@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+
+\usepackage{svg}
+\svgpath{{img/}}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsthm, mathrsfs, mathtools, amssymb}
+\usepackage{enumitem}
+
+\usepackage{physics}
+
+\usepackage{epigraph}
+
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{tensor}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+\usepackage{titlesec}
+\DeclareMathOperator{\supp}{supp}
+
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=1cm,bmargin=2cm,lmargin=1.5cm,rmargin=1.5cm}
+
+\newtheoremstyle{example}% name
+{0.7cm}% Space above
+{0.7cm}% Space below
+{\small}% Body font
+{}% Indent amount
+{\small\scshape}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning ‘normal’)
+
+\theoremstyle{example}
+\newtheorem{example}{Пример}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{corollary}{Следствие}
+\newtheorem*{corollary*}{Следствие} 
+\newtheorem{lemma}{Лемма}
+\newtheorem{utv}{Утверждение}
+\newtheorem*{utv*}{Утверждение}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem*{definition*}{Определение}
+\newtheorem{question}{Вопрос}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание}
+\newtheorem*{remark*}{Замечание}
+\numberwithin{remark}{section}
+
+\frenchspacing
+
+\usepackage[labelsep=period]{caption}
+\captionsetup{font = small}
+
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Spl}{\mathrm{Spl}}
+\newcommand{\spl}{\mathrm{spl}}
+
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+
+\newcounter{problem} 
+\newenvironment{problem}[1][]
+{
+	\refstepcounter{problem} 
+	\par \vspace{0.7em} \noindent
+	\textbf{Задача \theproblem}\ifx&#1&\else\ (#1)\fi. 
+}
+{
+	\vspace{1em}	
+}
+
+\newenvironment{solution}
+{
+	\vspace{0.3em}
+	\par\textsc{Решение.}
+}
+{
+	\qed
+}
+
+\newcommand{\que}[1]{%
+	\subsection{#1}
+}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\titleformat{\section}{\centering\LARGE\bf\scshape}{}{1em}{}
+
+\begin{document}
+%	\tableofcontents 
+	
+	\begin{center}
+		\Huge \bf	
+		\textsc{Механика сплошных сред}
+		\rule{\textwidth}{0.4pt}
+	\end{center}
+	
+  % Элементы тензорного исчисления
+  \input{teor-01}
+  \input{teor-02}
+  \input{teor-03}
+  \input{teor-04}
+  \input{teor-05}
+  \input{teor-06}
+  \input{teor-07}
+
+  % Кинематика сплошных сред
+  \input{teor-08}
+  \input{teor-09}
+
+  \input{teor-10}
+  \input{teor-11}
+  \input{teor-12}
+  \input{teor-13}
+
+  % Законы сохранения
+  \input{teor-14}
+  \input{teor-15}
+  \input{teor-16}
+  \input{teor-17}
+  \input{teor-18}
+  \input{teor-19}
+
+  \input{teor-20}
+  \input{teor-21}
+  \input{teor-22}
+  \input{teor-23}
+  \input{teor-24}
+  \input{teor-25}
+  \input{teor-26}
+
+  % Теория определяющих соотношений
+  \input{teor-27}
+  \input{teor-28}
+  \input{teor-29}
+
+  \input{teor-30}
+  \input{teor-31}
+  \input{teor-32}
+  \input{teor-33}
+  \input{teor-34}
+  \input{teor-35}
+  \input{teor-36}
+
+\end{document}
