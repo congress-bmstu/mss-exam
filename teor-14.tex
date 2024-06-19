@@ -1,1 +1,74 @@
 \que{Закон сохранения массы.  Уравнение неразрывности в переменных Лагранжа. Различные формы уравнения неразрывности.}
+
+\paragraph{Закон сохранения массы.} 
+\begin{axiom*}[закон сохранения массы]
+	Для всякой сплошной среды $\mathcal{B}$ (тела) существует скалярная функция $M(\mathcal{B}, t)$, называемая \textbf{массой} тела и обладающая следующими свойствами:
+	\begin{enumerate}
+		\item положительностью: $M > 0$,
+		
+		\item аддитивностью: $M(\mathcal{B}_1 + \mathcal{B}_2, t) = M(\mathcal{B}_1, t) + M(\mathcal{B}_2, t), \, \forall \mathcal{B}_1 \text{ и } \mathcal{B}_2, \, \forall t \leqslant 0$,
+		
+		\item инвариантностью по отношению к любым преобразованиям координат и к любым движениям  
+	\end{enumerate}
+	
+	Из последнего свойства следует, что масса в любой актуальной конфигурации не меняется:
+	\begin{equation*}
+		M(\mathcal{B}, t) = \mathrm{const}.
+	\end{equation*}
+\end{axiom*}
+
+\begin{remark*}
+	Закон можно записать иначе: 
+	\begin{equation*}
+		dM / dt = 0.
+	\end{equation*}
+	
+	Из аддитивности массы следует, что $M$ можно представить следующим образом:
+	\begin{equation*}
+		M = \int \limits_{V} dm, 
+	\end{equation*}
+	где $dm$ --- масса элементарного объема $dV$, содержащего материальную точку $\mathcal{M}$ из рассматриваемой области $V$ сплошной среды.
+\end{remark*}
+
+\begin{definition*}
+	Отношение 
+	\begin{equation*}
+		\rho = dm / dV
+	\end{equation*}
+	называется \textit{плотностью} вещества в точке $\mathcal{M}$. 
+	
+	В силу положительности массы $M$ и объема $dV$, масса и плотность также всегда положительны: $\rho > 0, \, dm > 0$. 
+\end{definition*}
+
+Теперь мы можем записать \textit{закон сохранения массы в интегральной форме}: 
+\begin{equation*}
+	\dv{}{t} \int\limits_{V} \rho \, dV = 0,
+\end{equation*}
+или, применяя это соотношение к элементарному объему, получим
+\begin{equation*}
+	\rho \, dV = \mathring{\rho} \, d\mathring{V} = \mathrm{const}.
+\end{equation*}
+
+Последнее соотношение называется \textit{законом сохранения массы в дифференциальной форме}. 
+
+\paragraph{Уравнение неразрывности в переменных Лагранжа.} Рассмотрим в $\mathring{\mathcal{K}}$ элементарный объем $d\mathring{V}$, построенный на элементарных радиусах векторах, ориентированных по локальным векторам базиса $d\mathring{\mathbf{x}}_{\alpha} = \mathring{\mathbf{r}}_{\alpha} d X^{\alpha}$. В актуальной конфигурации $\mathcal{K}$ ему соответствует область $dV$, построенная на векторах $\mathbf{r}_{\alpha} dX^{\alpha}$. Объемы областей $d\mathring{V}$ и $dV$ в этом случае вычисляются с использованием формул:
+\begin{align*}
+	d\mathring{V} &= \mathring{\mathbf{r}}_1 \cdot \left(\mathring{\mathbf{r}}_2 \times \mathring{\mathbf{r}}_3\right) \, dX^1 dX^2 dX^3 = \sqrt{\mathring{g}} \, dX^1 dX^2 dX^3 = \abs{\frac{\partial \mathring{x}^k}{\partial X^i}} \, dX^1 dX^2 dX^3, \\
+	dV &= \mathbf{r}_1 \cdot \left(\mathbf{r}_2 \times \mathbf{r}_3\right) \, dX^1 dX^2 dX^3 = \sqrt{g} \, dX^1 dX^2 dX^3 = \abs{\frac{\partial x^k}{\partial X^i}} \, dX^1 dX^2 dX^3.
+\end{align*}
+
+Подставляя эти выражения в закон сохранения массы в дифференциальной форме приходим к следующей теореме.
+
+\begin{theorem*}
+	Изменение плотности при переходе из конфигурации $\mathcal{K}$ в $\mathring{\mathcal{K}}$ определяется одним из следующих уравнений:
+	\begin{equation*}
+		\frac{\mathring{\rho}}{\rho} = \sqrt{\frac{g}{\mathring{g}}} = \frac{\abs{\partial x^k / \partial X^i}}{\partial \mathring{x}^j / \partial X^n} = \abs{\frac{\partial x^k}{\partial \mathring{x}^i}} = \det{\mathbf{F}}.
+	\end{equation*}
+	
+	Эти уравнения называют \textit{уравнениями неразрывности в переменных Лагранжа}.
+	
+	Часто используют соотношение элементарных объемов в $\mathcal{K}$ и $\mathring{\mathcal{K}}$:
+	\begin{equation*}
+		dV / d\mathring{V} = \sqrt{g / \mathring{g}}.
+	\end{equation*}
+\end{theorem*}

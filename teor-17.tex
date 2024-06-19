@@ -1,1 +1,53 @@
 \que{Вектор напряжений. Теоремы 1 и 2 Коши о свойствах вектора напряжений.}
+
+\paragraph{Вектор напряжений.} Как уже было отмечено в ответе на предыдущий вопрос, для некоторого разбиение области $V$ на $V_1$ и $V_2$ поверхностью $\Sigma_0$ имеем, что на некоторой элементарной площадке $d\Sigma \in \Sigma_0$ действуют поверхностные силы $d \mathcal{F}_1$ и $d \mathcal{F}_2$ для соответствующих областей. Тогда плотности этих сил можно обозначить следующим образом: 
+\begin{equation*}
+	\mathbf{t}_{n} = d\mathcal{F}_1 / d\Sigma \quad \text{и} \quad t_{-n} = d\mathcal{F}_2 / d\Sigma.
+\end{equation*} 
+
+Векторы $\mathbf{t}_n$ и $\mathbf{t}_{-n}$ называют \textit{векторами напряжений}, они представляют собой плотности \textit{внутренних поверхностных сил} по отношению ко всей области $V$ сплошной среды (так как они определены для внутренних точек $\mathcal{M}$ этой области). 
+
+\paragraph{Теорема Коши о свойствах вектора напряжений.} Очевидна относительность разбиения сил на внешние и внутренние: одни и те же силы могут быть внутренними или внешними по отношению к различным объемам сплошной среды. 
+
+Запишем уравнения изменения количества движения для всей области $V$ и для отдельных его частей $V_1$ и $V_2$:
+\begin{align*}
+	\int\limits_{V_1} \rho \left(\mathbf{f}_1 - \frac{d \mathbf{v}}{\mathbf{t}}\right) \, dV + \int\limits_{\Sigma_1} \mathbf{s}_1 \, d\Sigma + \int\limits_{\Sigma_0} \mathbf{t}_n \, d\Sigma &= 0, \\
+	\int\limits_{V_2} \rho \left(\mathbf{f}_2 - \frac{d\mathbf{v}}{dt}\right) \, dV + \int\limits_{\Sigma_2} \mathbf{s}_2 \, d\Sigma + \int\limits_{\Sigma_0} \mathbf{t}_{-n} \, d\Sigma &= 0,
+\end{align*}
+где $\mathbf{f}_i$ и $\mathbf{s}_i$ --- силы, действующие в областях $V_i$ и на поверхностях $\Sigma_i$, т.е. $\mathbf{f} = \mathbf{f}_i$ в $V_i$ и $\mathbf{s} = \mathbf{s}_i$ на $\Sigma_i$. В силу непрерывности всех функций $\mathbf{s}_i$ и $\mathbf{f}_i$, вычитая их уравнения изменения количества движения уравнения для отдельных его частей получаем, что
+\begin{equation*}
+	\int\limits_{\Sigma_0} \left(\mathbf{t}_n + \mathbf{t}_{-n}\right) \, d\Sigma = 0.
+\end{equation*}
+
+В силу произвольности поверхности $\Sigma_0$, заключаем, что $\mathbf{t}_n + \mathbf{t}_{-n} = 0$. Таким образом, мы доказали следующую теорему. 
+
+\begin{theorem*}[первая теорема Коши --- о непрерывности вектора напряжений]
+	Для одной и той же точки $\mathcal{M}$, являющейся внутренней точкой области $V$, вектор напряжений, определенный по отношению к площадкам $\mathbf{n} \, d\Sigma_0$ и $-(\mathbf{n} \, d\Sigma_0)$, различается только знаком:
+	\begin{equation*}
+		\mathbf{t}_{n} = - \mathbf{t}_{-n},
+	\end{equation*}
+	т.е. поле $\mathbf{t}_n(x)$ --- непрерывно в области $V$.
+\end{theorem*}
+
+\begin{theorem*}[вторая теорема Коши]
+	Вектор напряжений $\mathbf{t}_n$ на произвольной площадке с нормалью $\mathbf{n}$ выражается через векторы напряжений $\mathbf{t}_{\alpha}$ на трех координатных площадках следующим образом:
+	\begin{equation*}
+		\mathbf{t}_{n} = \sum\limits_{\alpha = 1}^{3} \mathbf{n} \cdot \mathbf{r}_{\alpha} \abs{\mathbf{r}^{\alpha}} \mathbf{t}_{\alpha}.
+	\end{equation*}
+	
+	Т.к. 
+	\begin{equation*}
+		\abs{\mathbf{r}^{\alpha}} = \left(\mathbf{r}^{\alpha} \cdot \mathbf{r}^{\alpha}\right)^{1/2} = \sqrt{g^{\alpha\alpha}},
+	\end{equation*}
+	то соотношение из формулировки теоремы можно переписать в виде:
+	\begin{equation*}
+		\mathbf{t}_{n} = \mathbf{n} \cdot \mathbf{T},
+	\end{equation*}
+	где $\mathbf{T}$ --- тензор второго ранга, называемый \textit{тензором истинных напряжений Коши}:
+	\begin{gather*}
+		\mathbf{T} = \sum\limits_{\alpha = 1}^{3} \mathbf{r}_{\alpha} \otimes \mathbf{t}^{\alpha} = \mathbf{r}_{i} \otimes \mathbf{t}^i, \\
+		\mathbf{t}^{\alpha} \equiv \mathbf{t}_{\alpha} \sqrt{g^{\alpha\alpha}}. 
+	\end{gather*}
+	
+	Можно переформулировать теорему следующим образом: <<Для непрерывного в $V \cup \Sigma$ поля вектора напряжений $\mathbf{s}(x) = \mathbf{t}_n(x)$, удовлетворяющих уравнению закона изменения количества движения в интегральной форме, всегда существует поле тензора $\mathbf{T}(\mathbf{x})$, удовлетворяющее соотношению $\mathbf{t}_n = \mathbf{n} \cdot \mathbf{T}$ в $V \cup \Sigma$>>. 
+\end{theorem*}
