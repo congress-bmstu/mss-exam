@@ -1,1 +1,147 @@
-\que{Вектор скорости, конвективная производная,  кинематическое  соотношение. Тензор скоростей деформации. }
+\que{Вектор скорости, конвективная производная,  кинематическое  соотношение.
+Тензор скоростей деформации. }
+\paragraph{Вектор скорости.}
+\begin{definition*}
+  \emph{Вектором скорости} называется
+\begin{equation*}
+\mathbf{v}\left(X^{i}, t\right)=\left.\frac{\partial \mathbf{x}}{\partial
+t}\left(X^{i}, t\right)\right|_{X^{i}} \quad \text{(типа зафиксировали точку
+тела)}.
+\end{equation*}
+\end{definition*}
+
+При этом
+\begin{equation*}
+\mathbf{v}=\bar{v}^{i} \overline{\mathbf{e}}_{i}=\frac{\partial x^{i}}{\partial
+t} \overline{\mathbf{e}}_{i}, \quad \bar{v}^{i}=\frac{\partial x^{i}}{\partial
+t}\left(X^{j}, t\right).
+\end{equation*}
+
+
+\paragraph{Полная производная тензора по времени.} Напомним, что
+произвольное векторное (а также скалярное и тензорное) поле может быть
+представлено
+\begin{equation*}
+\mathbf{a}(\mathbf{x}, t)=\mathbf{a}\left(\mathbf{x}\left(X^{j}, t\right), t\right)
+\end{equation*}
+в двух описаниях.
+
+\begin{definition*}
+  Полной производной по времени от переменного векторного поля $ \mathbf{a} $
+  называют частную производную по $t$ при фиксированных значениях координат
+  $X^{i}$:
+\begin{equation*}
+\dot{\mathbf{a}} \equiv \frac{d \mathbf{a}}{d t}=\left.\frac{\partial
+  \mathbf{a}}{\partial t}\right|_{X^{i}} = \left.\frac{\partial
+    \mathbf{a}}{\partial t}\right|_{x^{i}}+\left.\frac{\partial
+  \mathbf{a}}{\partial x^{j}} \frac{\partial x^{j}}{\partial t}\right|_{X^{i}}.
+\end{equation*}
+\end{definition}
+
+Заметим, что
+\begin{equation*}
+\frac{\partial \mathbf{a}}{\partial x^{j}} \frac{\partial x^{j}}{\partial
+t}=\bar{v}^{j} P_{j}^{k} \frac{\partial \mathbf{a}}{\partial X^{k}}=\bar{v}^{i}
+\overline{\mathbf{e}}_{i} \cdot \overline{\mathbf{e}}^{j} P_{j}^{k} \otimes
+\frac{\partial \mathbf{a}}{\partial X^{k}}=\mathbf{v} \cdot \mathbf{r}^{k}
+\otimes \frac{\partial \mathbf{a}}{\partial X^{k}}=\mathbf{v} \cdot \nabla
+\otimes \mathbf{a},
+\end{equation*}
+откуда
+\begin{equation*}
+\frac{d \mathbf{a}}{d t}=\frac{\partial \mathbf{a}}{\partial t}+\mathbf{v} \cdot
+\boldsymbol{\nabla} \otimes \mathbf{a}.
+\end{equation*}
+
+\begin{definition*}
+Выражение $\mathbf{v} \cdot \boldsymbol{\nabla} \otimes \mathbf{a}$ называют
+\emph{конвективной производной}.
+\end{definition*}
+
+Конвективная производная характеризует изменение поля
+за счет перемещения материальной частицы $\mathcal{M}$ из точки $\mathbf{x}$ в
+точку $\mathbf{x}+\mathbf{v} d t$ пространства.
+
+Например,
+\begin{equation*}
+\mathbf{v}=\frac{d \mathbf{x}}{d t}=\frac{d \mathbf{u}}{d t}=\frac{\partial \mathbf{u}}{\partial t}+\mathbf{v} \cdot \nabla \otimes \mathbf{u} 
+\end{equation*}
+
+\paragraph{Дифференциал тензора.}
+\begin{definition*}
+Дифференциалом переменного тензорного поля (дифференциалом тензора) ${ }^{n}
+\Omega\left(x^{i}, t\right)$ называют следующий объект:
+\begin{equation*}
+d^{n} \boldsymbol{\Omega}=\frac{d^{n} \Omega}{d t} d t.
+\end{equation*}
+\end{definition*}
+
+Используя формулу для полной производной тензора по времени, получаем, что дифференциал тензора можно представить в виде
+\begin{equation*}
+d^{n} \boldsymbol{\Omega}\left(x^{i}, t\right)=\left(\frac{\partial^{n} \boldsymbol{\Omega}}{\partial t}+\mathbf{v} \cdot \boldsymbol{\nabla} \otimes{ }^{n} \boldsymbol{\Omega}\right) d t 
+\end{equation*}
+
+Перепишем это выражение в виде
+\begin{equation*}
+d^{n} \boldsymbol{\Omega}=\frac{\partial^{n} \boldsymbol{\Omega}}{\partial t} d t+d \mathbf{x} \cdot \boldsymbol{\nabla} \otimes{ }^{n} \boldsymbol{\Omega}
+\end{equation*}
+
+В случае стационарных тензорных полей, т.е. когда $\partial^{n} \Omega / \partial t=0$, дифференциал тензорного поля имеет следующий вид:
+\begin{equation*}
+\widehat{d}^{n} \boldsymbol{\Omega}=d \mathbf{x} \cdot \boldsymbol{\nabla} \otimes{ }^{n} \boldsymbol{\Omega}
+\end{equation*}
+
+Для дифференциала вектора имеем 
+\begin{equation*}
+d \mathbf{a}\left(X^{i}, t\right)=\frac{d \mathbf{a}}{d t} d t=\left(\frac{\partial \mathbf{a}}{\partial t}+\mathbf{v} \cdot \boldsymbol{\nabla} \otimes \mathbf{a}\right) d t
+\end{equation*}
+
+Кроме того, по определению полагаем (случай стационарного векторного поля)
+\begin{equation*}
+d \hat{\mathbf{a}}=(\mathbf{v} \cdot \boldsymbol{\nabla} \otimes \mathbf{a}) d t=(\boldsymbol{\nabla} \otimes \mathbf{a})^{\mathrm{T}} \cdot d \mathbf{x} \text {. }
+\end{equation*}
+
+
+В частности, если $\mathbf{a}=\mathring{\mathbf{x}}$, то имеем
+\begin{equation*}
+d \widehat{\mathring{\mathbf{x}}}=(\boldsymbol{\nabla} \otimes
+\stackrel{\circ}{\mathbf{x}})^{\mathrm{T}} \cdot d \mathbf{x}=\mathbf{F}^{-1}
+\cdot d \mathbf{x},
+\end{equation*}
+то есть получили тот же дифференциал, что использовали ранее.
+
+\paragraph{Градиент скорости и тензор скоростей деформации.} Рассмотрим дифференциал вектора скорости $\widehat{d}
+\mathbf{v}$: 
+\[
+  \hat{d}\mathbf{v} = \frac{\partial}{\partial t} d\mathbf{x} = \frac{\partial^2
+  \mathbf{x}}{\partial X^i \partial t} dX^i = \frac{\partial^2
+\mathbf{x}}{\partial X^i \partial t}\otimes \mathring{\mathbf{r}}^i\cdot
+d\mathring{\mathbf{x}} = \left( \mathring{\mathbf{r}}^i\otimes \frac{\partial
+\mathbf{v}}{\partial X^i} \right)^{\mathsf T} \cdot d\mathring{\mathbf{x}} =
+(\mathring{\nabla}\otimes\mathbf{v})^{\mathsf T} \cdot d\mathring{\mathbf{x}}.
+\]
+
+Аналогично, используя уравнение $d X^{i}=\mathbf{r}^{i} \cdot
+d \mathbf{x}$, получим еще одно представление для вектора $\widehat{d \mathbf{v}}$ :
+\begin{equation*}
+\widehat{d} \mathbf{v}=(\boldsymbol{\nabla} \otimes \mathbf{v})^{\mathrm{T}} \cdot d \mathbf{x} 
+\end{equation*}
+
+\begin{definition*}
+Тензор второго ранга $(\boldsymbol{\nabla} \otimes \mathbf{v})^{\mathrm{T}}$
+называют \emph{градиентом скорости}.
+\end{definition*}
+
+Тензор $\mathbf{L}$, как и всякий тензор второго ранга, можно представить в виде суммы симметричного тензора $\mathbf{D}$ и кососимметричного $\mathbf{W}$:
+\begin{equation*}
+\mathbf{L}=\mathbf{D}+\mathbf{W} 
+\end{equation*}
+
+\begin{definition*}
+  Симметричный \emph{тензор скоростей деформации} $\mathbf{D}$ определяют
+  следующим образом:
+\begin{equation*}
+\mathbf{D}=\frac{1}{2}\left(\boldsymbol{\nabla} \otimes \mathbf{v}+\boldsymbol{\nabla} \otimes \mathbf{v}^{\mathrm{T}}\right) 
+\end{equation*}
+\end{definition*}
+Этот тензор имеет 6 независимых компонент.
