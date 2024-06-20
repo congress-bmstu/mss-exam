@@ -1,1 +1,86 @@
 \que{Второй закон термодинамики в пространственном и материальном описании. Интегральная и дифференциальная формулировки. }
+
+\paragraph{Интегральная формулировка.} Для формулировки второго закона термодинамики, аксиоматически введем новую локальную характеристику сплошной среды --- температуру.
+
+\begin{axiom*}
+	Для каждой материальной точки всякой сплошной среды $\mathcal{B}$ для всех $t \geqslant 0$ существует скалярная положительная функция \begin{equation*}
+		\theta(X^i, t) = \theta(x^i, t) > 0,
+	\end{equation*}
+	называемая \textbf{абсолютной температурой}.
+\end{axiom*} 
+
+Иногда аксиому о существовании абсолютной температуры называют \textit{нулевым законом термодинамики}. 
+
+\begin{definition*}
+	\textit{Производством энтропии за счет внешних массовых} источников называют скалярную функцию $\overline{Q}_{m}$, а \textit{производством энтропии} за счет \textit{внешних поверхностных} источников называют функцию $\bar{Q}_{\Sigma}$, определяемые для объема сплошной среды $V$ следующим образом:
+	\begin{equation*}
+		\bar{Q}_m = \int\limits_{V} \frac{q_m}{\theta} \, dm = \int\limits_{V}\frac{\rho q_m}{\theta} \, dV, \quad \bar{Q}_{\Sigma} = \int\limits_{\Sigma} \frac{q_{\Sigma}}{\theta} \, d\Sigma = - \int\limits_{\Sigma} \frac{\mathbf{n} \cdot \mathbf{q}}{\theta} \, d\Sigma.
+	\end{equation*}
+\end{definition*}
+
+\begin{axiom*}
+	Для всякой сплошной среды $\mathcal{B}$, существуют две скалярные аддитивные функции: $H(\mathcal{B}, t)$ --- \textbf{энтропия} сплошной среды и $\bar{Q}^{\ast}(\mathcal{B}, t)$ --- \textbf{производство энтропии за счет внутренних источников}, такие что для всех $t \geqslant 0$ выполняется уравнение 
+	\begin{equation*}
+		\frac{dH}{dt} = \bar{Q} + \bar{Q}^{\ast},
+	\end{equation*}
+	где обозначено суммарное производство энтропии за счет внешних источников
+	\begin{equation*}
+		\bar{Q} = \bar{Q}_m + \bar{Q}_{\Sigma},
+	\end{equation*}
+	а величина $\bar{Q}^{\ast}$ --- всегда неотрицательная (неравенство Планка):
+	\begin{equation*}
+		\bar{Q}^{\ast} \geqslant 0.
+	\end{equation*}
+\end{axiom*}
+
+Вследствии аддитивности функций $H$ и $\bar{Q}^{\ast}$, можно ввести их плотности для каждой точки $\mathcal{M} \in V$.
+
+\begin{definition*}
+	\textit{Плотностью энтропии} называют функцию $\eta$, а \textit{плотностью внутреннего производства энтропии} --- функцию $q^{\ast}$, которые определены для каждой точки $\mathcal{M}$ сплошной среды:
+	\begin{equation*}
+		\eta =\frac{dH}{dm}, \quad q^{\ast} = \theta \frac{d\bar{Q}^{\ast}}{dm}.
+	\end{equation*}
+	В силу неравенства Планка, а также неравенства из формулировки аксиомы о существовании абсолютной температуры, следует, что функция $q^{\ast}$ всегда неотрицательна:
+	\begin{equation*}
+		q^{\ast} \geqslant 0.
+	\end{equation*}
+	
+	Это неравенство также называют \textit{неравенством Планка}. 
+	
+	В силу аддитивности функций $H$ и $\bar{Q}^{\ast}$ для всего объема сплошной среды имеем 
+	\begin{equation*}
+		\bar{Q}^{\ast} = \int\limits_{V} \frac{q^{\ast}}{\theta} \, dm = \int\limits_{V} \frac{\rho q^{\ast}}{\theta} \, dV, \quad H = \int\limits_{V} \eta \, dm = \int\limits_{V} \rho \eta \, dV.
+	\end{equation*} 
+	Уравнение второго закона термодинамики и неравенство Планка эквивалентны \textit{неравенству Клаузиса}
+	\begin{equation*}
+		dH / dt \geqslant \bar{Q}.
+	\end{equation*}
+	
+	Подставляя определения производств энтропии в уравнение второго закона термодинамики, получаем \textit{интегральную формулировку второго закона термодинамики:}
+	\begin{equation*}
+		\frac{d}{dt} \int\limits_{V} \rho \eta \, dV = \int\limits_{V} \frac{\rho(q_m + q^{\ast})}{\theta} dV - \int\limits_{\Sigma} \frac{\mathbf{n} \cdot \mathbf{q}}{\theta} \, d\Sigma. 
+	\end{equation*}
+\end{definition*}
+
+\paragraph{Дифференциальная форма второго закона термодинамики.} Преобразуем поверхностный интеграл по формуле Гаусса-Остроградского:
+\begin{equation*}
+	\frac{d}{dt} \int\limits_{\Sigma} \frac{\mathbf{n} \cdot \mathbf{q}}{\theta} \, d\Sigma = \int\limits_{V} \nabla \cdot \left(\frac{\mathbf{q}}{\theta}\right) \, d\Sigma = \int\limits_{V} \left(\frac{\nabla \cdot \mathbf{q}}{\theta} + \mathbf{q} \cdot \nabla \left(\frac{1}{\theta}\right)\right) \, dV.
+\end{equation*}
+
+В силу произвольности объема $V$, приходим к следующему утверждению. 
+
+\begin{theorem*}
+	Если функции $\eta$, $\mathbf{q}$, $q^{\ast}$, $q_m$ и $\theta$, удовлетворяющие интегральной формулировке второго закона термодинамики, являются непрерывно-дифференцируемыми в $V(t)$ для всех рассматриваемых $t \geqslant 0$, то в каждой точке  $\mathcal{M} \in V$ выполняется второй закон термодинамики в \textbf{дифференциальной форме (уравнение баланса энтропии)}:
+	\begin{equation*}
+		\rho \frac{d\eta}{dt} = - \nabla \cdot \left(\frac{\mathbf{q}}{\theta}\right) + \rho \frac{q_m + q^{\ast}}{\theta}.
+	\end{equation*}
+	
+\paragraph{Второй закон термодинамики в материальном описании. } Переходя к материальному описанию получаем:
+\begin{equation*}
+	\int\limits_{\mathring{V}} \mathring{\rho} \frac{d\eta}{dt} \, d\mathring{V} = \int\limits_{\mathring{V}} \frac{\mathring{\rho}(q_m + q^{\ast})}{\theta} \, d\mathring{V} - \int\limits_{\mathring{\Sigma}} \frac{\mathring{\mathbf{n}} \cdot \mathring{\mathbf{q}}}{\theta} \, d\mathring{\Sigma},
+\end{equation*}
+откуда с помощью стандартных преоразований получаем \textit{второй закон термодинамики в материальном описании}:
+\begin{equation*}
+	\mathring{\rho} \frac{d\eta}{dt} = - \mathring{\nabla} \cdot \left(\frac{\mathring{\mathbf{q}}}{\theta}\right) + \mathring{\rho} \frac{q_m + q^{\ast}}{\theta}.
+\end{equation*}
+\end{theorem*}
