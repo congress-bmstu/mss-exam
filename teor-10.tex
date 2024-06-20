@@ -1,1 +1,204 @@
-\que{Физический  смысл компонент тензора  деформаций.  Преобразование ориентированной площадки при деформации сплошной среды. Геометрическая картина преобразования малой окрестности .}
+\que{Физический  смысл компонент тензора  деформаций.  Преобразование
+ориентированной площадки при деформации сплошной среды. Геометрическая картина
+преобразования малой окрестности.}
+\paragraph{Физический смысл.} Имеем  
+\[
+  \varepsilon_{\alpha\beta} =
+  \frac{1}{2}(|\mathbf{r}_\alpha||\mathbf{r}_\beta|\cos\psi_{\alpha\beta} -
+  |\mathring{\mathbf{r}}_\alpha||
+  \mathring{\mathbf{r}}_\beta|\cos\mathring{\psi}_{\alpha\beta}).
+\]
+Далее нестандартный анализ. Введём длины элементарных радиусов-векторов: $ ds^2
+= d\mathbf{x}\cdot d\mathbf{x}$, $ d\mathring{s}^2 = d\mathring{\mathbf{x}}\cdot
+d\mathring{\mathbf{x}}$.
+
+При этом $ d\mathring{\mathbf{x}} $ будем выбирать вдоль одного из векторов
+$\mathring{\mathbf{r}}_\alpha$. Тогда $ d\mathbf{x} $ тоже будет направлен вдоль
+$ \mathbf{r}_\alpha $. В этом случае  
+\begin{align*}
+  |d\mathring{\mathbf{x}}| &= d\mathring{s}_\alpha = \left| \frac{\partial
+  \mathring{\mathbf{x}}}{\partial X^\alpha} dX^\alpha \right| =
+  |\mathring{\mathbf{r}}_\alpha | dX^\alpha,\\
+    |d\mathbf{x}| &= ds_\alpha = \left| \frac{\partial x}{\partial
+  X^\alpha}dX^\alpha \right| = |\mathbf{r}_\alpha | dX^\alpha.
+\end{align*}
+Отсюда находим  
+\[
+  ds_\alpha/d\mathring{s}_\alpha =
+  |\mathbf{r}_\alpha|/|\mathring{\mathbf{r}}_\alpha| = \delta_\alpha + 1,
+\]
+где $ \delta_\alpha $ называют \emph{относительным удлинением}. Получаем  
+\[
+  |\mathring{\mathbf{r}}_\alpha| = |\mathring{\mathbf{r}}_\alpha|(1 +
+  \delta_\alpha)
+\]
+и  
+\begin{align*}
+  \varepsilon_{\alpha\beta} &= \frac{1}{2}
+  |\mathring{\mathbf{r}}_\alpha||\mathring{\mathbf{r}}_\beta|
+  ((1+\delta_\alpha)(1+\delta_\beta)\cos\psi_{\alpha\beta} -
+  \cos\mathring{\psi}_{\alpha\beta}), \\
+  \varepsilon_{\alpha\alpha} &=
+  \frac{1}{2}|\mathring{\mathbf{r}}_\alpha|^2((1+\delta_\alpha)^2 - 1) =
+  \frac{\mathring{g}_{\alpha\alpha}}{2}((1+\delta_\alpha)^2 - 1).
+\end{align*}
+
+Если $ X^i $ есть декартовы координаты, то $ \mathring{g}_{\alpha\beta} =
+\delta_{\alpha\beta} $, и при $ \delta_\alpha \ll 1 $ имеем $
+\varepsilon_{\alpha\alpha} \approx \delta_\alpha $. При этом  
+\[
+  \varepsilon_{\alpha\beta} =
+  \frac{1}{2}(1+\delta_\alpha)(1+\delta_\beta)\sin\chi_{\alpha\beta},
+\]
+где $ \chi_{\alpha\beta} = \mathring{\psi}_{\alpha\beta} - \psi_{\alpha\beta} =
+(\pi/2) - \psi_{\alpha\beta}$ --- изменение угла между базисными векторами $
+\mathbf{r}_\alpha $ и $ \mathbf{r}_\beta $. При $ \delta_\alpha \ll 1 $, $
+\chi_{\alpha\beta} \ll 1 $ имеем $ \varepsilon_{\alpha\beta} \approx
+\chi_{\alpha\beta}/2 $.
+
+\paragraph{Преобразование ориентированной площадки.} Далее какой-то бред.
+Рассмотрим некоторую гладкую поверхность $ \Sigma $, которой принадлежат
+какие-либо две из координатных линий $ X^\alpha $ и $ X^\beta $.
+
+Тогда можно ввести вектор нормали  
+\[
+  \mathbf{n} = \frac{1}{\sqrt{\tilde{g}}} \mathbf{r}_\alpha \times
+  \mathbf{r}_\beta,
+\]
+где $ \tilde g $ --- определитель метрической матрицы, составленной только из
+выбранных векторов $ \mathbf{r}_\alpha $, $ \mathbf{r}_\beta $. Эта нормаль
+является единичной.
+
+Рассмотрим элементарную площадку $ d\Sigma $, построенную на элементарных
+радиусах-векторах $ d\mathbf{x}_\alpha $, направленных по векторам локального
+базиса, то есть $ d\mathbf{x}_\alpha = \mathbf{r}_\alpha dX^\alpha $. Назовём
+величину  
+\[
+  d\Sigma = \sqrt{\tilde g} dX^\alpha dX^\beta
+\]
+\emph{площадью элементарной площадки} $ d\Sigma $ (обозначение супер),
+построенной на векторах $ d\mathbf{x}_\alpha $, $ d\mathbf{x}_\beta $. Тогда  
+\[
+  \mathbf{n} d\Sigma = \mathbf{r}_\alpha dX^\alpha \times \mathbf{r}_\beta
+  dX^\beta = d\mathbf{x}_\alpha \times d\mathbf{x}_\beta.
+\]
+Величину $ \mathbf{n}d\Sigma $ называют \emph{ориентированной площадкой}.
+
+Площадке $ d\Sigma $ соответствует площадка $ d\mathring{\Sigma} $, построенная
+на $ d\mathring{\mathbf{x}}_\alpha $, $ d\mathring{\mathbf{x}}_\beta$, 
+\[
+  \mathring{\mathbf{n}}d\mathring{\Sigma} = \mathring{\mathbf{r}}_\alpha
+  dX^\alpha \times \mathring{\mathbf{r}}_\beta dX^\beta =
+  \mathring{\mathbf{r}}_\alpha \times \mathring{\mathbf{r}}_\beta dX^\alpha
+  dX^\beta.
+\]
+
+Так как $ \mathbf{r}^\gamma = F^{-1\mathsf T}\cdot \mathring{\mathbf{r}}^\gamma
+$, то  
+\begin{equation}\label{eq:govno}
+  \mathbf{n}d\Sigma = \sqrt{g}\epsilon_{\alpha\beta\gamma}F^{-1\mathsf T} \cdot
+  \mathring{\mathbf{r}}^\gamma dX^\alpha dX^\beta =
+  \sqrt{g/\mathring{g}} F^{-1 \mathsf T}\cdot
+  \mathring{\mathbf{r}}_\alpha\times\mathring{\mathbf{r}}_\beta dX^\alpha
+  dX^\beta = 
+  \sqrt{g/\mathring{g}} F^{-1\mathsf
+  T}\cdot \mathring{\mathbf{n}}d\mathring{\Sigma}.
+\end{equation}
+Умножим это уравнение скалярно само на себя и получим  
+\[
+  d\Sigma^2 = \frac{g}{\mathring{g}}(\mathring{\mathbf{n}}\cdot F^{-1}\cdot
+  F^{-1\mathsf T}\cdot \mathring{\mathbf{n}})d\mathring{\Sigma}^2 =
+  \frac{g}{\mathring g}(\mathring{\mathbf{n}}\cdot G^{-1}\cdot
+  \mathring{\mathbf{n}})d\mathring{\Sigma}^2,
+\]
+то есть 
+\[
+  d\Sigma/d\mathring{\Sigma} = \sqrt{g/\mathring{g}}(\mathring{\mathbf{n}}\cdot
+  G^{-1}\cdot \mathring{\mathbf{n}})^{1/2}.
+\]
+
+С другой стороны, из той же формулы \eqref{eq:govno} можно сначала выразить $
+\mathring{\mathbf{n}} $, а затем получившееся соотношение умножить скалярно само
+на себя. Тогда  
+\[
+  d\mathring{\Sigma}^2 = \frac{\mathring{g}}{g}(\mathbf{n}\cdot F\cdot
+  F^{\mathsf T}\cdot \mathbf{n})d\Sigma^2.
+\]
+Отсюда  
+\[
+  d\mathring{\Sigma}/d\Sigma = \sqrt{\mathring g/g}(\mathbf{n}\cdot g^{-1}\cdot
+  \mathbf{n})^{1/2}.
+\]
+Иными словами,  
+\[
+  (\mathbf{n}\cdot g^{-1}\cdot \mathbf{n})^{1/2} = (\mathring{\mathbf{n}}\cdot
+  G^{-1}\cdot \mathring{n})^{-1/2}.
+\]
+После подстановки полученных выражений в \eqref{eq:govno} получаем  
+\[
+    (\mathring{\mathbf{n}}\cdot
+    G^{-1}\cdot \mathring{n})^{1/2} \mathbf{n} = F^{-1\mathsf T}\cdot
+    \mathring{\mathbf{n}}, \qquad (\mathbf{n}\cdot g^{-1}\cdot \mathbf{n})^{1/2}
+    \mathring{\mathbf{n}} = F^{\mathsf T} \cdot \mathbf{n}.
+\]
+
+\paragraph{Геометрическая картина преобразования малой окрестности.} 
+Известно соотношение
+\[ 
+  d \mathbf{x}=\mathbf{F} \cdot d\mathring{\mathbf{x}}.
+\]
+
+Запишем это соотношение в декартовых координатах
+\[ d x^{i}=\bar{F}_{m}^{i} d \mathring{x}^{m}, \]
+где $\bar{F}_{m}^{i}$ - компоненты градиента деформации в декартовом базисе:
+\[ \bar{F}_{m}^{i}=\left(\partial x^{i} / \partial \mathring{x}^m\right). \]
+Фактически, это аффинное преобразование.
+Из общих свойств аффинных преобразований следует, параллелограммы при аффинном
+преобразовании перейдут в параллелограммы, а сферы перейдут в эллипсоиды.
+
+Отношение длин $d s_{\alpha} / d\mathring{s}$
+произвольного отрезка (элементарного радиуса-вектора $d \mathbf{x}$ в
+$\mathcal{K}$ и $\mathring{\mathcal{K}}$ ) не зависит от начальной
+длины $d \mathring{s}$ этого отрезка (так как относительное удлинение
+$\delta_{\alpha}$ не зависит от $d s_{\alpha}$ ).
+
+Согласно полярному разложению, указанное преобразование из $\mathring{\mathcal{K}}$ в
+$\mathcal{K}$ всегда можно представить суперпозицией двух преобразований: 
+\[
+  d\mathbf{x} = O \cdot d\mathring{\mathbf{x}}', \qquad d\mathring{\mathbf{x}}'
+  = U \cdot d\mathring{\mathbf{x}},
+\]
+или
+
+\[ d \mathbf{x}=\mathbf{V} \cdot d \mathbf{x}^{\prime}, \quad d
+\mathbf{x}^{\prime}=\mathbf{O} \cdot d \mathbf{x} \]
+
+Тензор искажений $\mathbf{U}$, обладающий тремя собственными направлениями
+$\mathring{\mathbf{p}}_{\alpha}$, изменяет малую окрестность точки
+$\mathcal{M}$, сжимая или растягивая ее вдоль этих трех направлений
+$\mathring{\mathbf{p}}_{\alpha}$. Тензор поворота $ O $ поворачивает
+деформированную вдоль $\mathring{\mathbf{p}}_{\alpha}$ окрестность
+<<жестким образом>>, переводя направление $\mathring{\mathbf{p}}_{\alpha}$
+в $\mathbf{p}_{\alpha}$. Если используем левый тензор искажений $\mathbf{V}$, то
+вначале осуществляется поворот осей $\mathring{\mathbf{p}}_{\alpha}$ в
+$\mathring{\mathcal{K}}$ до их совпадения с $\mathbf{p}_{\alpha}$ (с
+точностью до параллельного переноса), а затем сжатие/растяжение малой
+окрестности вдоль направления $\mathbf{p}_{\alpha}$. Результат, очевидно, будет
+одинаковым.
+
+Если точка $\mathcal{M}_{\alpha}$ связана с $\mathcal{M}$ радиусом-вектором $d
+\mathbf{x}_{\alpha}$, ориентированным по собственному направлению
+$\mathring{\mathbf{p}}_{\alpha}$ (заметим, заранее до деформации
+неизвестному), то в $\mathcal{K}$ эта точка $\mathcal{M}_{\alpha}$ будет связана
+с $\mathcal{M}$ радиусом-вектором $d \mathbf{x}_{\alpha}$, ориентированным вдоль
+соответствующего собственного направления $\mathbf{p}_{\alpha}$.
+
+Если малую окрестность точки $\mathcal{M}$ в $\mathring{\mathcal{K}}$
+взять в виде сферы, то в $\mathcal{K}$ эта сфера перейдет в
+эллипсоид, главные оси которого направлены по собственным направлениям
+$\mathbf{p}_{\alpha}$.
+
+Таким образом, преобразование малой окрестности каждой точки $\mathcal{M}$
+сплошной среды при деформации всегда можно представить в виде растяжения/сжатия
+вдоль собственных направлений и поворота как жесткого целого, а также
+перемещения как жесткого целого.

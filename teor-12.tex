@@ -1,1 +1,117 @@
-\que{Вектор перемещений,  соотношения между перемещениями и градиентом деформаций, перемещениями и тензорами деформаций. Соотношения Коши в случае малых деформаций.}
+\que{Вектор перемещений,  соотношения между перемещениями и градиентом
+деформаций, перемещениями и тензорами деформаций. Соотношения Коши в случае
+малых деформаций.}
+\begin{definition*}
+  \emph{Вектором перемещения} точки $ \mathcal M $ называется вектор  
+  \[
+    \mathbf{u} = \mathbf{x} - \mathring{\mathbf{x}}.
+  \]
+\end{definition*}
+
+\begin{theorem*}[соотношения между перемещениями и градиентом деформаций]
+  \begin{align*}
+  &\begin{aligned}
+    F &= E + (\mathring{\nabla}\otimes \mathbf{u})^{\mathsf T}, & F^{-1} &= E -
+    (\nabla \otimes \mathbf{u})^{\mathsf T},\\
+    F^{\mathsf T} &= E + \mathring{\nabla}\otimes \mathbf{u}, & F^{-1\mathsf{T}}
+                  &= E - \nabla \otimes \mathbf{u},
+  \end{aligned}\\
+  &C = \frac{1}{2} ( \mathring{\nabla}\otimes \mathbf{u} +
+  \mathring{\nabla}\otimes \mathbf{u}^{\mathsf T} + \mathring{\nabla}\otimes
+\mathbf{u} \cdot \mathring{\nabla}\otimes \mathbf{u}^{\mathsf T} ),\\
+  &A = \frac{1}{2} (\nabla \otimes \mathbf{u} + \nabla \otimes
+  \mathbf{u}^{\mathsf T} - \nabla \otimes \mathbf{u}\cdot \nabla\otimes
+  \mathbf{u}^{\mathsf T}),\\
+  &\Lambda = \frac{1}{2}(\nabla \otimes \mathbf{u} + (\nabla \otimes
+  \mathbf{u})^{\mathsf T} - \nabla \otimes \mathbf{u}^{\mathsf T} \cdot \nabla
+  \otimes \mathbf{u}),\\
+  &J = \frac{1}{2} ( \mathring{\nabla} \otimes \mathbf{u} + \mathring{\nabla}
+  \otimes \mathbf{u}^{\mathsf T} + \mathring{\nabla} \otimes \mathbf{u}^{\mathsf
+  T}\cdot \mathring{\nabla}\otimes \mathbf{u}).
+\end{align*}
+\end{theorem*}
+\begin{proof}
+  Докажем для примера одну из цепочек. Для начала  
+  \[
+    F^{\mathsf T} = \mathring{\nabla}\otimes \mathbf{x} =
+    \mathring{\nabla}\otimes (\mathring{\mathbf{x}} + \mathbf{u}) =
+    \mathring{\mathbf{r}}^i \otimes \mathring{\mathbf{r}}_i +
+    \mathring{\nabla}\otimes \mathbf{u} = E + \mathring{\nabla} \otimes
+    \mathbf{u}.
+  \]
+  Тогда (почему-то считается, что $ (\mathring{\nabla}\otimes
+  \mathbf{u})^{\mathsf T} = \mathring{\nabla}\otimes \mathbf{u}^{\mathsf T} $)
+ \[
+   C = \frac{1}{2} ( (E + \mathring{\nabla} \otimes \mathbf{u}) \cdot
+   (E+\mathring{\nabla}\otimes \mathbf{u}^{\mathsf T}) - E) = \frac{1}{2}
+   (\mathring{\nabla}\otimes \mathbf{u} + \mathring{\nabla}\otimes
+   \mathbf{u}^{\mathsf T} + \mathring{\nabla}\otimes \mathbf{u}\cdot
+   \mathring{\nabla}\otimes \mathbf{u}^{\mathsf T}).
+ \]
+\end{proof}
+
+Вектор $ \mathbf{u} = \mathring{u}^i \mathring{\mathbf{r}}_i = u^i \mathbf{r}_i
+$ можно разложить по любому из базисов, как и его производную. Тогда 
+\begin{align*}
+  \mathring{\nabla}\otimes \mathbf{u} &= \mathring{\mathbf{r}}^i \otimes
+  \frac{\partial \mathbf{u}}{\partial X^i} = \mathring{\nabla}_i \mathring{u}^k
+  \mathring{\mathbf{r}}^i \otimes \mathring{\mathbf{r}}_k = \mathring{\nabla}^i
+  \mathring{u}^k \mathring{\mathbf{r}}_i \otimes \mathring{\mathbf{r}}_k,\\
+  {\nabla}\otimes \mathbf{u} &= {\mathbf{r}}^i \otimes
+  \frac{\partial \mathbf{u}}{\partial X^i} = {\nabla}_i {u}^k
+  {\mathbf{r}}^i \otimes {\mathbf{r}}_k = {\nabla}^i
+  {u}^k {\mathbf{r}}_i \otimes \mathbf{r}_k.
+\end{align*}
+Отсюда 
+\begin{align*}
+  F &= (\delta^k_i + \mathring{\nabla}_i \mathring{u}^k)\mathring{\mathbf{r}}_k
+  \otimes \mathring{\mathbf{r}}^i = \tensor{\mathring{F}}{^k_i}
+  \mathring{\mathbf{r}}_k\otimes \mathring{\mathbf{r}}^i,\\
+  F^{\mathsf T} &= (\delta^k_i +
+  \mathring{\nabla}^k\mathring{u}_i)\mathring{\mathbf{r}}_k\otimes
+  \mathring{\mathbf{r}}^i = \tensor{\mathring{F}}{_i^k}\mathring{\mathbf{r}}_k\otimes
+  \mathring{\mathbf{r}}^i,\\
+  F^{-1} &= (\delta^k_i -
+  {\nabla}_i {u}^k) {\mathbf{r}}_k\otimes
+  {\mathbf{r}}^i = \tensor{{F}^{-1}}{^k_i} {\mathbf{r}}_k\otimes
+  {\mathbf{r}}^i,\\
+  F^{-1\mathsf T} &= (\delta^k_i +
+  {\nabla}^k{u}_i){\mathbf{r}}_k\otimes
+  {\mathbf{r}}^i = \tensor{{F}^{-1}}{_i^k}{\mathbf{r}}_k\otimes
+  {\mathbf{r}}^i.
+\end{align*}
+
+Подставляя теперь это в выражения для $ C $ и $ A $, получаем  
+\begin{align*}
+  \varepsilon_{ij} &= \frac{1}{2}(\mathring{\nabla}_i \mathring{u}_j +
+  \mathring{\nabla}_j\mathring{u}_i + \mathring{\nabla}_i\mathring{u}^k
+  \mathring{\nabla}_j \mathring{u}_k),\\
+  \varepsilon_{ij} &= \frac{1}{2}({\nabla}_i {u}_j +
+  {\nabla}_j{u}_i + {\nabla}_i{u}^k
+  {\nabla}_j {u}_k).
+\end{align*}
+А подставляя в выражения для $ \Lambda $ и $ J $, получим
+\begin{align*}
+  \varepsilon^{ij} &= \frac{1}{2}(\mathring{\nabla}^i \mathring{u}^j +
+  \mathring{\nabla}^j\mathring{u}^i + \mathring{\nabla}^k\mathring{u}^i
+  \mathring{\nabla}_k \mathring{u}_j),\\
+  \varepsilon^{ij} &= \frac{1}{2}({\nabla}^i {u}^j +
+  {\nabla}^j{u}^i + {\nabla}^k{u}^i
+  {\nabla}_k {u}^j).
+\end{align*}
+
+Кроме того, 
+\begin{align*}
+  g_{ij} &= \mathring{g}_{ij} + \mathring{\nabla}_i \mathring{u}_j +
+  \mathring{\nabla}_j\mathring{u}_i + \mathring{\nabla}_i\mathring{u}^k
+  \mathring{\nabla}_j \mathring{u}_k = \mathring{g}_{ij} + {\nabla}_i {u}_j +
+  {\nabla}_j{u}_i + {\nabla}_i{u}^k
+  {\nabla}_j {u}_k,\\
+  g^{ij} &= \mathring{g}^{ij}+\mathring{\nabla}^i \mathring{u}^j +
+  \mathring{\nabla}^j\mathring{u}^i + \mathring{\nabla}^k\mathring{u}^i
+  \mathring{\nabla}_k \mathring{u}_j = \mathring{g}^{ij} + {\nabla}^i {u}^j +
+  {\nabla}^j{u}^i + {\nabla}^k{u}^i
+  {\nabla}_k {u}^j.
+\end{align*}
+
+

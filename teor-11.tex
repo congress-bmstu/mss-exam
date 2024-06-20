@@ -1,1 +1,300 @@
 \que{Полярное разложение, тензоры искажений и поворота. Собственные значения и собственные вектора тензоров искажений.}
+Очевидно, тензор $ \mathbf{F} $ невырожден.
+
+\begin{theorem*}
+Всякий невырожденный тензор второго ранга
+$\mathbf{F}$ можно представить в виде скалярного произведения двух тензоров
+второго ранга: \[
+\mathbf{F}=\mathbf{O} \cdot \mathbf{U} \quad \text { или } \quad
+\mathbf{F}=\mathbf{V} \cdot \mathbf{O}, 
+\]
+где $ \mathbf{U} $ и $ \mathbf{V} $ --- симметричные, положительно определенные
+тензоры, а $ \mathbf{O} $ --- ортогональный тензор, причем каждое из
+представлений единственное.
+\end{theorem*}
+\begin{proof}
+Построим тензоры $\mathbf{U}, \mathbf{V}$ и $ \mathbf{O} $. Для этого рассмотрим свертки
+тензора $\mathbf{F}$ со своим транспонированным: $\mathbf{F}^{{T}} \cdot
+\mathbf{F}$ и $\mathbf{F} \cdot \mathbf{F}^{{T}}$. Оба эти тензора
+являются симметричными, так как
+\[
+\left(\mathbf{F}^{\mathsf{T}} \cdot
+\mathbf{F}\right)^{\mathsf{T}}=\mathbf{F}^{\mathsf{T}}
+\cdot\left(\mathbf{F}^{\mathsf{T}}\right)^{\mathsf{T}}=\mathbf{F}^{\mathsf{T}}
+\cdot \mathbf{F} \text { и }\left(\mathbf{F} \cdot
+\mathbf{F}^{\mathsf{T}}\right)^{\mathsf{T}}=\left(\mathbf{F}^{\mathsf{T}}\right)^{\mathsf{T}}
+\cdot \mathbf{F}^{\mathsf{T}}=\mathbf{F} \cdot \mathbf{F}^{\mathsf{T}} \]
+а также положительно определенными:
+\[
+\mathbf{a} \cdot\left(\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}\right) \cdot
+\mathbf{a}=\left(\mathbf{a} \cdot \mathbf{F}^{\mathsf{T}}\right)
+\cdot(\mathbf{F} \cdot \mathbf{a})=(\mathbf{F} \cdot \mathbf{a})
+\cdot(\mathbf{F} \cdot \mathbf{a})=\mathbf{b} \cdot
+\mathbf{b}=|\mathbf{b}|^{2}>0 \]
+для любого ненулевого вектора $\mathbf{a}$, где $\mathbf{b}=\mathbf{F} \cdot
+\mathbf{a}$. Но у всякого симметричного положительно определенного тензора все
+три собственные значения вещественны и положительны тогда собственные значения
+тензоров $\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}$ и $\mathbf{F} \cdot
+\mathbf{F}^{\mathsf{T}}$ можно обозначить как $\lambda_{\alpha}^{2}$ и
+$\lambda_{\alpha}^{2}$. Эти тензоры являются диагональными в собственных
+базисах, т.е. имеют следующие представления:
+
+\[
+  \mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}=\sum_{\alpha=1}^{3}
+  \mathring{\lambda}_\alpha^2
+\mathring{\mathbf{p}}_{\alpha} \otimes \mathring{\mathbf{p}}_{\alpha}, \quad
+\mathbf{F} \cdot \mathbf{F}^{\mathsf{T}}=\sum_{\alpha=1}^{3}
+\lambda_{\alpha}^{2} \mathbf{p}_{\alpha} \otimes \mathbf{p}_{\alpha},
+\] 
+где $\mathring{\mathbf{p}}_{\alpha}$ - соб́ственные векторы тензора
+$\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}$, а $\mathbf{p}_{\alpha}-$ тензора
+$\mathbf{F} \cdot \mathbf{F}^{\mathsf{T}}$, являющиеся вещественнозначными и
+ортонормированными:
+\[
+\mathring{\mathbf{p}}_{\alpha} \cdot \mathring{\mathbf{p}}_{\beta}=\delta_{\alpha \beta}, \quad \mathbf{p}_{\alpha} \cdot \mathbf{p}_{\beta}=\delta_{\alpha \beta}
+\]
+
+Правые части представляют собой квадраты некоторых тензоров $\mathbf{U}$ и
+$\mathbf{V}$, определенных как 
+\[
+  U = \sum_{\alpha=1}^3 \mathring{\lambda}_\alpha
+  \mathring{\mathbf{p}}_\alpha\otimes \mathring{\mathbf{p}}_\alpha, \quad
+  \mathring{\lambda}_\alpha > 0; \qquad V = \sum_{\alpha = 1}^3
+  \lambda_\alpha\mathbf{p}_\alpha \otimes \mathbf{p}_\alpha, \quad
+  \lambda_\alpha > 0,
+\]
+где знаки у $\lambda_{\alpha}$ выбираем всегда положительными.
+
+При этом имеют место соотношения:
+
+\[
+\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}=\mathbf{U}^{2}, \quad \mathbf{F} \cdot \mathbf{F}^{\mathsf{T}}=\mathbf{V}^{2}
+\]
+
+Построенные тензоры V и U являются симметричными, что следует из формулы, а также положительно определенными, так как для любого ненулевого вектора а выполнено:
+\[
+\mathbf{a} \cdot \mathbf{U} \cdot \mathbf{a}=\sum_{\alpha=1}^{3} \mathring{\lambda}_{\alpha} \mathbf{a} \cdot \mathring{\mathbf{p}}_{\alpha} \otimes \mathring{\mathbf{p}}_{\alpha} \cdot \mathbf{a}=\sum_{\alpha=1}^{3} \mathring{\lambda}_{\alpha}\left(\mathbf{a} \cdot \mathring{\mathbf{p}}_{\alpha}\right)^{2}>0
+\]
+
+ввиду того, что $\mathring{A}_{\alpha}>0$. Аналогично доказываем положительную определенность тензора V.
+
+Оба тензора $ \mathbf{V} $ и $\mathbf{U}$ невырождены, так как по условию
+теоремы $\mathbf{F}$ невырожден, тогда
+\[
+(\operatorname{det} \mathbf{U})^{2}=\operatorname{det} \mathbf{U}^{2}=\operatorname{det}\left(\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}\right)=(\operatorname{det} \mathbf{F})^{2} \neq 0
+\]
+
+Тогда существуют обратные тензоры $\mathbf{U}^{-1}$ и $\mathbf{V}^{-1}$, с помощью которых можно построить еще два новых тензора
+\[
+\mathring{\mathbf{O}}=\mathbf{F} \cdot \mathbf{U}^{-1}, \quad \mathbf{O}=\mathbf{V}^{-1} \cdot \mathbf{F}
+\]
+
+являющихся ортогональными. В самом деле,
+\[
+\mathring{\mathbf{O}}^{\mathsf{T}} \cdot \mathring{\mathbf{O}}=\left(\mathbf{F}
+\cdot \mathbf{U}^{-1}\right)^{\mathsf{T}} \cdot\left(\mathbf{F} \cdot
+\mathbf{U}^{-1}\right)=\mathbf{U}^{-1} \cdot \mathbf{F}^{\mathsf{T}} \cdot
+\mathbf{F} \cdot \mathbf{U}^{-1}=\mathbf{U}^{-1} \cdot \mathbf{U}^{2} \cdot
+\mathbf{U}^{-1}=\mathbf{E},
+\]
+что по определению означает ортогональность тензора $ O $.
+
+Таким образом, мы действительно построили тензоры $\mathbf{U}$ и $\mathring{\mathbf{O}}$, а также $\mathbf{V}$ и $\mathbf{O}$, произведение которых образует исходный тензор $\mathbf{F}$ :
+
+\[
+\mathbf{F}=\mathring{\mathbf{O}} \cdot \mathbf{U}=\mathbf{V} \cdot \mathbf{O},
+\]
+
+причем $\mathbf{U}$ и  - симметричные, положительно определенные, а $\mathbf{O}$ и $\mathbf{\text { O }}-$ ортогональные.
+
+Покажем единственность каждого из разложений. Пусть противное, т.е. существует еще одно разложение, например,
+
+\[
+\mathbf{F}=\mathring{\mathbf{O}} \cdot \widetilde{\mathbf{U}}
+\]
+
+Но тогда
+
+\[
+\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}=\widetilde{\mathbf{U}}^{2}=\mathbf{U}^{2},
+\]
+
+откуда следует, что $\widetilde{\mathbf{U}}=\mathbf{U}$, так как разложение
+тензора $\mathbf{F}^{\mathsf{T}} \cdot \mathbf{F}$ по собственному базису
+единственно, а знаки у $\mathring{A}_{\alpha}$ и $\widetilde{\lambda}_{\alpha}$
+по условию выбираем положительными. Совпадение $ U $ и $ \widetilde U $ влечёт
+за собой совпадение $ \mathring{\widetilde{O}} $ и $ \mathring{O} $, так как
+\[
+  \mathring{\widetilde{\mathbf{O}}}=\mathbf{F} \cdot
+  \widetilde{\mathbf{U}}^{-1}=\mathbf{F}
+\cdot \mathbf{U}^{-1}=\mathring{\mathbf{O}},
+\]
+что и доказывает единственность разложения. Единственность разложения $\mathbf{F}=\mathbf{V} \cdot \mathbf{O}$ доказывается аналогично.
+
+Нам осталось только показать, что ортогональные тензоры $ \mathring{O} $ и $ O $
+совпадают. Для этого образуем тензор
+\[
+\mathbf{F} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}=\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}
+\]
+
+Для этого тензора выполнено соотношение:
+\[
+  \mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}=\mathbf{V} \cdot \mathbf{O} \cdot \mathring{\mathbf{O}}^{\mathsf{T}} .
+\]
+Тензор $ \mathbf{O} \cdot \mathbf{O}^{\mathsf{T}}$ является ортогональным, так как
+
+\[
+\left(\mathbf{O} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}\right)^{\mathsf{T}} \cdot\left(\mathbf{O} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}\right)=\mathring{\mathbf{O}} \cdot \mathbf{O}^{\mathsf{T}} \cdot \mathbf{O} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}=\mathring{\mathbf{O}} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}=\mathbf{E}
+\]
+
+Тогда на соответствующее соотношение можно смотреть как на полярное разложение тензора $\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathbf{O}^{\mathsf{T}}$. Но этот тензор симметричен, так как
+\[
+\left(\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}\right)^{\mathsf{T}}=\left(\mathring{\mathbf{O}}^{\mathsf{T}}\right)^{\mathsf{T}} \cdot(\mathring{\mathbf{O}} \cdot \mathbf{U})^{\mathsf{T}}=\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}
+\]
+
+Тогда формальное равенство
+
+\[
+\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}=\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}
+\]
+
+--- еще одно его полярное разложение. Однако выше мы показали единственность полярного разложения, значит должны иметь место соотношения:
+
+\[
+\mathbf{V}=\mathring{\mathbf{O}} \cdot \mathbf{U} \cdot \mathring{\mathbf{O}}^{\mathsf{T}} \quad \text { и } \quad \mathbf{O} \cdot \mathring{\mathbf{O}}^{\mathsf{T}}=\mathbf{E},
+\]
+
+откуда и вытекает совпадение ортогональных тензоров $\mathbf{O}=\mathring{\mathbf{O}}$.
+\end{proof}
+
+Тензоры $\mathbf{U}$ и $\mathbf{V}$ называют правым и левым тензорами искажений
+соответственно, а $ O $ --- тензором поворота, сопровождающего деформацию.
+
+Тензор $\mathbf{F}$ имеет девять независимых компонент, тензор $\mathbf{O}$ ---
+три независимые компоненты, а каждый из тензоров $\mathbf{U}$ и $\mathbf{V}$ ---
+по шесть независимых компонент.
+
+Из единственности тензора поворота О в полярном разложении
+следует, что тензоры искажений $\mathbf{U}$ и $\mathbf{V}$ связаны друг с другом
+с помощью тензора $\mathbf{O}$ :
+
+\[
+\mathbf{V}=\mathbf{O} \cdot \mathbf{U} \cdot \mathbf{O}^{\mathsf{T}}, \quad \mathbf{U}=\mathbf{O}^{\mathsf{T}} \cdot \mathbf{V} \cdot \mathbf{O}
+\]
+
+Тензоры деформации Коши -- Грина и Альманзи могут быть выражены через тензоры
+искажений $\mathbf{U}$ и $ \mathbf{V} $ следующим образом: 
+\[
+\begin{aligned}
+\mathbf{C} & =\frac{1}{2}\left(\mathbf{U}^{2}-\mathbf{E}\right), &
+\mathbf{A}=\frac{1}{2}\left(\mathbf{E}-\mathbf{V}^{-2}\right) \\
+\boldsymbol{\Lambda} & =\frac{1}{2}\left(\mathbf{E}-\mathbf{U}^{-2}\right), &
+\mathbf{J}=\frac{1}{2}\left(\mathbf{V}^{2}-\mathbf{E}\right)
+\end{aligned}
+\]
+
+\paragraph{Собственные значения и собственные базисы.}
+\begin{theorem*}
+  Собственные значения тензоров $\mathbf{U}$ и $ \mathbf{V} $ совпадают:
+
+\[
+\lambda_{\alpha}=\mathring{\lambda}_{\alpha}, \quad \alpha=1,2,3
+\]
+
+а собственные векторы $\mathring{\mathbf{p}}_{\alpha}$ и $\mathbf{p}_{\alpha}$ связаны тензором поворота, сопровождающим деформацию:
+
+\[
+\mathbf{p}_{\alpha}=\mathbf{O} \cdot \mathring{\mathbf{p}}_{\alpha}
+\]
+\end{theorem*}
+\begin{proof} 
+\[
+\mathbf{V}=\sum_{\alpha=1}^{3} \lambda_{\alpha} \mathbf{p}_{\alpha} \otimes
+\mathbf{p}_{\alpha}=\mathbf{O} \cdot \mathbf{U} \cdot
+\mathbf{O}^{\mathsf{T}}=\sum_{\alpha=1}^{3} \mathring{A}_{\alpha} \mathbf{O} \cdot \mathring{\mathbf{p}}_{\alpha} \otimes\left(\mathbf{O} \cdot \mathring{\mathbf{p}}_{\alpha}\right)=\sum_{\alpha=1}^{3} \dot{\lambda}_{\alpha} \mathbf{p}_{\alpha}^{\prime} \otimes \mathbf{p}_{\alpha}^{\prime},
+\]
+где $\mathbf{p}_{\alpha}^{\prime}=\mathbf{O} \cdot
+\mathring{\mathbf{p}}_{\alpha}$. Согласно этому соотношению, мы получили
+два различных собственных базиса тензора $\mathbf{V}$ и два набора собственных
+значений, что невозможно, следовательно,
+$\mathbf{p}_{\alpha}^{\prime}=\mathbf{O} \cdot
+\mathring{\mathbf{p}}_{\alpha}=\mathbf{p}_{\alpha}$ и
+$\lambda_{\alpha}=\mathring{A}_{\alpha}$, что и требовалось доказать.
+\end{proof}
+
+Оба собственных базиса ортогональны, поэтому взаимные векторы собственных
+базисов не отличаются от $\mathbf{p}_{\alpha}$ и $\mathring{\mathbf{p}}_{\alpha}$:
+\[
+\mathbf{p}_{\alpha}=\mathbf{p}^{\alpha}, \quad \mathring{\mathbf{p}}_{\alpha}=\mathring{\mathbf{p}}^{\alpha}
+\]
+
+Важным для приложений является вопрос о вычислении $\lambda_{\alpha}, \mathbf{p}_{\alpha}$ и $\mathring{\mathbf{p}}_{\alpha}$ по заданному градиенту деформации $\mathbf{F}$, для этого применяют следующую процедуру.
+
+\begin{enumerate}
+  \item Образуем тензор $\mathbf{U}^{2}=\mathbf{F}^{\mathsf{T}} \cdot
+\mathbf{F}$ (или $\mathbf{V}^{2}=\mathbf{F} \cdot \mathbf{F}^{\mathsf{T}}$ ) и
+найдем его компоненты в каком-либо подходящем для рассматриваемой задачи базисе,
+например, в декартовом $\overline{\mathbf{e}}_{i}$:
+\[
+\mathbf{U}^{2}=\left(\bar{U}^{2}\right)^{i}{ }_{j} \overline{\mathbf{e}}_{i} \otimes \overline{\mathbf{e}}^{j} \quad \text { и } \quad \mathbf{V}^{2}=\left(\bar{V}^{2}\right)^{i}{ }_{j} \overline{\mathbf{e}}_{i} \otimes \overline{\mathbf{e}}^{j} .
+\]
+
+  \item Найдем собственные значения матрицы $\left(\bar{U}^{2}\right)^{i}{
+    }_{j}$.
+
+\item Найдем собственные векторы $\mathring{\mathbf{p}}_{\alpha}$ тензора $\mathbf{U}$ и векторы $\mathbf{p}_{\alpha}$ тензора $\mathbf{V}$ из следующих уравнений:
+\[
+\mathbf{U}^{2} \cdot \mathring{\mathbf{p}}_{\alpha}=\lambda_{\alpha}^{2}
+\mathring{\mathbf{p}}_{\alpha}, \quad \mathbf{V}^{2} \cdot
+\mathbf{p}_{\alpha}=\lambda_{\alpha}^{2} \mathbf{p}_{\alpha}.
+\]
+записанных, например, в базисе $\overline{\mathbf{e}}_{i}$ :
+\[
+\left(\left(\bar{U}^{2}\right)^{i}{ }_{j}-\lambda_{\alpha}^{2}
+\delta_{j}^{i}\right) \mathring{\widehat{Q}^{j}}{ }_{\alpha}=0,
+\quad\left(\left(\bar{V}^{2}\right)^{i}{ }_{j}-\lambda_{\alpha}^{2}
+\delta_{j}^{i}\right) \widehat{Q}^{j}{ }_{\alpha}=0, 
+\]
+где $\widehat{Q}^{j}_{\alpha}$ и $\mathring{\widehat{Q}}^{j}_{\alpha}$ --- якобиевы матрицы собственных векторов:
+\[
+  \mathring{\mathbf{p}}_{\alpha}=\mathring{\widehat{Q}}^{j}{ }_{\alpha}
+  \overline{\mathbf{e}}_{j}, \quad \mathbf{p}_{\alpha}=\widehat{Q}^{j}{
+  }_{\alpha} \overline{\mathbf{e}}_{j}.
+\]
+
+В
+качестве дополнительных уравнений присоединяют условия нормировки
+\[
+\left|\mathbf{p}_{\alpha}\right|=1,
+\quad\left|\mathring{\mathbf{p}}_{\alpha}\right|=1б
+\]
+которые эквивалентны следующим квадратным уравнениям: 
+\[
+  \tensor{\mathring{\widehat{Q}}}{^i_\alpha}
+  \tensor{\mathring{\widehat{Q}}}{^j_\alpha} \delta_{ij} = 1, \quad
+  \tensor{\widehat{Q}}{^i_\alpha} \tensor{\widehat{Q}}{^j_\alpha}\delta_{ij}=1.
+\]
+
+  \item Составляем диадные произведения и находим представления тензоров $
+    \mathbf{U} $ и $ \mathbf{V} $ в собственных базисах, записанных, например, для декартова базиса $\overline{\mathbf{e}}_{i}$ :
+\[
+  \mathbf{U}=\sum_{\alpha=1}^{3} \lambda_{\alpha}
+  \mathring{\widehat{Q}}^{i}_{\alpha} \mathring{\widehat{Q}}^{j}_{\alpha}
+\overline{\mathbf{e}}_{i} \otimes \overline{\mathbf{e}}_{j}, \quad
+\mathbf{V}=\sum_{\alpha=1}^{3} \lambda_{\alpha} \widehat{Q}^{i}{ }_{\alpha}
+\widehat{Q}^{j}{ }_{\alpha} \overline{\mathbf{e}}_{i} \otimes
+\overline{\mathbf{e}}_{j} . 
+\]
+\end{enumerate}
+
+Заметим, что решение квадратных уравнений допускает
+неединственность решения в смысле выбора знаков у компонент матриц
+$\widehat{Q}^{i}{ }_{\alpha}$ и $\widehat{Q}^{i}{ }_{\alpha}$, которая
+устраняется после привлечения еще одного дополнительного условия - совпадения
+векторов $\mathring{\mathbf{p}}_{\alpha}$ и $\mathbf{p}_{\alpha}$ в предельном
+переходе при $t \rightarrow 0_{+}:$
+
+\[
+t \rightarrow 0_{+} \Rightarrow \mathbf{p}_{\alpha}(t)=\mathring{\mathbf{p}}_{\alpha}(t), \quad \alpha=1,2,3
+\]
+
