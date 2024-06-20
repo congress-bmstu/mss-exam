@@ -1,1 +1,80 @@
 \que{Первый закон термодинамики в пространственном и материальном описании. Интегральная и дифференциальная формулировки. Вектор потока тепла. }
+
+Законы сохранения массы, изменения количества движения и момента количества движения описывают движение сплошной среды. Для учета тепловых эффектов в сплошных средах необходимо привлекать \textit{законы термодинамики}. Рассмотрим вначале неполярные среды.
+
+\begin{definition*}
+	\textit{Кинетической энергией} сплошной среды $V$ называют следующую скалярную функцию: 
+	\begin{equation*}
+		K = \int\limits_{V} \frac{\mathbf{v} \cdot \mathbf{v}}{2} \, dm = \int\limits_{V} \rho \frac{\abs{v}^2}{2} \, dV, \quad \abs{v}^2 = \mathbf{v} \cdot \mathbf{v}.
+	\end{equation*}
+\end{definition*}
+
+\begin{definition*}
+	\textit{Мощностью внешних массовых сил} $W_m$ и \textit{мощностью внешних поверхностных сил} $W_{\Sigma}$ называют следующие скалярные функции:
+	\begin{equation*}
+		W_{m} = \int\limits_{V} \mathbf{f} \cdot \mathbf{v} \, dm = \int\limits_{V} \rho \mathbf{f} \cdot \mathbf{v} \, dV, \quad W_{\Sigma} = \int\limits_{\Sigma} \mathbf{t}_n \cdot \mathbf{v} \, d\Sigma.
+	\end{equation*}
+\end{definition*}
+
+\begin{axiom*}[первй закон термодинамики --- закон сохранения энергии]
+	Для всякой сплошной среды $\mathcal{B}$ существуют две скалярные аддитивные функции: $U(\mathcal{B}, t)$ --- \textbf{внутренняя энергия} сплошной среды и $Q(\mathcal{B}, t)$ --- \textbf{скорость нагрева} сплошной среды, такие что $\forall t \geqslant 0$ выполняется уравнение
+	\begin{equation*}
+		\frac{dE}{dt} = W + Q,
+	\end{equation*}
+	где $E$ называют \textbf{полной энергией} сплошной среды, которая состоит из $U$ м $K$:
+	\begin{equation*}
+		E = U + K, \quad W = W_{m} + W_{\Sigma}.
+	\end{equation*}
+\end{axiom*}
+\begin{remark*}
+	Данная формулировка, в отличии от иных имеющихся в литературе, является универсальной, т.е. не зависит от типа сплошной среды. 
+\end{remark*}
+\begin{definition*}
+	\textit{Плотностью внутренней энергии} называют функцию $e$, \textit{притоком тепла за счет массовых источников} --- функцию $q_m$, а \textit{притоком тепла за счет поверхностных источников} --- функию $q_{\Sigma}$, определенные в каждой точке сплошной среды $\mathcal{M}$ следующим образом:
+	\begin{equation*}
+		e = \frac{dU}{dm}, \quad q_m = \frac{dQ}{dm}, \quad q_{\Sigma} = \frac{dQ}{d\Sigma}.
+	\end{equation*}
+	В силы аддитивности функции $Q$ и $U$, для всего обхема сплошной среды получаем:
+	\begin{gather*}
+		Q = Q_m + Q_{\Sigma}, \\
+		Q_m = \int\limits_{V} q_m \, dm = \int\limits_{V} \rho q_m \, dV, \quad Q_{\Sigma} = \int\limits_{\Sigma} q_{\Sigma} \, d\Sigma, \\
+		U = \int\limits_{V} e \, dm = \int\limits_{V} \rho e \, dV.
+	\end{gather*}
+\end{definition*}
+
+Подставляя выражения выше, определения кинетической энергии, мощности сил, внутреннюю энергию и ее плотность, получаем \textit{закон сохранения энергии} в интегральной форме:
+\begin{equation*}
+	\frac{d}{dt} \rho \left(e + \frac{\abs{v}^2}{2}\right) \, dV = \int\limits_{V} \rho \left(\mathbf{f} \cdot \mathbf{v} + q_m\right) \, dV + \int\limits_{\Sigma} \left(\mathbf{t}_n \cdot \mathbf{v} + q_{\Sigma}\right) \, d\Sigma.
+\end{equation*}
+
+Используя для левой части выражения правила дифференцирования для объемного интеграла:
+\begin{equation*}
+	\frac{d}{dt} \int\limits_{V} \rho \left(e + \frac{\abs{v}^2}{2}\right) \, dV = \int\limits_{V} \rho \left(\frac{de}{dt} + \mathbf{v} \cdot \frac{d\mathbf{v}}{dt}\right) \, dV,
+\end{equation*}
+получим следующую форму закона сохранения энергии:
+\begin{equation*}
+	\int\limits_{V} \rho \left(-\frac{d}{dt}\left(e + \frac{1}{2} \abs{v}^2\right) + \mathbf{f} \cdot \mathbf{v} + q_m\right) \, dV + \int\limits_{\Sigma} \left(\mathbf{t}_n \cdot \mathbf{v} + q_{\Sigma}\right) \, d\Sigma = 0.
+\end{equation*}
+
+\paragraph{Вектор потока тепла.} Уравнение закона сохранения энергии в интегральной форме имеет вид как в обобщенной теореме Коши, если положить:
+\begin{equation*}
+	A = e + \abs{v^2} / 2, \quad C = \mathbf{f} \cdot \mathbf{v} + q_m \quad \text{и} \quad B = \mathbf{t}_n \cdot \mathbf{v} + q_{\Sigma}.
+\end{equation*}
+
+Тогда к этом уравнению можно применить вторую теорему Коши, которая утверждает существование такого вектора $(-\mathbf{q})$, что в $V \cup \Sigma$ имеет место соотношение 
+\begin{equation*}
+	q_{\Sigma} = - \mathbf{n} \cdot \mathbf{q}.
+\end{equation*}
+Вектор $\mathbf{q}$ называют \textit{вектором потока тепла}. Для него справедливо:
+\begin{equation*}
+	\mathbf{q} = \sum\limits_{\alpha = 1}^{3} \mathbf{r}_{\alpha} \sqrt{g^{\alpha\alpha}} q_{\alpha} = \mathbf{r}_i q^i, \quad q^{\alpha} = q_{\alpha} \sqrt{g^{\alpha\alpha}}.
+\end{equation*}
+
+Запишем теперь закон сохранения энергии в материальном описании.
+
+\begin{theorem*}
+	В условиях теоремы о уравнении энергииЖ в каждой точке $\mathcal{M} \in \mathring{V}$ для всех рассматриваемых $t \geqslant 0$ имеет место \textbf{уравнение энергии в лагранжевом описании:}
+	\begin{equation*}
+		\mathring{\rho} \frac{d}{dt} \left(e + \frac{\abs{v}^2}{2}\right) = \mathring{\rho} \mathbf{f} \cdot \mathbf{v} + \mathring{\rho} q_m + \mathring{\nabla} \cdot \left(\mathbf{P} \cdot \mathbf{v}\right) - \mathring{\nabla} \cdot \mathring{\mathbf{q}}. 
+	\end{equation*}
+\end{theorem*}
