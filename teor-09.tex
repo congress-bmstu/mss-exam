@@ -1,1 +1,87 @@
 \que{Градиент деформаций. Тензоры деформации Альманзи и Коши-Грина. }
+\paragraph{Градиент деформаций.}
+\begin{definition*}
+  \emph{Градиентом деформации} называется тензор второго ранга 
+  \begin{equation}\label{eq:F2}
+    F = \mathbf{r}_k \otimes \mathring{\mathbf{r}}^k.
+  \end{equation}
+\end{definition*}
+Дальше нестандартный анализ. Пусть $ \mathbf{x} $ --- радиус-вектор точки $
+\mathcal M $ тела $ \mathcal P $. Градиент деформации отвечает за то, как
+изменяется элементарный
+вектор $ d\mathbf{x} $, соединяющий бесконечно близкие точки $ \mathcal M $ и $
+\mathcal M'$: 
+\begin{equation}\label{eq:F}
+  d\mathbf{x} = F d\mathbf{\mathring{x}}.
+\end{equation}
+Действительно, $ d\mathbf{x} = \mathbf{r}_k dX^k $. Тогда $ \mathbf{r}^m\cdot
+d\mathbf{x} = dX^m = \mathring{\mathbf{r}}^m\cdot d\mathbf{\mathring{x}} $ и,
+наконец, $ d\mathbf{x} = \mathbf{r}_k (\mathbf{r}^k\cdot d\mathring{\mathbf{x}})
+= \mathbf{r}_k
+\otimes\mathbf{\mathring{r}}^k \cdot
+d\mathbf{\mathring{x}}$ (типа умножение на скаляр --- то же самое, что и
+тензорное умножение на скаляр). В каком порядке производить тензорное и
+скалярное умножение неважно, поэтому приходим к изначальной формуле
+\eqref{eq:F}. Из формулы \eqref{eq:F2} же непосредственно вытекает, что  
+\[
+  F \cdot \mathring{\mathbf{r}}_i = \mathbf{r}_k \delta^k_i = \mathbf{r}_i.
+\]
+
+В мсс часто используются следующие вариации градента деформации: 
+\begin{gather*}
+  F^{\mathsf T} = \mathring{\nabla}\otimes \mathbf x, \qquad F^{-1} =
+  \mathring{\mathbf{r}}_k \otimes \mathbf{r}^k, \\
+  F^{-1\mathsf T} = \nabla \otimes \mathring{\mathbf{x}}.
+\end{gather*}
+$ F^{\mathsf T} $ связывает уже градиенты произвольного вектора в
+разных конфигурациях: 
+\[
+  \mathring{\nabla}\otimes \mathbf{a} = F^{\mathsf T}\cdot \nabla \otimes
+  \mathbf{a}.
+\]
+Это правда, 
+\[
+  \nabla \otimes \mathbf{a} = \mathbf{r}^i \otimes \frac{\partial
+  \mathbf{a}}{\partial X^i} = \mathbf{r}^j \delta^{i}_{j} \otimes \frac{\partial
+\mathbf{a}}{\partial X^i} = \mathbf{r}^j \otimes \mathring{\mathbf{r}}_j \cdot
+\mathring{\mathbf{r}}^i \otimes \frac{\partial \mathbf{a}}{\partial X^i} =
+F^{-1\mathsf T} \cdot \mathring{\nabla}\otimes \mathbf{a}.
+\]
+
+
+\paragraph{Тензоры деформации.}
+\begin{definition*}
+ \begin{align*}
+   C &= \varepsilon_{ij} \mathring{\mathbf{r}}^i \otimes
+   \mathring{\mathbf{r}}^j = \frac{1}{2}(F^{\mathsf T}\cdot F - E) & (\emph{правый тензор деформации Коши -- Грина}),\\
+   A &= \varepsilon_{ij}\mathbf{r}^i \otimes \mathbf{r}^j =
+   \frac{1}{2}(E-F^{-1\mathsf T}\cdot F^{-1}) & (\emph{левый
+   тензор деформации Альманзи}),\\
+   \Lambda &= \varepsilon^{ij}\mathring{\mathbf{r}}_i \otimes
+   \mathring{\mathbf{r}}_j = \frac{1}{2} (E-F^{-1}\cdot F^{-1\mathsf T})& (\emph{правый тензор тензор деформации Альманзи}),\\
+   J &= \varepsilon^{ij} \mathbf{r}_i \otimes \mathbf{r}_j = \frac{1}{2}(F\cdot
+   F^{\mathsf T} - E)& (\emph{левый
+   тензор деформации Коши -- Грина}).
+ \end{align*}
+\end{definition*}
+Здесь  
+\[
+  \varepsilon_{ij} = \frac{1}{2}(g_{ij} - \mathring{g}_{ij}), \quad
+  \varepsilon^{ij} = \frac{1}{2}(\mathring{g}^{ij} - g^{ij}).
+\]
+\begin{remark*}
+  Заметим, что $ \varepsilon^{kl} \neq \varepsilon_{ij}g^{ik}g^{jl} $ и
+  наоборот. Эти компоненты определены независимо и не должны подвергаться
+  жонглированию.
+\end{remark*}
+\begin{proof}
+  Докажем, например, первое соотношение. 
+  \[
+    C = \varepsilon_{ij} \mathring{\mathbf{r}}^i \otimes \mathring{\mathbf{r}}^j
+    = \frac{1}{2}(g_{ij} - \mathring{g}_{ij}) \mathring{\mathbf{r}}^i \otimes
+    \mathring{\mathbf{r}}^j = \frac{1}{2}(\mathbf{r}_{i}\cdot\mathbf{r}_j
+    \otimes \mathring{\mathbf{r}}^i \otimes \mathring{\mathbf{r}}^j - E) =
+    \frac{1}{2}(\mathring{\mathbf{r}}^i \otimes \mathbf{r}_i \cdot \mathbf{r}_j
+    \otimes \mathring{\mathbf{r}}^j - E).
+  \]
+\end{proof}
