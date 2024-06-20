@@ -1,1 +1,54 @@
 \que{Уравнение  движения  в  пространственном и материальном описании.}
+
+Подставляя обозначения для внутренних поверхностных сил и формулу Коши в закон изменения количества движения в интегральной форме, получим еще одну часто используеиую формулировку закона изменения количества движения:
+\begin{equation*}
+	\frac{d}{dt} \int\limits_{V} \rho \mathbf{v} \, dV = \int\limits_{\Sigma} \mathbf{n} \cdot \mathbf{T} \, d\Sigma + \int\limits_{V} \rho \mathbf{f} \, dV.
+\end{equation*}
+
+Теперь подставим все то же в \eqref{omega} (вопрос №16):
+\begin{equation*}
+	\int\limits_{V} \left(\rho \frac{d\mathbf{v}}{dt} - \rho \mathbf{f}\right) = \int\limits_{\Sigma} \mathbf{n} \cdot \mathbf{T} \, d\Sigma,
+\end{equation*}
+и преобразуя поверхностный интеграл к объемному по формуле Гаусса-Остроградского, придем к следующему соотношению:
+\begin{equation*}
+	\int\limits_{V} \left(\rho \frac{d \mathbf{v}}{dt} - \rho \mathbf{f} - \nabla \cdot \mathbf{T}\right) \, dV = 0.
+\end{equation*}
+
+Отсюда, в силу произвольности объема $V$, заключаем, что подынтегральное выражение должно всегда обращаться в ноль. Итак мы доказали следующую теорему.
+
+\begin{theorem*}
+	Если функции $\mathbf{F}$, $\mathbf{v}$, $\mathbf{T}$ и $\mathbf{f}$, удовлетворяющие закону изменения количества движения и зависящие от $x^i$, $t$ являются непрерывно-дифференцируемыми в $V(t)$ для всех рассматриваемых $t \geqslant 0$, то в каждой точке $\mathcal{M} \in V(t)$ имеет место \textbf{уравнение движения в эйлеровом описании} (т.е. в $\mathcal{K}$):
+	\begin{equation*}
+		\rho \frac{d\mathbf{v}}{dt} = \nabla \cdot \mathbf{T} + \rho \mathbf{f}.
+	\end{equation*}
+\end{theorem*}
+
+
+Используя свойство полной производной, уравнение движения можно записать в \textit{дивергентной форме}:
+\begin{equation*}
+	\frac{\partial \rho \mathbf{v}}{\partial t} + \nabla \cdot \rho \mathbf{v} \otimes \mathbf{v} = \nabla \cdot \mathbf{T} + \rho \mathbf{f}.
+\end{equation*}
+
+Преобразуем теперь уравнение движения:
+\begin{equation*}
+	\int\limits_{\mathring{V}} \mathring{\rho} \left(\frac{d\mathbf{v}}{dt} - \mathbf{f}\right) \, d\mathring{V} - \int\limits_{\mathring{\Sigma}} \mathring{\mathbf{n}} \cdot \mathbf{P} \, d\mathring{\Sigma} = 0. 
+\end{equation*}
+
+С помощью теоремы Гаусса-Остроградского преобразуем это уравнение к виду:
+\begin{equation*}
+	\int\limits_{\mathring{V}} \left(\mathring{\rho} \left(\frac{d\mathbf{v}}{dt} - \mathbf{f}\right) - \mathring{\nabla} \cdot \mathbf{P}\right) \, d\mathring{V} = 0.
+\end{equation*}
+
+Откуда в силу произвольности объема $\mathring{V}$, получаем еще одну теорему. 
+
+\begin{theorem*}
+	Если выполнены условия предыдущей теоремы, то в каждой точке $\mathcal{M} \in \mathring{V}$ для всех рассматриваемых $t \geqslant 0$ имеет место \textbf{уравнение движения в лагранжевом (материальном) описании} (т.е в $\mathring{\mathcal{K}}$):
+	\begin{equation*}
+		\mathring{\rho} \frac{d\mathbf{v}}{dt} = \mathring{\rho} \mathbf{f} + \mathring{\nabla} \cdot \mathbf{P}.
+	\end{equation*}
+	
+	Так как в лагранжевом описании полная производная по времени совпадает с частной, то дивергентная форма уравнения движения в $\mathring{\mathcal{K}}$ совпадает с приведенной выше формулой:
+	\begin{equation*}
+		\mathring{\rho} \frac{\partial\mathbf{v}}{\partial t} = \mathring{\rho} \mathbf{f} + \mathring{\nabla} \cdot \mathbf{P}.
+	\end{equation*}
+\end{theorem*}
