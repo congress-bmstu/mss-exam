@@ -1,1 +1,129 @@
 \que{Закон сохранения моментов количества движения. Обобщенная теорема Коши. Дифференциальная форма закона сохранения моментов количества движения. Полярные и неполярные среды. Симметрия тензора напряжений Коши.}
+
+\paragraph{Закон сохранения моментов количества движения.}
+\begin{definition*}
+	Векторы
+	\begin{align*}
+		\mathbf{k}' &= \int\limits_{V} \mathbf{x} \times \mathbf{v} \, dm = \int\limits_{V} \mathbf{x} \times \rho \mathbf{v} \, dV, \\
+		\boldsymbol{\mu}'_m &= \int\limits_{V} \mathbf{x} \times \mathbf{f} \, dm = \int\limits_{V} \mathbf{x} \times \rho \mathbf{f} \, dV, \\
+		\boldsymbol{\mu}'_{\Sigma} &= \int\limits_{\Sigma} \mathbf{x} \times \mathbf{t}_n \, d\Sigma, \quad \boldsymbol{\mu}' = \boldsymbol{\mu}'_{m} + \boldsymbol{\mu}'_{\Sigma},
+	\end{align*}
+	называют соответственно: $\mathbf{k}'$ --- вектором \textit{момента количества движения} (момента импульса) сплошной среды, $\boldsymbol{\mu}'_m$ --- вектором \textit{массовых моментов}, $\boldsymbol{\mu}'_{\Sigma}$ --- вектором \textit{поверхностных моментов} сплошной среды, $\boldsymbol{\mu}'$ --- вектором \textit{моментов} сплошной среды.
+\end{definition*}
+
+\begin{axiom*}[закон изменения момента количества движения]
+	Для всякой сплошной среды $\mathcal{B}$ существуют две аддитивные векторные функции: $\mathbf{k}''(\mathcal{B}, t)$ --- вектор \textit{собственного момента количества движения} и $\boldsymbol{\mu}''(\mathcal{B}, t)$ --- вектор \textit{собственных моментов}, а также положительная константа $\gamma_s > 0$, называемая \textit{спиновой константой}, такие что для $\forall t \geqslant 0$ выполняется уравнение:
+	\begin{equation*}
+		\frac{d\mathbf{k}}{dt} = \boldsymbol{\mu},
+	\end{equation*}
+	где $\mathbf{k}$ --- вектор полного момента количества движения среды, а $\boldsymbol{\mu}$ --- вектор полного момента:
+	\begin{equation*}
+		\mathbf{k} = \mathbf{k}' + \frac{1}{\gamma_s} \mathbf{k}'', \quad \boldsymbol{\mu} = \boldsymbol{\mu}' + \boldsymbol{\mu}''.
+	\end{equation*}
+\end{axiom*}
+
+\begin{definition*}
+	\textit{Плотностью собственного момента количества движения} называют вектор $\mathbf{k}_m$, \textit{плотностью собственных массовых моментов} --- вектор $\mathbf{h}_m$, а \textit{плотностью собственных поверхностных моментов} --- вектор $\mathbf{h}_{\Sigma}$, определенные в точке $\mathcal{M}$ сплошной среды следующим образом:
+	\begin{equation*}
+		\mathbf{k}_m = \frac{d\mathbf{k}''}{dm}, \quad \mathbf{h}_m = \frac{d\boldsymbol{\mu}''}{dm}, \quad \mathbf{h}_{\Sigma} = \frac{d\boldsymbol{\mu}''}{d\Sigma}.
+	\end{equation*}
+\end{definition*}
+
+В силу аддитивности векторов $\mathbf{k}''$ и $\boldsymbol{\mu}''$, для всего объема сплошной среды имеем:
+\begin{equation*}
+	\mathbf{k}'' = \int\limits_{V} \rho \mathbf{k}_m \, dV, \quad \boldsymbol{\mu}'' = \boldsymbol{\mu}''_{m} + \boldsymbol{\mu}''_{\Sigma},
+\end{equation*}
+где обозначены следующие интегралы:
+\begin{equation*}
+	\boldsymbol{\mu}''_m = \int \limits_{V} \rho \mathbf{h}_m \, dV, \quad \boldsymbol{\mu}''_{\Sigma} = \int \limits_{\Sigma} \mathbf{h}_{\Sigma} \, d\Sigma.
+\end{equation*}
+
+Подставляя определения векторов моментов в закон изменения момента количества движения, получим \textit{интегральную формулировку закона изменения момента количества движения}:
+\begin{equation*}
+	\frac{d}{dt} \int\limits_{V} \left(\mathbf{x} \times \rho \mathbf{v} + \frac{\rho}{\gamma_s} \mathbf{k}_m\right) \, dV = \int\limits_{V} \left(\mathbf{x} \times \rho \mathbf{f} + \rho \mathbf{h}_{m}\right) \, dV + \int\limits_{\Sigma} \left(\mathbf{x} \times \mathbf{t}_n + \mathbf{h}_{\Sigma}\right) \, d\Sigma.
+\end{equation*} 
+
+\paragraph{Обобщенная теорема Коши.} Вторую теорему Коши (из вопроса №17) можно сформулировать для произвольного векторного или даже тензорного поля $\Phi(\mathbf{x}, t)$, удовлетворяющего уравнению аналогичному закону изменения количества движения в интеральной форме.
+
+\begin{theorem*}
+	Пусть существуют непрерывно-дифференцируемое тензорное поле $\tensor[^m]{\mathbf{A}}{}(\mathbf{x}, t), m \geqslant 0$, и непрерывное поле $\tensor[^m]{\mathbf{C}}{}(\mathbf{x}, t)$ в области $V$, а также существует непрерыное в $V \cup \Sigma$ поле вектора $\tensor[^m]{\mathbf{B}}{_n}(\mathbf{x}, t)$, зависящее от выбора поля вектора нормали $\mathbf{n}(\mathbf{x}, t)$, которые удовлетворяют уравнению
+	\begin{equation*}
+		\frac{d}{dt} \int\limits_{\widetilde{V}} \rho \tensor[^m]{\mathbf{A}}{} \, dV = \int\limits_{\widetilde{V}} \rho \tensor[^m]{\mathbf{C}}{} \, dV + \int\limits_{\widetilde{\Sigma}} \tensor[^m]{\mathbf{B}}{_n} \, d\Sigma \quad \forall \widetilde{V} \subset V,
+	\end{equation*}
+	где $\widetilde{\Sigma}$ --- граница области $\widetilde{V}$, тогда поле $\tensor[^m]{\mathbf{B}}{_n}(\mathbf{x}, t)$ может зависеть от поля $\mathbf{n}(\mathbf{x}, t)$ только линейно, т.е. существует такое тензорное поле $(m + 1)$-го ранга --- $\tensor[^{m + 1}]{\mathbf{B}}{}(\mathbf{x}, t)$, что в $V \cup \Sigma$ имеет место соотношение 
+	\begin{equation*}
+		\tensor[^m]{\mathbf{B}}{_n} = \mathbf{n} \cdot \tensor[^{m + 1}]{\mathbf{B}}{}.
+	\end{equation*} 
+\end{theorem*}
+
+\paragraph{Дифференциальная форма закона изменения момента количества движения.} Дадим теперь выражение закона изменения момента количества движения в дифференциальной форме. Рассмотрим вначале левую часть этого закона в интегральной формулировки и перейдем от $V$ к $\mathring{V}$:
+\begin{align*}
+	\frac{d}{dt} \int\limits_{\mathring{V}} \mathring{\rho} \left(\mathbf{x} \times \mathbf{v} + \frac{1}{\gamma_s} \mathbf{k}_{m}\right) \, d\mathring{V} = \frac{d}{dt} \int\limits_{\mathring{V}} \mathring{\rho}\left(\frac{d}{dt} (\mathbf{x} \times \mathbf{v}) + \frac{1}{\gamma_s} \frac{d\mathbf{k}_m}{dt}\right) \, d\mathring{V} = \int\limits_{V} \rho \left(\mathbf{v} \times \mathbf{v} + \mathbf{x} \times \frac{d\mathbf{v}}{dt} + \frac{1}{\gamma_s} \frac{d\mathbf{k}_m}{dt}\right) \, dV = \int\limits_{V} \rho \left(\mathbf{x} \times \frac{d \mathbf{v}}{dt} + \frac{1}{\gamma_s} \frac{d \mathbf{k}_m}{dt}\right) \, dV,
+\end{align*}
+так как $\mathbf{v} \times \mathbf{v} = 0$. 
+
+Преобразуем правую часть с помощью теоремы Гаусса-Остроградского и соотношения для тензора Коши:
+\begin{equation*}
+	\int\limits_{\Sigma} \mathbf{x} \times \mathbf{t}_n \, d\Sigma = \int\limits_{\Sigma} \mathbf{x} \times \left(\mathbf{n} \cdot \mathbf{T}\right) \, d\Sigma = - \int\limits_{\Sigma} \mathbf{n} \cdot \left(\mathbf{T} \times \mathbf{x}\right) \, d\Sigma = - \int\limits_{V} \nabla \cdot \left(\mathbf{T} \times \mathbf{x}\right) \, dV.
+\end{equation*}
+
+Набла-оператор $\nabla$ в предыдущей формуле вычисляется следующим образом:
+\begin{align*}
+	\nabla \cdot \left(\mathbf{T} \times \mathbf{x}\right) = \mathbf{r}^i \cdot \frac{\partial}{\partial X^i} \left(\mathbf{T} \cdot \mathbf{x}\right) &= \left(\nabla \cdot \mathbf{T}\right) \times \mathbf{x} + \mathbf{r}^i \cdot \mathbf{T} \times \mathbf{r}_i = \\
+	&= - \mathbf{x} \times \left(\nabla \cdot \mathbf{T}\right) + \varepsilon \cdot \cdot \mathbf{T}.
+\end{align*}
+
+Далее подставляя это выражение в правую часть, получим: 
+\begin{equation*}
+	\int\limits_{\Sigma} \mathbf{x} \times \mathbf{t}_n \, d\Sigma = \int\limits_{V} \mathbf{x} \times \nabla \cdot \mathbf{T} \, dV - \int\limits_{V} \varepsilon \cdot \cdot \mathbf{T} \, dV.
+\end{equation*}
+
+Теперь подставляя полученное выражение и левую часть в закон изменения момента количества движения, находи:
+\begin{equation*}
+	\int\limits_{V} \rho \mathbf{x} \times \left(\frac{d\mathbf{v}}{dt} - \mathbf{f} - \frac{1}{\rho} \nabla \cdot \mathbf{T}\right) \, dV + \int\limits_{V} \frac{\rho}{\gamma_s} \frac{d\mathbf{k}_m}{dt} \, dV = \int\limits_{V} \rho \mathbf{h}_m \, dV + \int\limits_{V}\nabla \cdot \mathbf{M} \, dV - \int\limits_{V} \varepsilon \cdot \cdot \mathbf{T} \, dV.
+\end{equation*}
+
+Здесь мы использовали определение тензора моментных напряжений $\mathbf{M}$. 
+
+С учетом уравнения движения в эйлеровом описании, предыдущее уравнение принимает окончательный вид:
+\begin{equation*}
+	\int\limits_{V} \left(\frac{\rho}{\gamma_s} \frac{d\mathbf{k}_m}{dt} - \rho \mathbf{h}_m - \nabla \cdot \mathbf{M} + \varepsilon \cdot \cdot \mathbf{T}\right) \, dV = 0.
+\end{equation*}
+Отсюда в сиду произвольности объема $V$, приходим к следующей теореме.
+
+\begin{theorem*}
+	Если функции $\mathbf{F}$, $\mathbf{v}$, $\mathbf{T}$, $\mathbf{f}$, удовлетворяющие закону изменения количество движения, а также $\mathbf{k}_m$, $\mathbf{h}_m$, $\mathbf{M}$, удовлетворяющие уравнению $\int\limits_{\mathring{V}} \left(\mathring{\rho} \left(\frac{d\mathbf{v}}{dt} - \mathbf{f}\right) - \mathring{\nabla} \cdot \mathbf{P}\right) \, d\mathring{V} = 0$, являются непрерыно-дифференцируемыми в $V(t)$ для всех рассматриваемых $t \geqslant 0$, то в каждой точке $\mathcal{M} \in V(t)$ имеет место уравнение \textbf{изменения момента количества движения}:
+	\begin{equation*}
+		\frac{\rho}{\gamma_s} \frac{d\mathbf{k}_m}{dt} = \rho \mathbf{h}_m + \nabla \cdot \mathbf{M} - \varepsilon \cdot \cdot \mathbf{T}.
+	\end{equation*}
+\end{theorem*}
+
+Таком образом, в уравнение изменения момента количества движения входит только одна <<классическая>> механическая характеристика --- тензор напряжений $\mathbf{T}$, остальные величины: $\mathbf{k}_m$, $\mathbf{h}_m$ и $\mathbf{M}$, как отмечалось, либо имеют немеханическую природу, либо обусловлены <<неклассическими>> механическими свойствами. 
+
+\paragraph{Полярные и неполярные среды.} Для классических сред, к которым относится подавляющее большинство тел, полагают
+\begin{equation*}
+	\mathbf{k}_m = 0, \quad \mathbf{h}_m = 0, \quad \mathbf{M} = 0.
+\end{equation*}
+
+Такие среды называют \textit{неполярными}, для них из предыдущих выражений и из уравнения изменения момента количества движения, следует:
+\begin{equation*}
+	\varepsilon \cdot \cdot \mathbf{T} = - \sqrt{g} \quad \sum\limits_{\begin{matrix}
+			\alpha = 1 \\
+			\alpha \not = \beta \not = \gamma \not = \alpha
+	\end{matrix}}^{3} \left(T^{\alpha\beta} - T^{\beta\alpha}\right)\mathbf{r}^{\gamma} = 0,
+\end{equation*}
+откуда получаем
+\begin{equation*}
+	\mathbf{T} = \mathbf{T}^{T}, 
+\end{equation*}
+т.е. тензор напряжений Коши (для неполярных сред) является симметричным. 
+
+Заметим, что соответствующий ему тензор Пиолы-Кирхгофа не является симметричным даже для неполярных сред, что следует из его определения. 
+
+Таким образом, для неполярных сред закон изменения момента количества движения сводится к соотношению $\mathbf{T} = \mathbf{T}^{T}$ симметрии тензора напряжений Коши $\mathbf{T}$.
+
+Среды, для которых собственныые величины сплошной среды $\mathbf{k}_m$, $\mathbf{h}_m$ и $\mathbf{M}$ отличны от тождественного нуля:
+\begin{equation*}
+	\mathbf{k}_m \not = 0, \quad \mathbf{h}_m \not = 0, \quad \mathbf{M} \not = 0,
+\end{equation*}
+называют \textit{полярными}. Для полярных сред тензор напряжений Коши $\mathbf{T}$ несимметричен. 
