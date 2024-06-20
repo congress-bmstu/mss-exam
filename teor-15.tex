@@ -1,1 +1,34 @@
 \que{Дифференцирование интеграла по подвижному объему и уравнение неразрывности в пространственном описании.}
+
+Рассмотрим некоторое переменное векторное поле $\mathbf{a}(x^i, t)$, являющееся непрерывно-дифференцируемой функцией $x^i$ и $t$ в области $V(t)$, $\forall t \geqslant 0$, где область $V(t)$ содержит одни и те же материальные точки (такую область обычно называют \textit{подвижным объемом}). Проинтегрируем поле $\mathbf{a}(x^i, t)$ по области $V(t)$ и вычислим производную от интеграла: $\frac{d}{dt} \int_{V(t)} \mathbf{a} \, dV$. 
+
+Для этого сделаем замену переменных в интеграле: $x^i \to \mathring{x}^i$, где $x^i \in V, \mathring{x}^i \in \mathring{V}$, причем якобиан преобразований, согласно уравнению неразрывности в переменных Лагранжа, равен $\abs{\partial x^k / \partial \mathring{x}^i} = \sqrt{g / \mathring{g}}$: 
+\begin{equation*}
+	\frac{d}{dt} \int\limits_{V(t)} \mathbf{a} \, dV = \frac{d}{dt} \int\limits_{\mathring{V}} \sqrt{\frac{g}{\mathring{g}}} \mathbf{a} \, d\mathring{V}.
+\end{equation*} 
+
+Поскольку при такой замене переменных мыодновременно перешли из конфигурации $\mathring{\mathcal{K}}$ в конфигурацию $\mathring{\mathcal{K}}$, в кторой область $\mathring{V}$ не зависит от $t$, то производную по $t$ можно внести под знак интеграла:
+\begin{equation*}
+	\frac{d}{dt} \int\limits_{V(t)} \mathbf{a} \, dV = \int\limits_{\mathring{V}} \frac{d}{dt} \left(\frac{\sqrt{g}}{\sqrt{\mathring{g}}} \mathbf{a}\right) \, d\mathring{V} = \int\limits_{\mathring{V}} \frac{1}{\sqrt{\mathring{g}}} \left(\mathbf{a} \frac{d}{dt} \sqrt{g} + \sqrt{g} \frac{d\mathbf{a}}{dt}\right) \, d\mathring{V}.
+\end{equation*}
+
+Преобразуя окончательно получим:
+\begin{align*}
+	\frac{d}{dt} \int\limits_{V(t)} \mathbf{a} \, dV &= \int\limits_{\mathring{V}} \sqrt{g / \mathring{g}} \left(\mathbf{a} \nabla \cdot \mathbf{v} + \frac{\partial \mathbf{a}}{\partial t} + \mathbf{v} \cdot \nabla \otimes \mathbf{a}\right) \, d\mathring{V} = \\
+	&= \int\limits_{\mathring{V}} \sqrt{\frac{g}{\mathring{g}}} \left(\frac{\partial \mathbf{a}}{\partial t} + \nabla \cdot \left(\mathbf{v} \otimes \mathbf{a}\right)\right) \, d\mathring{V} = \int\limits_{V} \left(\frac{\partial \mathbf{a}}{\partial t} + \nabla \cdot (\mathbf{v} \otimes \mathbf{a})\right) \, dV.
+\end{align*}
+
+Последнюю строку мы получили, совершив обратное преобразование координат $\mathring{x}^i \to x^i$.
+
+Таким образом, доказана следующая теорема.
+\begin{theorem}[правило дифференцирования интеграла по подвижному объему]
+	Для произвольного переменного векторного поля $\mathbf{a}(x^i, t)$, заданного в $V(t) \forall t \geqslant 0$ и являющегося непрерывно-дифференцируемой функцией $x^i$ и $t$, имеет место следующее соотношение:
+	\begin{equation*}
+		\frac{d}{dt} \int\limits_{V(t)} \mathbf{a}(x^i, t) \, dV = \int\limits_{V} \left(\frac{\partial \mathbf{a}}{\partial t} + \nabla \cdot \mathbf{v} \otimes \mathbf{a}\right) \, dV.
+	\end{equation*} 
+	
+	Выбирая в данной формуле в качестве векторного поля $\mathbf{a}(x^i, t) = \varphi(x^i, t) \bar{\mathbf{e}}_{\alpha}$, где $\bar{\mathbf{e}}_{\alpha}$ --- какой-либо из векторов декартова базиса, а $\varphi(x^i, t)$ --- переменное скалярное поле, и вынося $\bar{\mathbf{e}}_{\alpha}$ из-под знака интеграла в левой и правой частях, получаем формулу дифференцирования интеграла от скалярного поля: 
+	\begin{equation*}
+		\frac{d}{dt} \int\limits_{V(t)} \varphi(x^i, t) \, dV = \int\limits_{V} \left(\frac{\partial \varphi}{\partial t} + \nabla \cdot (\varphi \mathbf{v})\right) \, dV. 
+	\end{equation*}
+\end{theorem}
