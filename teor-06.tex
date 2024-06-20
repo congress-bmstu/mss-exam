@@ -1,1 +1,121 @@
 \que{Ковариантное дифференцирование тензоров.}
+
+\paragraph{Кратко}
+Основные операции с наблой:
+
+\begin{itemize}
+	\item с скаляром:
+	\begin{itemize}
+		\item $\nabla \varphi=\mathbf{r}_i\frac{\partial\varphi}{\partial X^i}=\bar{\mathbf{e}}_i\frac{\partial \varphi}{\partial x^i}$ - градиент скаляра --- вектор;
+	\end{itemize}
+	\item с вектором:
+	\begin{itemize}
+		\item $\nabla\cdot\mathbf{a}=\nabla_ja^j$ - дивергенция вектора --- скаляр;
+		\item $\nabla\times\mathbf{a}=\frac{1}{\sqrt{g}}\epsilon^{ijk}\nabla_ja_j\mathbf{r}_k$ - ротор вектора --- вектор;
+		\item $\nabla\otimes\mathbf{a}=\mathbf{r}^i \otimes \frac{\partial \mathbf{a}}{\partial X^i} $ - тензорное произведение;
+	\end{itemize}
+	\item с тензором:
+	\begin{itemize}
+		\item $\nabla\cdot\mathbf{T}=\nabla_iT^{ij}\mathbf{r}_j$ - дивергенция тензора --- вектор;
+	\end{itemize}
+\end{itemize}
+
+\begin{definition}[Кристоффель]
+	\begin{equation*}
+		\Gamma^{m}_{ij}=\frac{1}{2}g^{km}\left(
+		\frac{\partial g_{kj}}{\partial X^i} + \frac{\partial g_{ki}}{\partial X^j} -
+		\frac{\partial g_{ij}}{\partial X^k}
+		\right)
+	\end{equation*}
+\end{definition}
+
+\begin{definition}[Производные]
+	
+	Ковариантные:
+	\begin{equation*}
+		\nabla_ka_i=\frac{\partial a_i}{\partial X^k} - \Gamma^m_{ik}a_m,\quad
+		\nabla_ka^i=\frac{\partial a^i}{\partial X^k} + \Gamma^i_{km}a^m.
+	\end{equation*}
+	Контравариантные:
+	\begin{equation*}
+		\nabla^ka^i=g^{km}\nabla_ma^i.
+	\end{equation*}
+\end{definition}
+
+
+\paragraph{Из лекций}
+
+Введем набла оператор в $\mathcal{K}$ -- символический дифференциальный оператор:
+\[
+\nabla \equiv \mathbf{r}^i \frac{\partial }{\partial X^i} 
+= \mathbf{r}^1 \frac{\partial }{\partial X^1} + \mathbf{r}^2 \frac{\partial }{\partial X^2} 
++ \mathbf{r}^3 \frac{\partial }{\partial X^3};
+\]
+
+Применение его:
+\begin{enumerate}
+	\item К скаляру: градиент скаляра -- вектор
+	\[
+	\nabla \varphi = \mathbf{r}^i \frac{\partial \varphi}{\partial X^i}.
+	\]
+	Из свойств отметим, что он инвариантен, то есть 
+	\[
+	\nabla \varphi = \bar{\mathbf{e}}^i \frac{\partial \varphi}{\partial x^i} 
+	= \frac{\partial \varphi}{\partial x^1} \bar{\mathbf{e}}_1 + \frac{\partial \varphi}{\partial x^2} \bar{\mathbf{e}}_2 + \frac{\partial \varphi}{\partial x^3} \bar{\mathbf{e}}_3.
+	\]
+	
+	\item К вектору:
+	\begin{itemize}
+		\item тензорно: градиент вектора -- тензор второго ранга:
+		\[
+		\nabla \otimes \mathbf{a}
+		= \mathbf{r}^i \frac{\partial }{\partial X^i} \otimes \mathbf{a}
+		= \mathbf{r}^i \otimes \frac{\partial \mathbf{a}}{\partial X^i} 
+		\]
+		Рассмотрим
+		\[
+		\frac{\partial \mathbf{a}}{\partial X^i} 
+		= \frac{\partial a^j \mathbf{r}_j}{\partial X^i} 
+		= \frac{\partial a^j}{\partial X^i} \mathbf{r}_j
+		+ a^j \frac{\partial \mathbf{r}_j}{\partial X^i} 
+		= \left( \frac{\partial a^k}{\partial X^i} + a^j \Gamma^k_{ji} \right) \mathbf{r}_k,
+		\]
+		где введено обозначение:
+		$ \frac{\partial \mathbf{r}_j}{\partial X^i} 
+		= \Gamma^k_{ji} \mathbf{r}_k $
+		-- символы Кристоффеля.
+		
+		Обозначим: $\nabla_i a^k \equiv \frac{\partial a^k}{\partial X^i} + a^j \Gamma^k_{ji}$
+		-- ковариантная производная от контравариантных компонент вектора.
+		Тогда $ \frac{\partial \mathbf{a}}{\partial X^i} = (\nabla_i a^k) \mathbf{r}_k$.
+		
+		Если $\mathbf{r}_i \equiv \bar{\mathbf{e}}_i$, то $\Gamma^k_{ji} \equiv 0$. То есть
+		ковариантная производная совпадёт с частной производной.
+		
+		Подставим полученное в начало:
+		\[
+		\nabla \otimes \mathbf{a} = \mathbf{r}^i \otimes (\nabla_i a^k) \mathbf{r}_k 
+		= (\nabla_i a^k) \mathbf{r}^i \otimes \mathbf{r}_k
+		\]
+		Компоненты этого тензора в смешанном диадном локальном базисе. (Также связь между градиентом и ковариантоной производной.)
+		
+		\textbf{Теорема Риччи}: $\nabla_i g_{jk} \equiv 0$, из нее следует, что можно опускать и 
+		поднимать индексы под знаком контравариантной производной.
+		
+		\[
+		\nabla^i a_k \equiv g^{ij} \nabla_j a_k
+		\]
+		-- контравариантая производная от ковариантных компонент вектора.
+		
+		\[
+		\nabla \otimes \mathbf{a}
+		= (\nabla_i a^k) \mathbf{r}^i \otimes \mathbf{r}_k
+		= (\nabla^i a^k) \mathbf{r}_i \otimes \mathbf{r}_k
+		\]
+		
+		Отметим, что $ \frac{\partial a_k}{\partial X^i} $ -- не являются компонентами какого-то
+		тензора, но $\nabla_i a_k$, $\nabla^i a^k$ -- являются компонентами тензора 2-го ранга.
+		
+	\end{itemize}
+\end{enumerate}
+
