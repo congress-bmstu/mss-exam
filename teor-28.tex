@@ -1,1 +1,45 @@
 \que{Энергетические пары тензоров напряжений и деформаций. }
+В законе изменения кинетической энергии использовалась величина $W_{(i)}$ -- мощность внутренних
+поверхностных сил, которую мы определяли как
+$W_{(i)} = - \int_V \mathbf{T} \cdot\cdot (\nabla \otimes \mathbf{v})^T \, dV$.
+Обозначим $w_{(i)} = \mathbf{T} \cdot\cdot (\nabla \otimes \mathbf{v})^T$ --
+\emph{мощность напряжений}, тогда $W_{(i)} = - \int_V w_{(i)} \, dV$.
+
+\begin{definition}[\footnote{Димитриенко -- Нелинейная МСС, стр 150}]
+  \emph{Энергетическими тензорами напряжений} $\stackrel{(n)}{\mathbf{T}}$,
+  и \emph{энергетическими тензорами деформаций} $\stackrel{(n)}{\mathbf{C}}$
+  называются такие пары тензоров, которыми наиболее удачно можно представить мощность напряжений
+  в виде:
+  \[
+    w_{(i)} = \stackrel{(n)}{\mathbf{T}} \cdot\cdot \dfrac{d}{dt} \stackrel{(n)}{\mathbf{C}} + \mathbf{T}^K \cdot\cdot \mathbf{W},
+  \]
+  где $T^K = \dfrac{1}{2} (T - T^T)$ -- кососиметричная часть тензора напряжений Коши $T$, а 
+  $\mathbf{W}$ -- тензор вихря.
+
+  В случаях, когда $T = T^T$, второе слагаемое отсутствует.
+\end{definition}
+
+Выделяют 5 пар таких тензоров.
+
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    $n$ & $\stackrel{(n)}{\mathbf{T}}$ & $\stackrel{(n)}{\mathbf{C}}$ \\
+    \hline
+    I & $\mathbf{F}^T \cdot \mathbf{T}^S \cdot \mathbf{F}$ & $\boldsymbol{\Lambda} = \dfrac{1}{2} (\mathbf{E} - \mathbf{U}^{-2})$ \\
+    II & $1/2 (\mathbf{F}^T \cdot \mathbf{T}^S \cdot \mathbf{O} + \mathbf{O}^T \cdot \mathbf{T}^S \cdot \mathbf{F})$ & $\mathbf{E} - \mathbf{U}^{-1}$ \\
+    III & $\mathbf{O}^T \cdot \mathbf{T}^s \cdot \mathbf{O}$ & $\mathbf{B}$ \\
+    IV & $1/2 (\mathbf{F}^{-1} \cdot \mathbf{T}^s \cdot \mathbf{O} + \mathbf{O}^T \cdot \mathbf{T}^S \cdot \mathbf{F}^{-1T})$ & $\mathbf{U} - \mathbf{E}$ \\
+    V & $\mathbf{F}^{-1} \cdot \mathbf{T}^S \cdot \mathbf{F}^{-1T}$ & $\mathbf{C} = \dfrac{1}{2}(\mathbf{U}^2 - \mathbf{E})$ \\
+    \hline
+  \end{tabular}
+\end{center}
+где $T^S = \dfrac{1}{2} (T + T^T)$ - симметрическая часть тензора напряжений Коши;
+$\mathbf{F}$ -- тензор градиента деформаций;
+$\mathbf{O}, \mathbf{U}$ -- полярное разложение тензора градиента деформаций $\mathbf{F} = \mathbf{O} \cdot \mathbf{U}$.
+
+% В случае третьей пары, энергетический тензор деформаций $\stackrel{(III)}{\mathbf{C}} = \mathbf{B}$
+% неизвестен, но является решением следующего ДУ
+
+% TODO проверить, что ещё можно написать.
+
