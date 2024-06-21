@@ -1,1 +1,221 @@
 \que{Полные системы законов сохранения в пространственном и материальном описании.}
+
+144 димдим 2 (нелин механика)
+
+
+
+\paragraph{ Полная система в эйлеровом описании.}
+Рассмотрим неполярную сплошную среду. Систему законов сохранения в пространственном описании (1.18), (2.47), (4.17), (5.12), (7.14) можно записать в единой универсальной форме:
+
+\begin{equation}
+\rho \frac{d \bar{A}_{\alpha}}{d t}=\nabla \cdot \bar{B}_{\alpha}+\rho C_{\alpha}, \quad \alpha=1 \ldots 6 \label{eq:91}
+\end{equation}
+
+где обозначены следующие обобщенные векторы:
+\begin{equation}
+\label{eq:92}
+\bar{A}_{\alpha}=\left(\begin{array}{c}
+1 / \rho  \\
+\mathbf{v} \\
+e+|v|^{2} / 2 \\
+\eta \\
+\mathbf{u} \\
+\mathbf{F}^{\mathrm{T}}
+\end{array}\right), \quad \bar{B}_{\alpha}=\left(\begin{array}{c}
+\mathbf{v} \\
+\mathbf{T} \\
+\mathbf{T} \cdot \mathbf{v}-\mathbf{q} \\
+-\mathbf{q} / \theta \\
+\mathbf{0} \\
+\rho \mathbf{F} \otimes \mathbf{v}
+\end{array}\right), \quad C_{\alpha}=\left(\begin{array}{c}
+0 \\
+\mathbf{f} \\
+\mathbf{f} \cdot \mathbf{v}+q_{m} \\
+\left(q_{m}+q^{*}\right) / \theta \\
+\mathbf{v} \\
+\mathbf{0}
+\end{array}\right)
+\end{equation}
+
+
+Здесь индекс $\alpha=1$ соответствует уравнению неразрывности,
+
+$\alpha=2$ - уравнению движения,
+
+$\alpha=3-$ уравнению энергии,
+
+$\alpha=4-$ уравнению баланса энтропии,
+
+$\alpha=5$ - кинематическому уравнению,
+
+$\alpha=6$ - динамическому уравнению совместности.
+
+Уравнение \eqref{eq:91} при $\alpha=5$ получено из (1.4.10) умножением его слева и справа на $\rho$ :
+
+\begin{equation}
+\rho \frac{d \mathbf{u}}{d t}=\rho \mathbf{v} \label{eq:93}
+\end{equation}
+
+
+Это соотношение называют кинематическим уравнением. Систему \eqref{eq:91} называют универсальной системой законов сохранения МСС в полных дифференциалах.
+
+Эту же систему можно записать в дивергентном виде, для этого можно собрать соответствующие дивергентные формы отдельных уравнений: (1.15), (2.48), (4.18), (5.12a), (7.13), а можно непосредственно левую часть системы \eqref{eq:91} с помощью уравнения неразрывности ( $\alpha=1$ ) преобразовать следующим образом:
+
+\begin{gather*}
+\rho \frac{\partial \bar{A}_{\alpha}}{\partial t}+\rho \mathbf{v} \cdot \boldsymbol{\nabla} \otimes \bar{A}_{\alpha}+\left(\frac{\partial \rho}{\partial t}+\nabla \cdot \rho \mathbf{v}\right) \bar{A}_{\alpha}=\frac{\partial \rho \bar{A}_{\alpha}}{\partial t}+\boldsymbol{\nabla} \cdot \rho \mathbf{v} \otimes \bar{A}_{\alpha} \\
+\alpha=2, \ldots, 6 \label{eq:94}
+\end{gather*}
+
+
+Тогда вместе с самим уравнением неразрывности имеет место следующее представление полной системы законов сохранения в дивергентном виде в пространственном описании:
+
+
+\begin{equation}
+\frac{\partial \rho A_{\alpha}}{\partial t}+\boldsymbol{\nabla} \cdot\left(\rho \mathbf{v} \otimes A_{\alpha}-B_{\alpha}\right)=\rho C_{\alpha}, \quad \alpha=1, \ldots 6 \label{eq:95}
+\end{equation}
+
+
+где
+\begin{equation}
+A_{\alpha}=\left(\begin{array}{c}
+1  \label{eq:96}\\
+\mathbf{v} \\
+e+|v|^{2} / 2 \\
+\eta \\
+\mathbf{u} \\
+\mathbf{F}^{\mathrm{T}}
+\end{array}\right), \quad B_{\alpha}=\left(\begin{array}{c}
+0 \\
+\mathbf{T} \\
+\mathbf{T} \cdot \mathbf{v}-\mathbf{q} \\
+-\mathbf{q} / \theta \\
+\mathbf{0} \\
+\rho \mathbf{F} \otimes \mathbf{v}
+\end{array}\right)
+\end{equation}
+
+В частности, кинематическое уравнение \eqref{eq:93} в дивергентном виде имеет вид:
+
+\begin{equation}
+\frac{\partial \rho \mathbf{u}}{\partial t}+\nabla \cdot \rho \mathbf{v} \otimes \mathbf{u}=\rho \mathbf{v} \label{eq:97}
+\end{equation}
+
+Таким образом, мы доказали следующую теорему.
+
+\begin{theorem}
+Полную систему законов сохранения механики сплошной среды в эйлеровом описании можно представить в универсальной форме \eqref{eq:91} - в полных дифференциалах и в эквивалентном дивергентном виде \eqref{eq:95}.
+\end{theorem} 
+
+\paragraph{Полная система в лагранжевом описании.} В лагранжевом описании система законов сохранения (1.8), (2.51), (4.30), (5.20), (1.4.10), \eqref{eq:72} также может быть записана в единой универсальной форме:
+
+\begin{equation}
+\stackrel{\circ}{\rho} \frac{d \stackrel{A}{A}_{\alpha}}{d t}=\stackrel{\circ}{\nabla} \cdot \stackrel{\circ}{B}_{\alpha}+\stackrel{\circ}{\rho} C_{\alpha}, \quad \alpha=1, \ldots 6 \label{eq:98}
+\end{equation}
+
+где появляются два новых обобщенных вектора:
+
+\begin{equation}
+\stackrel{\circ}{A}_{\alpha}=\left(\begin{array}{c}
+(\rho / \stackrel{\circ}{\rho})  \det \mathbf{F}  \label{eq:99}\\
+\mathbf{v} \\
+e+\left|v^{2}\right| / 2 \\
+\eta \\
+\mathbf{u} \\
+\mathbf{F}^{\mathrm{T}}
+\end{array}\right), \quad \quad \stackrel{\circ}{B}_{\alpha}=\left(\begin{array}{c}
+0 \\
+\mathbf{P} \\
+\mathbf{P} \cdot \mathbf{v}-\stackrel{\circ}{\mathbf{q}} \\
+-\stackrel{\circ}{\mathbf{q}} / \theta \\
+0 \\
+\stackrel{\circ}{\rho}{\mathbf{E}} \otimes \mathbf{v}
+\end{array}\right)
+\end{equation}
+
+Поскольку в лагранжевой системе координат полная производная $d / d t$ совпадает с частной производной $\partial / \partial t$, то система законов сохранения \eqref{eq:98} уже имеет дивергентный вид.
+
+\begin{remark}Заметим, что первое уравнение в системе \eqref{eq:98} при $\alpha=1$ получено дифференцированием уравнения неразрывности (1.8) в переменных Лагранжа.
+В этом случае мы должны присоединить к этому дифференциальному уравнению еще и начальное условие $\det (\mathbf{F}) =1$. 
+Тогда уравнение \eqref{eq:98} при $\alpha=1$ с таким начальным условием всегда имеет решение - соотношение (1.8): $(\rho / \stackrel{\circ}{\rho}) \det  \mathbf{F}=1$. 
+Следовательно, в \eqref{eq:99} в качестве функции $\stackrel{\circ}{A}_{1}$ всегда можно использовать ее фактическое значение: $\stackrel{\circ}{A}_{1}=1$.
+Это означает, что обобщенные векторы $\stackrel{\circ}{A}_{\alpha}$ в \eqref{eq:99} и $A_{\alpha}$ в \eqref{eq:96} совпадают: $\stackrel{\circ}{A}_{\alpha}=A_{\alpha}, \quad \alpha=1, \ldots, 6$.
+\end{remark}
+
+\paragraph{Интегральная формулировка.}
+В едином универсальном виде можно представить и систему законов сохранения в интегральной форме (1.5), (2.44),(4.15),(5.9).
+
+\begin{theorem} Формулировка систем законов сохранения механики в дифференциальной форме \eqref{eq:95} в эйлеровом описании эквивалентна следующей интегральной формулировке:
+
+\begin{equation}
+\frac{d}{d t} \int_{V} \rho A_{\alpha} d V=\int_{\Sigma} \mathbf{n} \cdot B_{\alpha} d \Sigma+\int_{V} \rho C_{\alpha} d V, \quad \alpha=1, \ldots 6 \label{eq:910}
+\end{equation}
+\end{theorem}
+
+Для доказательства теоремы для $\alpha=1, \ldots 4$ достаточно подставить обобщенные векторы $A_{\alpha}, B_{\alpha}$ и $C_{\alpha}$ и записать уравнение \eqref{eq:910} для каждого $\alpha=1, \ldots 4$ в отдельности. В результате в точности получим уже доказанные ранее соотношения (1.5), (2.44), (4.15) и (5.9).
+
+Для случаев $\alpha=5,6$ просто интегрируем уравнения \eqref{eq:97} и \eqref{eq:713} по $V$, а затем, как обычно, применяем правило дифференцирования интеграла по подвижному объему (см. упр. 2.1.2) и теорему Гаусса-Остроградского (1.24)
+
+Аналогично доказываем следующую теорему (см. упр. 2.92).
+
+\begin{theorem}
+ Формулировка системь законов сохранения механики в дифференциальной форме в материальном описании \eqref{eq:98} эквивалентна следующей интегральной формулировке:
+
+
+\begin{equation}
+\frac{d}{d t} \int_{\stackrel{\circ}{V}} \stackrel{\circ}{\rho} \stackrel{\circ}{A_{\alpha}} d \stackrel{\circ}{V}=\int_{\stackrel{\circ}{\Sigma}} \stackrel{\circ}{\mathbf{n}} \cdot \stackrel{\circ}{B_{\alpha}} d \stackrel{\circ}{\Sigma}+\int_{\stackrel{\circ}{V}} \stackrel{\circ}{\rho} C_{\alpha} d \stackrel{\circ}{V}, \quad \alpha=1, \ldots 6 \label{eq:911}
+\end{equation}
+\end{theorem}
+
+
+Несмотря на указанную выше эквивалентность дифференциальной и интегральной формулировок законов сохранения, между ними имеется одно существенное отличие: в интегральной формулировке уравнение изменения момента количества движения (3.5) даже для неполярных сред не удовлетворяется тождественно, в то время как соответствующее уравнение в дифференциальной формулировке (см. разд. 2.3) свелось к симметрии тензора напряжений $\mathbf{T}$ и было исключено из системы \eqref{eq:91}. Таким образом, интегральная формулировка \eqref{eq:910} должна быть дополнена законом (3.5); иначе говоря, для обобщенных векторов $A_{\alpha}, B_{\alpha}$ и $C_{\alpha}$ в \eqref{eq:910} индекс $\alpha$ пробегает значения от 1 до 7:
+
+\begin{equation}
+A_{\alpha}=\left(\begin{array}{c}
+1  \label{eq:912}\\
+\mathbf{v} \\
+e+|v|^{2} / 2 \\
+\eta \\
+\mathbf{u} \\
+\mathbf{F}^{\mathrm{T}} \\
+\mathbf{x} \times \mathbf{v}
+\end{array}\right), \quad B_{\alpha}=\left(\begin{array}{c}
+0 \\
+\mathbf{T} \\
+\mathbf{T} \cdot \mathbf{v}-\mathbf{q} \\
+-\mathbf{q} / \theta \\
+\mathbf{0} \\
+\rho \mathbf{F} \otimes \mathbf{v} \\
+-\mathbf{T} \times \mathbf{x}
+\end{array}\right), \quad C_{\alpha}=\left(\begin{array}{c}
+0 \\
+\mathbf{f} \\
+\mathbf{f} \cdot \mathbf{v}+q_{m} \\
+\left(q_{m}+q^{*}\right) / \theta \\
+\mathbf{v} \\
+\mathbf{0} \\
+\mathbf{x} \times \mathbf{f}
+\end{array}\right)
+\end{equation}
+
+Аналогично интегральная формулировка \eqref{eq:911} в материальном описании должна состоять из семи уравнений, а $\stackrel{\circ}{A}_{\alpha}$ и $\stackrel{\circ}{B}_{\alpha}$ имеют вид
+
+\begin{equation}
+\stackrel{\circ}{A}_{\alpha}=\left(\begin{array}{c}
+(\rho / \stackrel{\circ}{\rho}) \operatorname{det} \mathbf{F}  \label{eq:913}\\
+\mathbf{v} \\
+e+\left|v^{2}\right| / 2 \\
+\eta \\
+\mathbf{u} \\
+\mathbf{F}^{\mathrm{T}} \\
+\mathbf{x} \times \mathbf{v}
+\end{array}\right), \quad \quad \stackrel{\circ}{B}_{\alpha}=\left(\begin{array}{c}
+0 \\
+\mathbf{P} \\
+\mathbf{P} \cdot \mathbf{v}-\stackrel{\circ}{\mathbf{q}} \\
+-\stackrel{\circ}{\mathbf{q}} / \theta \\
+0 \\
+\stackrel{\circ}{\rho} \mathbf{E} \otimes \mathbf{v} \\
+-\mathbf{P} \times \mathbf{x}
+\end{array}\right)
+\end{equation}
