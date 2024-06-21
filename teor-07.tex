@@ -1,1 +1,12 @@
 \que{Физические  компоненты тензоров.}
+
+Если криволинейные координаты $X^i$ являются ортогональными, то векторы $\mathring{\mathbf{r}}_i$ -- ортогональны: $ \mathring{\mathbf{r}}_i\cdot\mathring{\mathbf{r}}_j=\delta_{ij}$, а матрицы $\mathring{g}_ij$ и $\mathring{g}^ij$ -- диагональные. Тогда можно ввести параметры Ламе (см. подробнее раздел \ref{Локальные базисы и метрические матрицы в конфигурациях} параграф \nameref{Локальные базисы и метрические матрицы в конфигурациях}): $\mathring{H}_\alpha=\sqrt{\mathring{g_{\alpha\alpha}}},\,\alpha=1,2,3$, и \textit{физический ортонормированный базис}:
+\begin{equation*}
+	\widehat{\mathring{\mathbf{r}}}_\alpha=\frac{\mathring{\mathbf{r}}_\alpha}{\mathring{H}_\alpha}=\mathring{\mathbf{r}}^\alpha\mathring{H}_\alpha.
+\end{equation*}
+Компоненты вектора $\mathbf{a}$ в этом базисе называют физическими:
+\begin{equation*}
+	\mathbf{a} = \widehat{\mathring{a}}^{\,i}~\widehat{\mathring{r}}_i.
+\end{equation*}
+
+Актуальный базис $\mathbf{r}_i$ в общем случае не является ортогональным, даже если $\mathring{\mathbf{r}}_i$ -- ортогональный, поэтому нельзя ввести соответствующий ему физический базис в $\mathcal{K}$. Заметим однако, что в $\mathcal{K}$ всё-таки вводят физический базис, но по другому ... (\textit{взято из димитриенки}).
