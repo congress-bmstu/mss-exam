@@ -2,39 +2,43 @@
 
 \begin{definition}[Симметричный тензор]
 	\begin{equation*}
-		A=A^T;\;A^{ij}=A^{ji}
+		A=A^T,\quad A^{ij}=A^{ji}.
 	\end{equation*}
 \end{definition}
 
 \begin{definition}[Кососимметричный тензор]
 	\begin{equation*}
-		\mathbf{A} = -\mathbf{A}^T
+		\mathbf{A} = -\mathbf{A}^T.
 	\end{equation*}
 \end{definition}
 
 \begin{definition}[Собственный вектор, собственное значение]
-	Будем говорить, что $\mathbf{p}_{A\alpha}$ -- правый собственный вектор для тензора второго ранга $A$, если
-	он удовлетворяет уравнению $A \cdot \mathbf{p}_{A\alpha} = \lambda_{A\alpha} \cdot \mathbf{p}_{A\alpha}$, а числа $\lambda_{A\sigma}$ -- правое собственное значение.
+	Будем говорить, что $\mathbf{p}_{A\alpha}$ --- \emph{правый собственный
+  вектор} для тензора второго ранга $A$, если
+	он удовлетворяет уравнению $A \cdot \mathbf{p}_{A\alpha} = \lambda_{A\alpha}
+  \cdot \mathbf{p}_{A\alpha}$; числа $\lambda_{A\sigma}$ будем называть
+  \emph{правыми собственными значениями.}
 	
-	Аналогично, левым собственным вектором называется такой вектор $\mathbf{p}^*_{A\alpha}$, что:
+  Аналогично, \emph{левым собственным вектором} называется такой вектор $\mathbf{p}^*_{A\alpha}$, что
 	$\mathbf{p}^*_{A\alpha} \cdot A = \lambda^*_{A\alpha} \cdot \mathbf{p}^*_{A\alpha}$.
 \end{definition}
 
 \begin{corollary}
-	Если $A$ -- симметричный, то:
-	\begin{itemize}
+	Если $A$ --- симметричный, то
+  \begin{itemize}[label=--]
 		\item все собственные значения вещественные;
-		\item все собственные векторы вещественнозначные, т.е. все компоненты в декартовом базисе
-		вещественные.
-		\item $\mathbf{p}_{A\alpha} = \mathbf{p}^*_{A\alpha}$
+    \item все собственные векторы вещественнозначные, т.\,е. все компоненты в
+      декартовом базисе
+		вещественные;
+		\item $\mathbf{p}_{A\alpha} = \mathbf{p}^*_{A\alpha}$;
 		\item $\mathbf{p}_{A\alpha} \cdot \mathbf{p}_{A\beta} = \delta_{\alpha\beta}.$
 	\end{itemize}
 	
-	Если он еще и положительно определенный, то все собственные значения еще и положительны.
+	Если он к тому же положительно определенный, то все собственные значения еще и положительны.
 \end{corollary}
 \begin{corollary}
-	Представим симметричный тензор в собственном базисе. Если $A$ -- симметричный,
-	$\mathbf{p}_{A\alpha}$ -- собственные векторы, $\lambda_{A\alpha}$ -- собственные значения,
+	Представим симметричный тензор в собственном базисе. Если $A$ --- симметричный,
+	$\mathbf{p}_{A\alpha}$ --- собственные векторы, $\lambda_{A\alpha}$ --- собственные значения,
 	тогда
 	\[
 	A = \sum_{\alpha=1}^3 \lambda_{A\alpha} \mathbf{p}_{A\alpha} \otimes \mathbf{p}_{A\alpha}
@@ -46,15 +50,15 @@
 		A \cdot \mathbf{p}_{A\alpha}
 		= \sum_{\beta=1}^3 \lambda_{A\beta} (\mathbf{p}_{A\alpha}\otimes \mathbf{p}_{A\beta}) \cdot \mathbf{p}_{A\alpha}
 		= \sum_{\beta=1}^3 \lambda_{A\beta} \mathbf{p}_{A\alpha} \otimes \delta_{\alpha\beta}
-		= \sum_{\beta=1}^3 \lambda_{A\beta} 
-		= \lambda_{A\alpha} \mathbf{p}_{A\alpha}
+		% = \sum_{\beta=1}^3 \lambda_{A\beta} %TODO
+		= \lambda_{A\alpha} \mathbf{p}_{A\alpha}.
 		\]
 	\end{proof}
 \end{corollary}
 
 \begin{definition}[Ортогональный тензор]
 	\begin{equation*}
-		O\in\mathcal{E}_3^{(2)}: O^T=O^{-1}
+		O\in\mathcal{E}_3^{(2)}\colon O^T=O^{-1}.
 	\end{equation*}
 \end{definition}
 Введем компоненты в диадном базисе:
