@@ -1,0 +1,161 @@
+\documentclass[12pt, oneside]{book}
+
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\usepackage{amsmath}
+\usepackage{amsthm, mathrsfs, mathtools, amssymb}
+\usepackage{enumitem}
+
+\usepackage{epigraph}
+
+\usepackage{geometry}
+\geometry{verbose,a4paper,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=1.5cm}
+
+\usepackage{accents}
+\usepackage{bm}
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+\newtheoremstyle{example}% name
+{0.7cm}% Space above
+{0.7cm}% Space below
+{\small}% Body font
+{}% Indent amount
+{\small\scshape}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning ‘normal’)
+\theoremstyle{example}
+\newtheorem{ex}{Пример}
+\numberwithin{ex}{section}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newenvironment{thmbis}[1]
+  {\renewcommand{\thetheorem}{\ref{#1}$'$}%
+   \addtocounter{thm}{-1}%
+   \begin{theorem}}
+  {\end{theorem}}
+\newtheorem{corollary}{Следствие}
+\newtheorem*{corollary*}{Следствие}
+\newtheorem{lemma}{Лемма}
+\newtheorem{utv}{Утверждение}
+\newtheorem*{utv*}{Утверждение}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newenvironment{dfnbis}[1]
+  {\renewcommand{\thedefinition}{\ref{#1}$'$}%
+   \addtocounter{definition}{-1}%
+   \begin{definition}}
+  {\end{definition}}
+\newtheorem*{definition*}{Определение}
+\newtheorem{question}{Вопрос}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Замечание}
+\newtheorem*{remark*}{Замечание}
+\numberwithin{remark}{section}
+
+\newenvironment{solution}
+{
+	\vspace{0.5em}
+	
+	% \noindent\textsc{Решение.}
+	\textsc{Решение.}
+}
+{
+  \renewcommand{\qedsymbol}{$\square$}
+	\qed
+}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\numberwithin{remark}{section}
+
+\frenchspacing
+
+\usepackage[labelsep=period]{caption}
+\captionsetup{font = small}
+
+\usepackage{subfiles}
+\usepackage{cancel}
+
+\usepackage{tikz}
+\usetikzlibrary{fit}
+%%%%%
+\usepackage{svg}
+\svgpath{{img/}}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+\usepackage{physics}
+
+\usepackage{tikz}
+\usepackage{tensor}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+\usepackage{titlesec}
+\DeclareMathOperator{\supp}{supp}
+
+\usepackage[labelsep=period]{caption}
+\captionsetup{font = small}
+
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Spl}{\mathrm{Spl}}
+\newcommand{\spl}{\mathrm{spl}}
+
+\DeclareMathAlphabet{\mathbfit}{OML}{cmm}{b}{it}
+
+
+\newcounter{problem} 
+\newenvironment{problem}[1][]
+{
+	\refstepcounter{problem} 
+	\par \vspace{0.7em} \noindent
+	\textbf{Задача \theproblem}\ifx&#1&\else\ (#1)\fi. 
+}
+{
+	\vspace{1em}	
+}
+
+\newenvironment{solution}
+{
+	\vspace{0.3em}
+	\par\textsc{Решение.}
+}
+{\qed}
+
+\newcommand{\que}[1]{%
+	\section{#1}
+}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\titleformat{\section}{\centering\LARGE\bf\scshape}{}{1em}{}
+
+\begin{document}
+% титульник
+\pagestyle{empty}
+\begin{center}
+	\LARGE \textsc{Механика сплошной среды}
+\end{center}
+\newpage
+\pagestyle{plain}
+
+\tableofcontents
+
+\subfile{semester7/document}
+\subfile{semester8/document}
+\end{document}

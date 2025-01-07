@@ -18,3 +18,7 @@
 **/*.bbl
 **/*.pdf
 **/*.pdf_tex
+semester7/build
+build
+mss.dvi
+mss.fdb_latexmk
