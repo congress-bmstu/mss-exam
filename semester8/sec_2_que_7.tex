@@ -1,2 +1,30 @@
 \que{Классификация поверхностей раздела. Аксиома о классе функций при переходе через поверхность разрыва.}
+\begin{center}
+\begin{tikzpicture}[node distance=4cm]
+	
+	\node (start) [block] {Разрывы\\ (поверхность разрыва $S(t)$)};
+	
+	\node (slab) [block, below left of=start] {Слабые\\ $\mathring{\rho}, \mathring{A}_\alpha, \mathring{B}_\alpha$ - непрерывны по $\mathring{S}$, а их производные - терпят разрыв};
+	
+	\node (siln) [block, below right of=start] {Сильные\\ Хотя бы одна $\mathring{\rho}, \mathring{A}_\alpha, \mathring{B}_\alpha$ - терпят разрыв};
+	
+	\node (neper) [block, below left of=siln] {Материальные точки не переходят через $S(t)$};
+	\node (per) [block, below right of=siln] {Материальные точки  переходят через $S(t)$};
+	\node (per1) [block1, below left of=neper] {Контактный разрыв};
+	\node (per2) [block1, right of=per1] {Поверхность контакта};
 
+	\node (per3) [block1,right of=per2] {Ударная волна};
+	\node (per4) [block1, right of=per3] {Фазовое превращение};
+	
+	\draw [arrow] (start) -- (slab);
+	\draw [arrow] (start) -- (siln);
+	\draw [arrow] (siln) -- (neper);
+	\draw [arrow] (siln) -- (per);
+	
+	\draw [arrow] (neper) -- (per1);
+	\draw [arrow] (neper) -- (per2);
+	
+	\draw [arrow] (per) -- (per3);
+	\draw [arrow] (per) -- (per4);
+\end{tikzpicture}
+\end{center}
