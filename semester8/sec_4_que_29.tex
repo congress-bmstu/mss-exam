@@ -1,2 +1,88 @@
-\que{Модель газообразных сред: определяющие соотношения, замкнутая система уравнений для идеального газа}
+\que{Модель газообразных сред: определяющие соотношения, замкнутая система уравнений для идеального газа в дивергентной форме и в полных дифференциалах. Уравнение движения в форме Громеки-Лемба}
 
+\paragraph{Определение сплошных сред, определяющие соотношения для сплошных сред.}
+\begin{definition}
+  Сплошную среду, имеющую группу симметрий $\mathring{G}_s$ для любой отсчётной конфигурации
+  $\mathring{\mathcal{K}}$, которая совпадает с полной унимодулярной группой
+  $\mathring{G}_s = U$\footnote{\emph{полная унимодулярная группа} $U$ -- группа, состоящая из всех тензоров $H$, таких что $\det H = \pm 1$},
+  называют \emph{жидкостью} (жидкой средой).
+\end{definition}
+
+Рассматривая различные модели сплошных сред, такие как $\overset{(n)}{A}$,
+$\overset{(n)}{B}$, $\overset{(n)}{C}$, $\overset{(n)}{D}$, и применяя к ним принцип
+материальной симметрии относительно полной унимодулярной группы, получим одни и те же
+определяющие соотношения, т.о. все эти модели эквивалентны, а определяющие соотношения можно
+представить в виде\footnote{подробнее см. Димитриенко 2 том, раздел 3.8.13, страница 304}:
+\begin{equation}\label{eq:os_fluid_1}
+  \begin{cases}
+    T = - p E, \\
+    p = p(\rho, \theta) = \rho^2 \dfrac{\partial \psi}{\partial \rho}, \\
+    \psi = \Psi(\rho, \theta), \\
+    \eta = - \dfrac{\partial \psi}{\partial \theta} 
+  \end{cases}
+\end{equation}
+
+\paragraph{Замкнутая система уравнений для идеального газа в дивергентной форме.}
+
+Уравнение неразрывности (никак не меняется от ОС):
+\[
+  \dfrac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0.
+\]
+
+Уравнение движения (используем $T = - p E$):
+\[
+  \dfrac{\partial \rho\mathbf{v}}{\partial t} + \nabla \cdot \left( \rho \mathbf{v} \otimes \mathbf{v} + p E \right) = \rho \mathbf{f}.
+\]
+
+Уравнение для полной энергии (используем $T = -p E$, т.к. $\nabla \cdot (T \cdot\mathbf{v}) = - \nabla \cdot (p \mathbf{v}) = - \nabla \cdot (\rho \mathbf{v} (p / \rho)) $):
+\[
+  \dfrac{\partial \rho \varepsilon}{\partial t} + \nabla \cdot \left( \rho \mathbf{v} \dfrac{p}{\rho} + \mathbf{q} \right) = \rho \mathbf{f} \cdot \mathbf{v} + q_m,
+\]
+где $\varepsilon = e + \dfrac{\mathbf{v}^2}{2}$ -- полная энергия.
+
+И добавляем определяющие соотношения \eqref{eq:os_fluid_1} в виде:
+\[
+  \begin{cases}
+    p = p(\rho, \theta) = \rho^2 \dfrac{\partial \psi}{\partial \rho}, \\
+    e = e(\rho, \theta) = \psi - \theta \dfrac{\partial \psi}{\partial \theta}, \\
+    \psi = \psi(\rho, \theta).
+  \end{cases}
+\]
+А также закон Фурье:
+\[
+  \mathbf{q} = - \lambda \nabla \theta.
+\]
+
+\paragraph{Замкнутая система уравнений для идеального газа в полных дифференциалах.}
+
+Уравнение неразрывности:
+\[
+  \dfrac{d \rho}{dt} + \rho \nabla \cdot \mathbf{v} = 0.
+\]
+Уравнение движения:
+\[
+  \rho \dfrac{d \mathbf{v}}{dt} = - \nabla p + \rho \mathbf{f}.
+\]
+Уравнение энергии:
+\[
+  \rho \dfrac{d\varepsilon}{dt} = - \nabla \cdot \left( p \mathbf{v} + \mathbf{q} \right) + \rho \mathbf{f} \cdot \mathbf{v} + \rho q_m.
+\]
+Определяющие соотношения остаются без изменений:
+\[
+  \begin{cases}
+    p = p(\rho, \theta) = \rho^2 \dfrac{\partial \psi}{\partial \rho}, \\
+    e = e(\rho, \theta) = \psi - \theta \dfrac{\partial \psi}{\partial \theta}, \\
+    \psi = \psi(\rho, \theta).
+    \mathbf{q} = - \lambda \nabla \theta.
+  \end{cases}    
+\]
+
+\paragraph{Уравнение движения в форме Громеки-Лемба.}
+
+\begin{theorem}
+  Уравнение движения Эйлера всегда можно представить в форме Громеки-Лемба:
+  \[
+    \dfrac{\partial \mathbf{v}}{\partial t} + \nabla \dfrac{|\mathbf{v}|^2}{2} + 2 \mathbf{\omega} \times \mathbf{v} = - \dfrac{1}{\rho} \nabla p + \mathbf{f},
+  \]
+  где $\mathbf{\omega} = \dfrac{1}{2} \nabla \times \mathbf{v}$ -- вектор вихря.
+\end{theorem}
