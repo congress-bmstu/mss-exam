@@ -59,7 +59,7 @@ $\overset{(n)}{B}$, $\overset{(n)}{C}$, $\overset{(n)}{D}$, и применяя 
 \[
   \dfrac{d \rho}{dt} + \rho \nabla \cdot \mathbf{v} = 0.
 \]
-Уравнение движения:
+Уравнение движения (в такой форме его называют \emph{уравнением Эйлера}):
 \[
   \rho \dfrac{d \mathbf{v}}{dt} = - \nabla p + \rho \mathbf{f}.
 \]
@@ -72,7 +72,7 @@ $\overset{(n)}{B}$, $\overset{(n)}{C}$, $\overset{(n)}{D}$, и применяя 
   \begin{cases}
     p = p(\rho, \theta) = \rho^2 \dfrac{\partial \psi}{\partial \rho}, \\
     e = e(\rho, \theta) = \psi - \theta \dfrac{\partial \psi}{\partial \theta}, \\
-    \psi = \psi(\rho, \theta).
+    \psi = \psi(\rho, \theta), \\
     \mathbf{q} = - \lambda \nabla \theta.
   \end{cases}    
 \]
@@ -86,3 +86,17 @@ $\overset{(n)}{B}$, $\overset{(n)}{C}$, $\overset{(n)}{D}$, и применяя 
   \]
   где $\mathbf{\omega} = \dfrac{1}{2} \nabla \times \mathbf{v}$ -- вектор вихря.
 \end{theorem}
+
+\paragraph{+ Другой вид уравнения энергии.}
+Выведем теперь другой вид уравнения энергии из уравнения относительно $\varepsilon$ в полных
+дифференциалах. Для начала получим \emph{теорему живых сил}, которая получается путём домножения
+уравнения движения Эйлера скалярно на $\mathbf{v}$, а далее путём пары преобразований можно
+получить:
+\[
+  \rho \dfrac{d}{dt} \left( \dfrac{|\mathbf{v}|^2}{2} \right) = - \mathbf{v} \cdot \nabla p + \rho \mathbf{f} \cdot \mathbf{v}.
+\]
+
+Теперь вычтем это уравнение из уравнения энергии в полных дифференциалах, учитывая, что $\varepsilon = e + |\mathbf{v}|^2/2$:
+\begin{equation}\label{eq:fluid_energy_2}
+  \rho \dfrac{de}{dt} = - p \nabla \mathbf{v} - \nabla \cdot \mathbf{q} + \rho q_m.
+\end{equation}
