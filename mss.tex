@@ -16,6 +16,25 @@
 \usepackage{accents}
 \usepackage{bm}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{block} = [rectangle,
+minimum width=3cm, 
+minimum height=1cm,
+text width=5cm,
+text centered, 
+draw=black]
+
+\tikzstyle{block1} = [rectangle,
+minimum width=3cm, 
+minimum height=1cm,
+text width=3cm,
+text centered, 
+draw=black]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
 \newtheoremstyle{example}% name
 {0.7cm}% Space above
@@ -42,6 +61,9 @@
 \newtheorem{lemma}{Лемма}
 \newtheorem{utv}{Утверждение}
 \newtheorem*{utv*}{Утверждение}
+
+\newtheorem{axiom}{Аксиома}
+\newtheorem*{axiom*}{Аксиома}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Определение}
