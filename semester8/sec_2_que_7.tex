@@ -30,23 +30,23 @@
 		\draw [arrow] (per) -- (per4);
 	\end{tikzpicture}
 \end{center}
-	\begin{definition}
-		Поверхность разрыва $S(t)$, при переходе через которую терпят разрыв сами неизвестные функции $\rho, \mathbf{u},\mathbf{v},\mathbf{T},\mathbf{F},$ и др. называют \textit{ поверхностью сильного разрыва}, если ж е эти функции остаются непрерывными, а терпят разрыв только их первые производные по t и координатам ($\mathbf{\nabla}\rho,\mathbf{\nabla}\otimes \mathbf{u}, \mathbf{\nabla}\otimes \mathbf{v}$ и т.д.), то $S(t)$ называют \textit{поверхностью слабого разрыва}.
-	\end{definition}
-	\begin{definition}
+\begin{definition}
+	Поверхность разрыва $S(t)$, при переходе через которую терпят разрыв сами неизвестные функции $\rho, \mathbf{u},\mathbf{v},\mathbf{T},\mathbf{F},$ и др. называют \textit{ поверхностью сильного разрыва}, если ж е эти функции остаются непрерывными, а терпят разрыв только их первые производные по t и координатам ($\mathbf{\nabla}\rho,\mathbf{\nabla}\otimes \mathbf{u}, \mathbf{\nabla}\otimes \mathbf{v}$ и т.д.), то $S(t)$ называют \textit{поверхностью слабого разрыва}.
+\end{definition}
+\begin{definition}
 	Поверхность сильного разрыва $S(t)$, через которую для $\forall t\in [t_1,t_2]$ не переходят материальные точки, называют
 	\textit{поверхностью контактного разрыва}, если определяющие соотношения в областях $V_+(t)$ и $V_-(t)$ одинаковы для всех рассматриваемых $t$, в противном ж е случае ее называют \textit{поверхностью контакта}.
-	\end{definition}
-	\begin{definition}
-		Поверхность сильного разрыва $S(t)$, через которую при
+\end{definition}
+\begin{definition}
+	Поверхность сильного разрыва $S(t)$, через которую при
 	$\forall t\in [t_1,t_2]$ переходят материальные точки, называют \textit{поверхностью ударной волны}, если определяющие соотношения одинаковы для всех рассматриваемых $t$, в противном случае $S(t)$ называют \textit{поверхностью фазового перехода}.
-	\end{definition}
-	
-	\begin{definition}
-		Поверхность разрыва $S(t)$, при переходе через которую
-		терпят разрывы радиусы-векторы $\mathbf{x}$ материальных точек $M \in S(t)$, называют \textit{некогерентной}, в противном случае поверхность называют \textit{когерентной}.
-	\end{definition}
-	
+\end{definition}
+
+\begin{definition}
+	Поверхность разрыва $S(t)$, при переходе через которую
+	терпят разрывы радиусы-векторы $\mathbf{x}$ материальных точек $M \in S(t)$, называют \textit{некогерентной}, в противном случае поверхность называют \textit{когерентной}.
+\end{definition}
+
 \paragraph{Аксиома о классе функций при переходе через поверхность разрыва}
 Рассмотрим далее поверхность сильного разрыва $\mathring{S}(t)$, разделяющую область $\mathring{V}$ в $\mathring{\mathcal{K}}$ на две подобласти $\mathring{V}_+$ и $\mathring{V}_-$.
 
@@ -61,12 +61,64 @@
 		\begin{aligned}
 			&\mathring{\mathbf{x}}\to\mathring{\mathbf{x}}_\Sigma\\
 			\mathring{\mathbf{x}}\in&\mathring{V}_{\pm},\mathring{\mathbf{x}}_\Sigma\in\mathring{S}
-		\end{aligned}}A_{\pm}(\mathring{\mathbf{x}},t).
+	\end{aligned}}A_{\pm}(\mathring{\mathbf{x}},t).
 	\]
 \end{definition}
 
-\begin{axiom*}
-	efwef
-\end{axiom*}
-
-\paragraph{Правило дифференцирования объемного интеграла при наличии поверхности разрыва}
+\begin{axiom}\label{ax17}
+	Для сплошной среды, содержащей в $\mathring{\mathcal{K}}$ поверхность разрыва $\mathring{S}(t)$, которая разделяет область $\mathring{V}$ на части $\mathring{V}_+$ и $\mathring{V}_-$, функций $\mathring{\rho}, \mathring{A}_\alpha$ и $\mathring{B}_\alpha$ в системе законов сохранения предполагаются гладкими в $\mathring{V}_+$ и $\mathring{V}_-$:
+	\[
+	\begin{aligned}
+		\mathring{A}_\alpha=\begin{cases}
+			\begin{aligned}
+				&\mathring{A}_{\alpha+},&\mathring{\mathbf{x}}\in\mathring{V}_+,\\
+				&\mathring{A}_{\alpha-},&\mathring{\mathbf{x}}\in\mathring{V}_-,
+			\end{aligned}
+		\end{cases}
+		\mathring{B}_\alpha=\begin{cases}
+			\begin{aligned}
+				&\mathring{B}_{\alpha+},&\mathring{\mathbf{x}}\in\mathring{V}_+,\\
+				&\mathring{B}_{\alpha-},&\mathring{\mathbf{x}}\in\mathring{V}_-,
+			\end{aligned}
+		\end{cases}
+	\end{aligned}
+	\]
+	а на поверхности разрыва $\mathring{S}(t)$ могут иметь конечный скачок, т.е.
+	\[
+	\begin{aligned}
+		&[\mathring{A}_\alpha] < \infty,&	[\mathring{B}_\alpha] < \infty.
+	\end{aligned}
+	\]
+	Функции $C_\alpha$ в системе законов сохранения энергии также предполагаются гладкими в $\mathring{V}_+$ и $\mathring{V}_-$, а на поверхности разрыва могут иметь неограниченный скачок типа скачка $\delta$-функции:
+	\begin{equation}\label{eq17}
+	\begin{aligned}
+		&\mathring{\rho}C_\alpha=\mathring{\rho}\tilde{C}_\alpha+\mathring{C}_{\alpha\Sigma}\delta(\mathring{\mathbf{x}}_\Sigma-\mathring{\mathbf{x}}),&\tilde{C}_\alpha=\begin{cases}
+			\begin{aligned}
+				&\mathring{C}_{\alpha+},&\mathring{\mathbf{x}}\in\mathring{V}_+,\\
+				&\mathring{C}_{\alpha-},&\mathring{\mathbf{x}}\in\mathring{V}_-,
+			\end{aligned}
+		\end{cases}
+	\end{aligned}
+	\end{equation}
+	где $\mathring{C}_{\alpha\Sigma}(\mathring{\mathbf{x}}_\Sigma,t)$ - конечная гладкая по $\mathring{S}(t)$ функция, удовлетворяющая условию:
+	\begin{equation}\label{eq18}
+	\int_{\mathring{V}}\mathring{C}_{\alpha\Sigma}\delta(\mathring{\mathbf{x}}_\Sigma-\mathring{\mathbf{x}})d\mathring{V}=\int_{\mathring{S}}\mathring{C}_{\alpha\Sigma}d\mathring{\Sigma}
+	\end{equation}
+	Функция $\mathring{C}_{4\Sigma}$ состоит из двух слагаемых: скачка производства энтропии за счет внешних источников $\mathring{\bar{C}}_{4\Sigma}$ и скачка производства энтропии за
+	счет внутренних источников $\mathring{C}_{4\Sigma}^*$, который полагают всегда неотрицательным:
+	\[
+	\mathring{C}_{4\Sigma}=\mathring{\bar{C}}_{4\Sigma}+\mathring{C}_{4\Sigma}^*,~~~\mathring{C}_{4\Sigma}^*\geq 0.
+	\]
+\end{axiom}
+	\paragraph{Правило дифференцирования объемного интеграла при наличии поверхности разрыва}
+	\begin{theorem}\label{th11}
+		Для любых функций $\mathring{A}_\alpha$, определенных в области $\mathring{V}$ с поверхность разрыва $\mathring{S}$ и удовлетворяющих аксиоме \ref{ax17}, имеет место \textit{правило дифференцирования объемного интеграла}:
+		\begin{equation}\label{eq116}
+		\frac{\partial}{\partial t}\int_{\mathring{V}}\mathring{\rho}\mathring{A}_\alpha d\mathring{V}=\int_{\mathring{V}}\mathring{\rho}	\frac{\partial\mathring{A}_\alpha}{\partial t}d\mathring{V}-\int_{\mathring{S}}\left(\mathring{\rho}_+\mathring{A}_{\alpha+}-\mathring{\rho}_-\mathring{A}_{\alpha-}\right)\mathring{D}d\mathring{\Sigma},
+		\end{equation}
+		где
+		\[
+			\mathring{D}=\mathring{\mathbf{c}}\cdot\mathring{\mathbf{n}}
+		\]
+		- нормальная скорость движения поверхности разрыва.
+	\end{theorem}
