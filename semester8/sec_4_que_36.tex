@@ -1,2 +1,89 @@
 \que{Адиабата Пуассона для совершенного газа.}
 
+\paragraph{Адиабата Пуассона для совершенного газа.}
+В выражении для $\eta$ в совершенном газе обозначим:
+\[
+  \eta\left(\rho(X^i, t), \theta(X^i, t)\right) =
+  - \dfrac{\partial \psi}{\partial \theta}  =
+  \eta_0 +
+  % \int\limits_{\theta_0}^\theta C_v(\tilde\theta) \, d\tilde\theta +
+  \underbrace{\int\limits_{\theta_0} \dfrac{c_v(\tilde \theta)}{\tilde \theta} \, d\tilde \theta + R \ln \dfrac{\rho_0}{\rho}}_{\Delta \eta} =
+  \eta_0 + \Delta \eta =
+  \mathring{\eta}(X^i)
+\]
+т.е.
+\[
+  \int\limits_{\theta_0} \dfrac{c_v(\tilde \theta)}{\tilde \theta} \, d\tilde \theta + R \ln \dfrac{\rho_0}{\rho} =
+  \eta - \Delta \eta =
+  \operatorname{const}
+\]
+
+\paragraph{Для модели совершенного газа с постоянной теплоёмкостью.}
+Если теперь $c_v = \operatorname{const}$, то интегралы в последнем выражении можно найти
+и получить
+\[
+  c_v \ln \dfrac{\theta}{\theta_0} = R \ln \dfrac{\rho}{\rho_0} + \Delta \eta,
+\]
+или
+\[
+  \dfrac{\theta}{\theta_0} = e^{\dfrac{\Delta \eta}{c_v}} \left(\dfrac{\rho}{\rho_0}\right)^{\dfrac{R}{c_v}}
+\]
+обозначая в последнем $A_0 = e^{\dfrac{\Delta\eta}{c_v}}$; вспоминая коэффициент Пуассона $k = \dfrac{c_p}{c_v} = \dfrac{c_v + R}{c_v}$, получаем
+\begin{equation}\label{eq:poisson_adiabata_0}
+  \dfrac{\theta}{\theta_0} = A_0 \left( \dfrac{\rho}{\rho_0} \right)^{k-1}
+\end{equation}
+-- адиабата Пуассона для идеального совершенного газа с постоянными теплоёмкостями
+в форме $\theta \sim \rho$.
+
+\textit{Другие формы адиабаты Пуассона для совершенного газа с постоянными теплоёмкостями.}
+
+Отметим, что адиабата Пуассона \eqref{eq:poisson_adiabata_0} содержит параметры газа
+$\theta_0, \rho_0, \eta_0$ -- табличные значения в некотором известном (<<начальном>>) состоянии.
+Получим теперь это же соотношение, считая известными параметры газа в некоторой конфигурации
+$\mathcal{K}_1$, в которой газ имеет параметры $\theta_1, \rho_1, \eta_1$. Запишем адиабату
+Пуассона два раза: для известного состояния $\mathcal{K}_1$ и для некоторой произвольной
+конфигурации $\mathcal{K}$:
+\[
+  \begin{cases}
+    \dfrac{\theta_1}{\theta_0} = A_0 \left( \dfrac{\rho_1}{\rho_0} \right)^{k-1} \\
+    \dfrac{\theta}{\theta_0} = A_0 \left( \dfrac{\rho}{\rho_0} \right)^{k-1}
+  \end{cases}
+\]
+поделим второе выражение на первое и получим
+\begin{equation}\label{eq:poisson_adiabata_1}
+  \dfrac{\theta}{\theta_1} = \left( \dfrac{\rho}{\rho_1} \right)^{k-1}
+\end{equation}
+-- адиабата Пуассона для совершенного газа с постоянными теплоёмкостями, выраженная через
+некоторую конфигурацию $\mathcal{K}_1$.
+
+\textit{Адиабата Пуассона в форме $p \sim \rho$}
+Из соотношения Менделеева-Клапейрона $p = \rho R \theta$ выразим температуру $\theta = \dfrac{p}{\rho R}$, тогда адиабата Пуассона \eqref{eq:poisson_adiabata_1} принимает вид:
+\[
+  \dfrac{p \rho_1 R}{p_1 \rho R} = \left(\dfrac{\rho}{\rho_1} \right)^{k-1},
+\]
+сокращая всё что можно сократить, получаем
+\begin{equation}\label{eq:poisson_adiabata_2}
+  \dfrac{p}{p_1} = \left( \dfrac{\rho}{\rho_1} \right)^{k}
+\end{equation}
+-- ещё одна адиабата Пуассона.
+
+Её ещё можно преобразовать, введя $A = \dfrac{p_1}{\rho_1^k}$, к виду
+\begin{equation}\label{eq:poisson_adiabata_3}
+  p = A \rho^k
+\end{equation}
+
+Ещё можно ввести \emph{удельный объём} $V = \dfrac{1}{\rho}$, тогда
+\begin{equation}\label{eq:poisson_adiabata_2}
+  \dfrac{p}{p_1} = \left( \dfrac{V_1}{V} \right)^{k}
+\end{equation}
+
+\paragraph{Внутренняя энергия совершенного идеального газа с постоянными теплоёмкостями.}
+Для совершенного газа было получено:
+\[
+  e = e_0 + c_v(\theta - \theta_0) = \tilde e_0 + c_v \theta
+\]
+используя соотношение Менделеева-Клапейрона в виде $\theta = \dfrac{p}{\rho R}$ получаем:
+\[
+  e = \tilde e_0 + \dfrac{c_v p}{\rho R} = \tilde e_0 + \dfrac{p}{\rho (k-1)} =
+  \tilde e_0 + \dfrac{pV}{k-1}
+\]
