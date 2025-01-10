@@ -1,2 +1,16 @@
 \que{Система уравнений газовой динамики для адиабатических процессов.}
 
+% TODO
+(видимо имеется ввиду адиабатические процессы в совершенном газе, если газ не совершенный,
+то я информации не нашёл)
+
+
+Уравнение энергии можно исключить из общей системы уравнений в идеальном совершенном газе,
+поэтому замкнутая система будет выглядеть так:
+\[
+  \begin{cases}
+    \dfrac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0, \\
+    \dfrac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \otimes \mathbf{v} = - \dfrac{1}{\rho} \nabla p + \mathbf{f}, \\
+    p = A \rho^k, \quad A = \dfrac{\mathring{p}}{\mathring{\rho}^k}
+  \end{cases}
+\]
