@@ -1,2 +1,73 @@
 \que{Соотношения на поверхностях сильных разрывов в пространственном описании.}
 
+Установим теперь соотношения для скачков функций $\rho_\alpha, A_\alpha, B_\alpha$ и $C_\alpha$ на когерентной поверхности разрыва $S(t)$, соответствующей поверхности разрыва $\mathring{S}(t)$ в $\mathring{\mathcal{K}}$. Для этого умножим соотношение (\ref{eq125}) на элементарную площадку $d\mathring{\Sigma}$:
+\begin{equation}\label{eq21}
+-[\mathring{\rho}\mathring{A}_\alpha]\mathring{\mathbf{c}}\cdot\mathring{\mathbf{n}}d\mathring{\Sigma}=\mathring{\mathbf{n}}\cdot[\mathring{B}_\alpha]d\mathring{\Sigma}+\mathring{C}_{\alpha\Sigma}d\mathring{\Sigma}
+\end{equation}
+
+\begin{theorem}
+	Для функций $\mathring{B}_\alpha$ и $B_\alpha$ имеют место соотношения:
+	\begin{equation}
+		\mathring{\mathbf{n}}\cdot[\mathring{B}_\alpha]d\mathring{\Sigma}=\mathbf{n}\cdot[B_\alpha]d\Sigma,~~~\alpha=1,\dots,6.
+	\end{equation}
+\end{theorem}
+\paragraph{Доказательство.}
+Действительно, при $\alpha=2$ имеем: $B_2=\mathbf{T}, \mathring{B}_2=\mathbf{P}$, и поэтому:
+\[
+	\mathring{\mathbf{n}}\cdot[\mathbf{P}]d\mathring{\Sigma}=\mathbf{n}\cdot[\mathbf{T}]d\Sigma
+\]
+
+При $\alpha=3$ имеем $B_3=\mathbf{T}\cdot\mathbf{v}-\mathbf{q}, \mathring{B}_3=\mathbf{P}\cdot\mathbf{v}-\mathring{\mathbf{q}}$, и, следовательно:
+\[
+\mathring{\mathbf{n}}\cdot[\mathbf{P}\cdot\mathbf{v}-\mathring{\mathbf{q}}]d\mathring{\Sigma}=\mathbf{n}\cdot[\mathbf{T}\cdot\mathbf{v}-\mathbf{q}]d\Sigma.
+\]
+
+При $\alpha=4$ имеем $B_4=\mathbf{q}/\theta,\mathring{B}_4=\mathring{\mathbf{q}}/\theta$, поэтому выполняется соотношение:
+\[
+\mathring{\mathbf{n}}\cdot[\mathring{\mathbf{q}}/\theta]d\mathring{\Sigma}=\mathbf{n}\cdot[\mathbf{q}/\theta]d\Sigma.
+\]
+
+При $\alpha=6$ имеем $B_6=\rho\mathbf{F}\otimes\mathbf{v},\mathring{B}_6=\mathring{\rho}\mathbf{E}\otimes\mathbf{v}$, получаем:
+\[
+\mathbf{n}\cdot[\rho\mathbf{F}\otimes\mathbf{v}]d\Sigma = \mathring{\mathbf{n}}\cdot[\rho\sqrt{g/\mathring{g}}\mathbf{E}\otimes\mathbf{v}]d\mathring{\Sigma}=\mathring{\mathbf{n}}\cdot[\mathring{\rho}\mathbf{E}\otimes\mathbf{v}]d\mathring{\Sigma}
+\]
+что и требовалось доказать. $\blacksquare$
+
+\begin{theorem}
+	Скорости $\mathring{\mathbf{c}}$ и $\mathbf{c}$ движения когерентной поверхности разрыва
+	$S(t)$ в отсчетной и актуальной конфигурациях, определенные по $\mathbf{\mathring{c}}=d\mathring{\mathbf{x}}_\Sigma/dt$ и $\mathbf{c}=d\mathbf{x}_\Sigma/dt$, связаны следующими соотношениями:
+	\begin{equation}
+		\mathbf{c}=\mathbf{v}_{\Sigma\pm}+\mathbf{F}_\pm\cdot \mathring{\mathbf{c}},
+	\end{equation}
+	или
+	\begin{equation}\label{eq131}
+		\mathring{\mathbf{c}}=\mathbf{F}_\pm^{-1}\cdot(\mathbf{c}-\mathbf{v}_{\Sigma\pm}).
+	\end{equation}
+\end{theorem}
+
+Для того чтобы преобразовать левую часть в (\ref{eq21}) используем соотношение (\ref{eq131}), тогда имеют место следующие соотношения:
+\[
+\mathring{\rho}\mathring{D}d\mathring{\Sigma}=\mathring{\rho}_+\mathring{\mathbf{c}}\cdot\mathring{\mathbf{n}}d\mathring{\Sigma}=\mathring{\rho}_+\mathring{\mathbf{n}}\cdot\mathbf{F}_+^{-1}\cdot(\mathbf{c}-\mathbf{v}_{\Sigma+})d\mathring{\Sigma}=\mathring{\rho}_-\mathring{\mathbf{n}}\cdot\mathbf{F}_-^{-1}\cdot(\mathbf{c}-\mathbf{v}_{\Sigma-})d\mathring{\Sigma}.
+\]
+
+Но, учитывая свойство преобразования элементарных площадок,
+примененное к площадкам на поверхности разрыва:
+\[
+\mathring{\rho}_\pm\mathring{\mathbf{n}}\cdot \mathbf{F}_\pm^{-1}d\mathring{\Sigma}=\rho_\pm\mathbf{n}d\Sigma
+\]
+получаем
+\[
+\mathring{\rho}_\pm\mathring{D}d\mathring{\Sigma}=\rho_\pm\mathbf{n}\cdot\mathbf{c}d\Sigma-\rho_\pm\mathbf{n}\cdot\mathbf{v}_{\Sigma\pm}d\Sigma=\rho_\pm(D-\mathbf{n}\cdot\mathbf{v}_{\Sigma\pm})d\Sigma
+\]
+где обозначена нормальная скорость $D$ движения поверхности раздела $\mathcal{K}$:
+\[
+D=\mathbf{c}\cdot\mathbf{n}.
+\]
+
+Подставляя в (\ref{eq21}), приходим к следующей теореме:
+\begin{theorem}
+	Соотношения (\ref{eq125}) на когерентной поверхности разрыва $\mathring{S}$ в $\mathring{\mathcal{K}}$ эквивалентны соотношениям
+	\begin{equation}
+		-[\rho A_\alpha]D+\mathbf{n}\cdot[\rho\mathbf{v}\otimes A_\alpha]-\mathbf{n}\cdot[B_\alpha]=C_{\alpha\Sigma}
+	\end{equation}
+\end{theorem}
