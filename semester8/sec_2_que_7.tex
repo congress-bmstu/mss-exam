@@ -90,7 +90,7 @@
 	\end{aligned}
 	\]
 	Функции $C_\alpha$ в системе законов сохранения энергии также предполагаются гладкими в $\mathring{V}_+$ и $\mathring{V}_-$, а на поверхности разрыва могут иметь неограниченный скачок типа скачка $\delta$-функции:
-	\[
+	\begin{equation}\label{eq17}
 	\begin{aligned}
 		&\mathring{\rho}C_\alpha=\mathring{\rho}\tilde{C}_\alpha+\mathring{C}_{\alpha\Sigma}\delta(\mathring{\mathbf{x}}_\Sigma-\mathring{\mathbf{x}}),&\tilde{C}_\alpha=\begin{cases}
 			\begin{aligned}
@@ -99,11 +99,11 @@
 			\end{aligned}
 		\end{cases}
 	\end{aligned}
-	\]
+	\end{equation}
 	где $\mathring{C}_{\alpha\Sigma}(\mathring{\mathbf{x}}_\Sigma,t)$ - конечная гладкая по $\mathring{S}(t)$ функция, удовлетворяющая условию:
-	\[
+	\begin{equation}\label{eq18}
 	\int_{\mathring{V}}\mathring{C}_{\alpha\Sigma}\delta(\mathring{\mathbf{x}}_\Sigma-\mathring{\mathbf{x}})d\mathring{V}=\int_{\mathring{S}}\mathring{C}_{\alpha\Sigma}d\mathring{\Sigma}
-	\]
+	\end{equation}
 	Функция $\mathring{C}_{4\Sigma}$ состоит из двух слагаемых: скачка производства энтропии за счет внешних источников $\mathring{\bar{C}}_{4\Sigma}$ и скачка производства энтропии за
 	счет внутренних источников $\mathring{C}_{4\Sigma}^*$, который полагают всегда неотрицательным:
 	\[
@@ -111,11 +111,11 @@
 	\]
 \end{axiom}
 	\paragraph{Правило дифференцирования объемного интеграла при наличии поверхности разрыва}
-	\begin{theorem}
+	\begin{theorem}\label{th11}
 		Для любых функций $\mathring{A}_\alpha$, определенных в области $\mathring{V}$ с поверхность разрыва $\mathring{S}$ и удовлетворяющих аксиоме \ref{ax17}, имеет место \textit{правило дифференцирования объемного интеграла}:
-		\[
+		\begin{equation}\label{eq116}
 		\frac{\partial}{\partial t}\int_{\mathring{V}}\mathring{\rho}\mathring{A}_\alpha d\mathring{V}=\int_{\mathring{V}}\mathring{\rho}	\frac{\partial\mathring{A}_\alpha}{\partial t}d\mathring{V}-\int_{\mathring{S}}\left(\mathring{\rho}_+\mathring{A}_{\alpha+}-\mathring{\rho}_-\mathring{A}_{\alpha-}\right)\mathring{D}d\mathring{\Sigma},
-		\]
+		\end{equation}
 		где
 		\[
 			\mathring{D}=\mathring{\mathbf{c}}\cdot\mathring{\mathbf{n}}
