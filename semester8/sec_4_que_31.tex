@@ -1,2 +1,65 @@
 \que{Модель идеальной несжимаемой жидкости.}
 
+\begin{definition}
+  Сплошную среду называют \emph{несжимаемой}, если в любой актуальной конфигурации $\mathcal{K}$
+  её плотность $\rho$ совпадает с плотностью $\mathring{\rho}$ в отсчётной конфигурации:
+  \[
+    \rho = \mathring{\rho} = \operatorname{const}, \forall t \geqslant 0, \forall \mathcal{K}
+  \]
+\end{definition}
+
+Из уравнения неразрывности в переменных Лагранжа следует, что для несжимаемых сред объём любого
+элементарного параллелепипеда $dV$ не изменяется:
+\[
+  \rho = \mathring{\rho} \Rightarrow dV = d\mathring{V},
+\]
+а, следовательно, и объём $|V(t)|$ области, которую занимает несжимаемая среда, не изменяется:
+$|V(t)| = |\mathring{V}| = \operatorname{const}$.
+
+Из уравнения неразрывности следует также, что для несжимаемой среды всегда существует
+дополнительное условие на градиент деформации:
+\[
+  \det F = 1.
+\]
+
+Используя полярное разложение, находим, что для несжимаемой среды тензоры искажений всегда имеют 
+единичный детерминант:
+\[
+  \det V = \det F \cdot \det O^T = \det F = 1, \quad \det U = 1.
+\]
+Тогда, находим, что детерминант всех энергетических и квазиэнергетических мер деформации тоже
+всегда имеет постоянное значение:
+\begin{align*}
+  \det \overset{(n)}{G} &= \det \left( \dfrac{1}{n - III} U^{n - III} \right) = 
+  \dfrac{1}{(n-III)^3} \det U^{n - III} = \dfrac{1}{(n-III)^3}, \\
+  \det \overset{(n)}{g} &= \det \left( \dfrac{1}{n - III} V^{n - III} \right) = 
+  \dfrac{1}{(n-III)^3}, \quad n = I, II, III, IV, V.
+\end{align*}
+
+Уравнение неразрывности для несжимаемой жидкости (т.н. \emph{уравнение несжимаемости}):
+\[
+  \nabla \cdot \mathbf{v} = 0.
+\]
+Уравнение движения для несжимаемой жидкости:
+\[
+  \dfrac{\partial \mathbf{v}}{\partial t} + \nabla \cdot \left( \mathbf{v} \otimes \mathbf{v} + \dfrac{p}{\rho} E \right) = \mathbf{f}.
+\]
+Уравнение энергии для несжимаемой жидкости:
+\[
+  \dfrac{\partial \varepsilon}{\partial t} + \nabla \cdot \left( \mathbf{v}\cdot \left( \varepsilon+\dfrac{p}{\rho} \right) + \dfrac{\mathbf{q}}{\rho} \right) = \mathbf{f}\cdot\mathbf{v} + q_m.
+\]
+
+Определяющие соотношения для несжимаемой жидкости:
+\[
+  \begin{cases}
+    \varepsilon = e + \dfrac{|\mathbf{v}|^2}{2}, \\
+    e = \psi + \theta \eta = \psi - \theta \dfrac{\partial \psi}{\partial \theta} = e(\theta), \\
+    \psi = \psi(\rho, \theta) = \psi(\theta), \\
+    \mathbf{q} = - \lambda \nabla \theta
+  \end{cases}
+\]
+Определяющее соотношение $p = \rho^2 \dfrac{\partial \psi}{\partial \rho}$ пропадает, а
+давление становится самостоятельной независимой функцией.
+
+% \paragraph{Модель совершенной несжимаемой жидкости.}
+
