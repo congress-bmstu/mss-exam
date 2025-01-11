@@ -1,2 +1,65 @@
 \que{Модель совершенного газа, термодинамические функции. Модель совершенного газа с постоянными теплоемкостями.}
 
+\paragraph{Модель совершенного газа.}
+\begin{definition}
+  Идеальную жидкость называют \emph{идеальным совершенным сжимаемым газом}, если потенциал
+  $\psi(\rho, \theta)$ имеет следующий вид:
+  \[
+    \psi(\rho, \theta) = \psi_0 + \int\limits_{\theta_0}^\theta c_v(\theta') \, d\theta' -
+    \theta \int\limits_{\theta_0}^\theta \dfrac{c_v(\theta')}{\theta'} \, d\theta' - R\theta \ln \dfrac{\rho_0}{\rho},
+  \]
+  где $\psi_0 = e_0 - \theta \eta_0$; константы $e_0, \eta_0, \theta_0, \rho_0$ -- константы,
+  соответствующие некоторому <<начальному>> (известному) состоянию; константу $R$ называют
+  \emph{газовой постоянной}; $c_v(\theta)$ -- \emph{теплоёмкостью при постоянном объёме}.
+\end{definition}
+
+Газовую постоянную считают с помощью \emph{универсальной газовой постоянной}:
+\[
+  R = \dfrac{\mathcal{R}}{\mu},
+\]
+где $\mu$ -- \emph{молярная масса}, специфичная для данного газа;
+$\mathcal{R} \approx 8.31$.
+
+\paragraph{Термодинамические функции в совершенном газе.}
+Теперь подставим выражение для $\psi$ в совершенном газе в остальные термодинамические функции:
+\begin{align*}
+  \eta &= - \dfrac{\partial \psi}{\partial \theta} = \eta_0 + \int\limits_{\theta_0}^\theta \dfrac{c_v(\theta')}{\theta'} \, d\theta' + R \ln \dfrac{\rho_0}{\rho}, \\
+  e &= \psi + \theta \eta = e_0 + \int\limits_{\theta_0}^\theta c_v(\theta') \, d\theta', \\
+  p &= \rho^2 \dfrac{\partial \psi}{\partial \rho} = \rho R \theta.
+\end{align*}
+Последнее уравнение называют \emph{уравнением Менделеева-Клапейрона}.
+
+Также часто используют ещё две термодинамические функции:
+\emph{Энтальпия} $i$:
+\[
+  i = e + \dfrac{p}{\rho} = i_0 + \int\limits_{\theta_0}^\theta c_p(\theta') \, d\theta',
+  \quad i_0 = e_0 + R\theta_0;
+\]
+и \emph{свободная энергия Гиббса} $\eta$:
+\[
+  \eta = \psi + \dfrac{p}{\rho} = \eta_0 + \int\limits_{\theta_0}^\theta c_p(\theta') \, d\theta' - \theta \int\limits_{\theta_0}^\theta \dfrac{c_p(\theta')}{\theta'} \, d\theta' + R\theta \ln \dfrac{p}{p_0}, \quad
+  \eta_0 = e_0 + R\theta_0 - \theta \eta_0, \quad
+  p_0 = \rho_0 R \theta_0,
+\]
+важно отметить, что и в энтальпии, и в свободной энергии Гиббса под интегралом стоит
+\emph{теплоёмкость при постоянном давлении} $c_p(\theta)$:
+\[
+  c_p(\theta) = c_v(\theta) + R
+\]
+-- формула Майера.
+
+Ещё одна характеристика газа -- \emph{коэффициент Пуассона} $k = \dfrac{c_p}{c_v}$.
+
+Подставим выражения для термодинамической функции $e$ в уравнение энергии в форме \eqref{eq:fluid_energy_2} и подставим закон Фурье:
+\[
+  \rho c_v \dfrac{d\theta}{dt} = \nabla \cdot (\lambda \nabla \theta) - p  \nabla\cdot\mathbf{v} + \rho q_m,
+\]
+получившееся уравнение называют \emph{уравнением теплопроводности}.
+
+\paragraph{Модель совершенного газа с постоянными теплоёмкостями.}
+
+Если $c_v(\theta) = \operatorname{const}$, то и $c_p(\theta) = \operatorname{const}$, тогда:
+\[
+  \psi(\rho, \theta) = \psi_0 + c_v (\theta - \theta_0) - \theta c_v \ln \dfrac{\theta}{\theta_0} - R\theta \ln \dfrac{\rho_0}{\rho}.
+\]
+и т.д.
