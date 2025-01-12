@@ -1,2 +1,45 @@
 \que{Модель линейно-упругих сред. Постановка квазистатической задачи линейно-теории упругости}
 
+\paragraph{Модель линейно-упругих сред.}
+\begin{definition}
+  Твёрдую среду с малыми деформациями, для которой оператор свободной энергии Гельмгольца
+  $\breve{\psi}$ имеет вид
+  \begin{align*}
+    \breve{\psi}(\varepsilon, \theta) &= \psi_\theta + \dfrac{1}{2\mathring{\rho}} (\varepsilon - \mathring{\varepsilon}) \cdot\cdot {}^4 C \cdot\cdot (\varepsilon - \mathring{\varepsilon}), \\
+    \psi_\theta &= \psi_0 + \int\limits_{\theta_0}^\theta c_v(\theta') \, d\theta' - \theta \int\limits_{\theta_0}^\theta \dfrac{c_v(\theta')}{\theta'} \, d\theta',
+  \end{align*}
+  называют \emph{линейно-упругой средой}.
+
+  Здесь $\psi_0$ -- начальное значение свободной энергии, $\psi_0 = e_0 - \theta \eta_0$;
+  $c_v(\theta)$ -- теплоёмкость;
+  ${}^4 C (\theta)$ -- тензор 4-го ранга, называемый \emph{тензором модулей упругости};
+  $\mathring{\varepsilon}(\theta)$ -- тензор 2-го ранга, называемый \emhp{тензором тепловой деформации}.
+  Все эти величины являются заданными.
+\end{definition}
+
+% TODO возможно, стоит дописать вид определяющих соотношений для линейно-упругих твёрдых тел,
+% но вроде как это только для идеальных твёрдых тел
+% Я не знаю надо это или нет:
+% Если твёрдая линейно-упругая среда является идеальной, то для неё определяющие соотношения
+% принимают вид:
+% \begin{align*}
+%   \sigma &= {}^4 C \cdot\cdot (\varepsilon - \mathring{\varepsilon}), \\
+%   \eta &= \eta_0 + \int\limits_{\theta_0}^\theta \dfrac{c_v}{\theta'} \, d\theta' + \dfrac{1}{\mathring{\rho}} \alpha \cdot\cdot {}^4 C \cdot\cdot (\varepsilon - \mathring{\varepsilon}) - \dfrac{1}{2\mathring{\rho}} (\varepsilon - \mathring{\varepsilon}) \cdot\cdot {}^4 C_\theta \cdot\cdot (\varepsilon - \mathring{\varepsilon})
+% \end{align*}
+
+\paragraph{Постановка квазистатической задачи линейной теории упругости.}
+
+Рассмотрим постановку квазистатической (можно пренебречь
+$ \dfrac{\partial \mathbf{v}}{\partial t} $ по сравнению с $\nabla \cdot \sigma$ и
+$\mathring{\rho} \mathbf{f}$) задачи линейной теории упругости при изотермическом процесса
+($\theta = \theta_0 = \operatorname{const}$), т.е. тогда, когда $q_m = 0$ -- отсутствие массовых
+источников, $\theta_e = \theta_0$ -- внешняя температура равна внутренней,
+$\mathbf{q}_{en} = \mathbf{0}$ -- нормальные потоки тепла равны нулю. Тогда получаем уравнение,
+также называемое \emph{условием равновесия твёрдого тела}:
+\[
+  \nabla \cdot \sigma + \mathring{\rho} \mathbf{f} = 0, \\
+\]
+
+Если задача не является изотермической, то необходимо также рассматривать задачу теплопроводности,
+которая будет содержать $\sigma$, а значит будет связанной с уравнением выше, такую задачу
+называют \emph{связанной квазистатической задачей линейной термоупругости}.
