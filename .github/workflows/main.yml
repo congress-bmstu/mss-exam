@@ -17,6 +17,8 @@ jobs:
         filters: |
           tex:
             - '*.tex'
+            - 'semester7/**'
+            - 'semester8/**'
           workflows:
             - '.github/workflows/**'
   build_latex:
