@@ -1,2 +1,63 @@
+% !TeX spellcheck = ru_RU
+
+% том 4
+% глава 2 упругие среды.. стр 34
 \que{Модель твердых сред с малыми деформациями: основные допущения и уравнения.}
 
+Будем говорить, что рассматривается модель твердой среды с малыми деформациями, если при переходе из $\mathring{\mathcal{K}}$ в $\mathcal{K}$ выполняется условие:
+\begin{equation*}
+	F = E + \Delta F,\quad \|\Delta F\|<<1,\quad \forall M\in V,
+\end{equation*}
+\begin{itemize}
+	\item[где] $\|F\|=\max\limits_{x^i\in V}\left(\sum\limits_{i,j,k=1}^{3}\left|\frac{\partial x^i}{\partial\mathring{x}^j}-\delta^i_j\right|\right)$
+	\item[] $\Delta F = F-E=\frac{\partial x^i}{\partial\mathring{x}^j}\bar{\vec{e_i}}\otimes\bar{\vec{e_j}}-\delta_{ij}\bar{\vec{e_i}}\otimes\bar{\vec{e_j}}$
+\end{itemize}
+
+Заметим, что если нет движения из $\mathring{\mathcal{K}}$ в $\mathcal{K}$, то $F=E$, так как
+\begin{equation*}
+	\mathring{\vec{r_i}}=\vec{r_i},\quad F=\vec{r_i}\otimes\mathring{\vec{r}}^i=\vec{r_i}\otimes\vec{r}=E
+\end{equation*}
+
+Основные допущения
+\begin{enumerate}
+	\item Конфигурации $\mathring{\mathcal{K}}$ и $\mathcal{K}$ неразличимы $\mathring{\mathcal{K}}\approx \mathcal{K}$
+	\item Координаты материальной точки неразличимы $\vec{x}\approx\mathring{\vec{x}}$
+	\item Ковариантные производные неразличимы $\nabla \otimes\vec{a}\approx\mathring{\nabla}\otimes\vec{a}$
+	\item $\mathring{\nabla}\otimes\vec{u}=F^T-E$
+	\item Метрические матрицы неразличимы $g_{ij}\approx\mathring{g_{ij}},\quad g^{ij}\approx\mathring{g}^{ij},\quad g\approx\mathring{g}$
+	\item тензоры искажений U,V и тензор поворота O линеаризуются:
+	\begin{equation*}
+		F=VO=OV
+	\end{equation*}
+	\[\begin{matrix}
+		U=E+\Delta U,     & V=E+\Delta V,     & O=E+\Delta O,     \\
+		\|\Delta U\| <<1, & \|\Delta V\| <<1, & \|\Delta O\| <<1.
+	\end{matrix}\]
+	\item Все тензоры деформации $A,J,C,\Lambda$, а также $\overset{(n)}{C}, \overset{(n)}{A}$ совпадают:
+	\begin{multline*}
+		A=\frac{1}{2}(E-F^{-1T}F^{-1})=\frac{1}{2}(E-(E-\Delta F^{-1T})(E-\Delta F^{-1}))=\\=\frac{1}{2}(E-(E-\nabla\otimes\vec{u}^T)(E-\nabla\otimes\vec{u}))=\frac{1}{2}(\nabla\otimes\vec{u}+\nabla\otimes\vec{u}^T)
+	\end{multline*}
+	остальные аналогично. То есть
+	\[
+		\varepsilon = A\approx J \approx C \approx\Lambda\approx\overset{(n)}{C}\approx\overset{(n)}{A}
+	\]
+	где $\varepsilon=\frac{1}{2}(\nabla\otimes\vec{u}+\nabla\otimes\vec{u}^T)$ - тензор малых деформаций (соотношение Коши)
+	\item Тензоры напряжений Коши T и Пиолы-Кирхгофа P и $\Pi$ неразличимы.
+	\[
+		T = \sqrt{\frac{\mathring{g}}{g}}F\cdot P \approx P
+	\]
+	\[
+	T = \sqrt{\frac{\mathring{g}}{g}}F\cdot \Pi\cdot F^T \approx \Pi
+	\]
+	Аналогично все энергетические и квазиэнергетические тензоры 
+	напряжений совпадают, используется обозначение \textit{симметричного 
+	тензора напряжений} $\sigma$ или \textit{симметричного тензора деформации} $\varepsilon$. 
+	\[
+		\overset{(n)}{T}=T=\overset{(n)}{S}\approx P\approx \Pi \approx \sigma,
+	\]
+	где $S$ -- поворотный тензор напряжений.
+	\item Так как конфигурации неразличимы $\mathring{\mathcal{K}}\approx \mathcal{K}$, то совпадают и скоростные характеристики:
+	\[
+		\frac{\mathrm{d}a}{\mathrm{d}t}=\frac{\partial a}{\partial t} + \cancelto{{}^\text{пренебрегаем конвективной производной}}{\vec{v}\cdot\nabla\otimes a} \approx \frac{\partial a}{\partial t}
+	\]
+\end{enumerate}
