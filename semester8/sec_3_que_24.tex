@@ -1,2 +1,98 @@
 \que{Постановка задачи теории упругости в напряжениях. Тензор функций напряжений. Формулы Чезаро.}
 
+\subsection*{Постановка задачи теории упругости в напряжениях. Тензор функций напряжений.}
+
+Рассмотрим случай, когда на границе области \( V \) задан только вектор усилий \( \vec{S}_e \):
+%картинка 241
+\begin{equation}\label{eq:base_system}
+    \begin{cases}
+        \nabla \cdot \sigma + \rho \vec{f} = 0, & \vec{x} \in V \\
+        \varepsilon = \frac{1}{4} \Pi \cdot\cdot \sigma, & \vec{x} \in V \cup \varepsilon \\
+        \vec{n} \cdot \sigma |_{\Sigma} = \vec{S}_e, & \vec{x} \in \Sigma \\
+        \text{Ink} \, \varepsilon = 0, & \vec{x} \in V
+    \end{cases}
+\end{equation}
+
+Если уравнения совместности деформаций (УСД) не присоединять, то задача будет недоопределённая. УСД в этом случае не удовлетворяются тождественно.
+
+Соотношения Коши 
+
+\begin{equation}\label{eq:cauchy_relations}
+    \varepsilon = \frac{1}{2} (\nabla \otimes \vec{u} + \nabla \otimes \vec{u}^T)
+\end{equation}
+
+не включаются в общую систему \eqref{eq:base_system}. Они служат для вычисления перемещений по заданному полю \( \varepsilon \), но решения этих уравнений неоднозначны, так как не заданы граничные условия по перемещению. С учетом УСД система \eqref{eq:base_system} становится переопределенной. 
+
+Решение задачи \eqref{eq:base_system} существует не всегда, а только при определенных ограничениях на \( \vec{f} \) и \( \vec{S}_e \).
+
+Если массовые силы потенциальны:
+
+\begin{equation}\label{eq:mass_forces}
+    \vec{f} = \nabla \chi
+\end{equation}
+
+можно ввести новый симметричный тензор второго ранга \( \Phi \):
+
+\begin{equation}\label{eq:phi_tensor}
+    \Phi_{\sigma} = \text{Ink} \, \Phi - \chi E
+\end{equation}
+
+Уравнение \eqref{eq:phi_tensor} представляет собой 6 уравнений относительно 6 компонент тензора \( \Phi \).
+
+После введения тензора \( \Phi \) уравнения равновесия удовлетворяются тождественно для любой области \( V \):
+
+\begin{align}\label{eq:equilibrium}
+    \nabla \cdot \sigma 
+    &= \nabla \cdot \text{Ink} \, \Phi - \nabla (\chi E) \notag \\
+    &= \frac{1}{g} \nabla_s \epsilon^{snj} \epsilon^{pik} \nabla_i \nabla_n \Phi_{kj} \cdot \vec{r}_p 
+    - \nabla \chi \notag \\
+    &= \vec{r}_p \epsilon^{pik} \nabla_i (\epsilon^{snj} \nabla_s \nabla_n \Phi_{kj}) - \nabla \chi \notag \\
+    &= -\nabla \chi
+\end{align}
+
+Таким образом:
+
+\begin{equation}\label{eq:balance}
+    0 = \nabla \cdot \sigma + \rho \vec{f} = -\nabla \chi + \nabla \chi = 0
+\end{equation}
+
+Следовательно, система \eqref{eq:base_system} преобразуется в следующую:
+
+\begin{equation}\label{eq:new_system}
+    \begin{cases}
+        \text{Ink} \, \varepsilon = 0 \\
+        \varepsilon = ^4\Phi \cdot\cdot \sigma \\
+        \sigma = \text{Ink} \, \Phi - \chi E
+    \end{cases}
+\end{equation}
+
+Где:
+
+\begin{equation}\label{eq:boundary_conditions}
+    \begin{cases}
+        \vec{n} \cdot \text{Ink} \, \Phi |_{\Sigma} = \vec{S}_e + \chi \vec{n}, & \vec{x} \in \Sigma \\
+        \text{Ink} \left(^4\Phi \cdot\cdot (\text{Ink} \, \Phi - \chi E)\right) = 0, & \vec{x} \in V
+    \end{cases}
+\end{equation}
+
+В системе \eqref{eq:new_system} имеется 6 уравнений относительно 6 неизвестных компонент тензора \( \Phi \), то есть система замкнутая. Это задача в «напряжениях» относительно функций тензора напряжения \( \Phi \). Перемещения не могут быть определены из этой задачи.
+
+\subsection*{Формулы Чезаро}
+%картинка 242
+Эти формулы позволяют найти вектор перемещений \( \vec{u} \), если задано поле тензора деформаций \( \varepsilon \) в области \( V \):
+
+\begin{equation}\label{eq:cesaro_formulas}
+    \vec{u}(\vec{x}) = \vec{u}_0 + \vec{\omega}_0 \times (\vec{x} - \vec{x}_0) + 
+    \int_{\alpha} \left( \varepsilon + (\tilde{\vec{x}} - \vec{x}) \times \nabla \times \varepsilon \right) d\tilde{\vec{x}}
+\end{equation}
+
+Где:
+- \( \vec{u}_0 \), \( \vec{\omega}_0 \), \( \vec{x}_0 \) — постоянные векторы;
+- \( \alpha \) — произвольная кривая в \( V \).
+
+Эта форма справедлива только для односвязных областей \( V \).
+
+- \( \vec{u}_0 \) — вектор перемещений тела в точке \( \vec{x}_0 \);
+- \( \vec{\omega}_0 \) — вектор поворота тела в точке \( \vec{x}_0 \).
+
+Эти величины исключают движение тела как жёсткого целого, делая движение тела определённым.

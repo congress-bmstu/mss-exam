@@ -1,2 +1,60 @@
 \que{Простейшие задачи теории упругости: задача о всестороннем сжатии.}
 
+
+\textit{Простейшие задачи допускают явное аналитическое решение задач теории упругости, причем это решение является однородным, то есть напряжение \( \sigma_{ij} \) и деформации \( \varepsilon_{ij} \) в выбранной системе координат не зависят от координат.
+}
+\par
+\textbf{Теорема:}
+
+Рассмотрим упругую среду, которой соответствует ограниченная область \( V \) с поверхностью \( \Sigma \), на которой задан вектор усилий:
+\begin{equation}
+\vec{t}_e = - p_e \vec{n} \quad \text{(1)}
+\end{equation}
+где \( \vec{n} \) – вектор нормали и \( \Sigma \), \( p_e = \text{const} \) – внешнее давление.
+
+Тогда, если массовые силы отсутствуют:
+\begin{equation}
+\vec{f} \equiv 0, \quad \vec{x} \in V \quad \text{(2)}
+\end{equation}
+а процессы в упругой среде квазистатические, то для всех \( \vec{x} \in V \) имеет место следующее напряжение (постоянное и шаровое):
+\begin{equation}
+\sigma = - p E \quad \label{eq:2531}
+\end{equation}
+Деформация тогда равна:
+\begin{equation}
+\varepsilon = ^4\Pi \cdot \cdot \sigma, \quad \vec{x}^i \in V \quad \label{eq:2532}
+\end{equation}
+которая вычисляется на основании линейных упругих соотношений.
+
+А поле перемещений в односвязной области выражается по формуле Чезаро:
+\begin{equation}
+\vec{u}(\vec{x}) = \vec{u}_0 + \vec{w}_0 \times (\vec{x} - \vec{x}_0) + \varepsilon \cdot (\vec{x} - \vec{x}_0) \label{eq:254}
+\end{equation}
+где \( \vec{u}_0, \vec{w}_0 \) – постоянные векторы, \( \vec{x}_0 \) – точка, в которой задано жесткое закрепление.
+
+\textbf{Замечание 1.} Формулы \ref{eq:2531}, \ref{eq:2532} и \ref{eq:254} имеют место для линейной упругой среды, но сама теорема справедлива и для более общей упругой среды с определяющими соотношениями:
+\begin{equation}
+\sigma = F(\varepsilon), \quad \varepsilon = G(\sigma) \quad \text{\ref{eq:255}}
+\end{equation}
+Но формулы \ref{eq:2531}, \ref{eq:2532} заменяются на \ref{eq:255}.
+
+\textbf{Замечание 2.} Область \( V \) может быть и не односвязной, но тогда формула \ref{eq:254}  видоизменяется, так как \ref{eq:2532} принимает вид:
+\begin{equation}
+\varepsilon = \Pi_{ijkl} \sigma_{kl} = - p \Pi_{ijkl} \quad \text{(6)}
+\end{equation}
+
+\textbf{Замечание 3.} Поле перемещений \( \vec{u}(\vec{x}) \) по \ref{eq:254} определяется неоднозначно – с точностью до \( \vec{u}_0, \vec{w}_0 \) соответствующей точки \( \vec{x}_0 \). Для устранения неоднозначности необходимо дополнительно задать:
+\begin{itemize}
+    \item Вектор перемещений \( \vec{u}_0 \), для \( \vec{x} = \vec{x}_0 \in V \cup \Sigma \):
+    \begin{equation}
+    \vec{u}_0 \quad \label{eq:257}
+    \end{equation}
+    \item Вектор вихря (вектор малого поворота) в точке \( \vec{x}_0 \):
+    \begin{equation}
+    \vec{w}_0 = \frac{1}{2} \nabla \times \vec{u}_0, \quad \text{для} \quad \vec{x} = \vec{x}_0 \in V \cup \Sigma \quad \label{eq:258}
+    \end{equation}
+\end{itemize}
+\ref{eq:257} и \ref{eq:258} называют условиями жесткого защемления, если \( \vec{u}_0 = 0, \vec{w}_0 = 0 \). В таком случае:
+\begin{equation}
+\vec{u}(\vec{x}) = \varepsilon (\vec{x} - \vec{x}_0) \quad \text{(9)}
+\end{equation}
