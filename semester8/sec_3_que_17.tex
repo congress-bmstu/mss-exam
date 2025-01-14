@@ -1,3 +1,50 @@
 \que{Тензор упругих податливостей, различные формы записи для общего случая анизотропии.}
 
+Имеем обратное к обобщенному закону Гука соотношение:
+
+\begin{equation}
+	\varepsilon = \tensor[^4]{\Pi}{} \cdot \cdot \sigma
+\end{equation}
+
+где $\tensor[^4]{\Pi}{}$ --- тензор упругих податливостей.
+
+\begin{align}
+	\varepsilon = \tensor[^4]{\Pi}{} \cdot \cdot \tensor[^4]{C}{} \cdot \cdot \varepsilon &= \Delta \cdot \cdot \varepsilon; \\
+	\tensor[^4]{\Pi}{} \cdot \cdot \tensor[^4]{C}{} &= \Delta
+\end{align}
+т.е. $\tensor[^4]{\Pi}{}$ и $\tensor[^4]{C}{}$ являются взаимнообратными, а $\Delta$ --- единичный тензор 4-го ранга.
+
+\begin{equation*}
+	\Delta = \frac{1}{2} \left(\mathbf{c}_i \otimes \mathbf{c}^k \otimes \mathbf{c}^i \otimes \mathbf{c}_k + \mathbf{c}_i \otimes \mathbf{c}^{k} \otimes \mathbf{c}_k \otimes \mathbf{c}^i\right)
+\end{equation*}
+--- для симметричных тензоров $\varepsilon$ и $\sigma$
+\begin{align*}
+	\Delta = \Delta^{ijkl} \mathbf{c}_i \otimes \mathbf{c}_j \otimes \mathbf{c}_k \otimes \mathbf{c}_l; \\
+	\Delta^{ijkl} = \frac{1}{2} \left(\delta^{ik} \delta^{jl} + \delta^{il} \delta^{jk}\right).
+\end{align*} 
+
+Для $\tensor[^4]{\Pi}{}$ --- имеет место аналогичные представления, как и для $\tensor[^4]{C}{}$: 
+\begin{itemize}
+	\item \textit{Безиндексная запись:} Обратное выражение к обобщенному закону Гука;
+	
+	\item \textit{Компонентная}: см. вопрос Саши про это (15 вопрос: Безиндексная и коммпонентная формы представления определяющих соотношений);
+	
+	\item \textit{Матрич} 
+	\begin{equation*}
+		\underbrace{\{\varepsilon\}}_{6\times1} = \underbrace{\left(\tensor[^4]{\Pi}{}\right)}_{6\times 6} \underbrace{\{\sigma\}}_{6 \times 1}
+	\end{equation*}
+	
+	\begin{equation*}
+		\left(\tensor[^4]{\Pi}{}\right) = \begin{pmatrix}
+			\Pi^{1111} & \Pi^{1122} & \Pi^{1133} & \sqrt{2}\Pi^{1123} & 
+			\sqrt{2}\Pi^{1113} & 
+			\sqrt{2}\Pi^{1112} \\ 
+			& \Pi^{2222} & \Pi^{2233} & \sqrt{2} \Pi^{2223} & \sqrt{2} \Pi^{2213} & \sqrt{2} \Pi^{2212} \\
+			& & \Pi^{3333} & \sqrt{2} \Pi^{3323} & \sqrt{2} \Pi^{3313} & \sqrt{2} \Pi^{3312} \\
+			& \text{сим.} &  & 2 \Pi^{2323} & 2 \Pi^{2312} & 2 \Pi^{2312} \\
+			& & & & 2 \Pi^{2322} & 2 \Pi^{2312} \\
+			& & & & & \Pi^{1212} 
+		\end{pmatrix}
+	\end{equation*}
+\end{itemize}
 
