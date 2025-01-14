@@ -1,2 +1,66 @@
 \que{Уравнения совместности деформаций при малых деформациях.}
+{\footnotesize 
+    Обозначения: $ \varepsilon_{kj\mid in} := \frac{\partial^2
+    \varepsilon_kj}{\partial X^i \partial X^n} $. В ДСК аналогично $ \varepsilon_{kj, in}
+    $.
+}
 
+Рассмотрим четвёртую форму уравнения совместности деформаций в базисе $
+\mathbf{r}_i $: 
+\begin{multline*}
+    M_{njik} = \varepsilon_{kj\mid in} -
+    \varepsilon_{ij\mid kn} +
+    \varepsilon_{in \mid kj} -
+    \varepsilon_{kn \mid ij} + 
+    \varepsilon_{kjm} \mathring{\Gamma}^m_{in} + \\ +
+    \varepsilon_{inm} \mathring{\Gamma}^m_{kj} -
+    \varepsilon_{knm} \mathring{\Gamma}^m_{ij} -
+    \varepsilon_{ijm}\mathring{\Gamma}^m_{kn} -
+    2\varepsilon_{ml} (\mathring{\Gamma}^l_{in} \mathring{\Gamma}^m_{kj} -
+    \mathring{\Gamma}^l_{ij} \mathring{\Gamma}^m_{kn}) = 0.
+\end{multline*}
+Здесь была использована линеаризация $ g_{ij} \approx \mathring{g}_{ij} $, откуда $
+\Gamma^k_{ij} \approx \mathring{\Gamma}^k_{ij} $, для малых деформаций. 
+
+Введём для удобства симметричный \emph{тензор несовместности}  
+\[
+    M^{lm} := \frac{1}{4g} \epsilon^{lnj} \epsilon^{mik} M_{njik},
+\]
+где $ g := \det g_{ij} $.
+
+Можно записать в безындексном виде  
+\[
+    M = M^{lm} \mathbf{r}_l \otimes \mathbf{r}_m = \operatorname{Inc} \varepsilon = 0,
+\]
+где $ \operatorname{Inc} $ --- дифференциальный \emph{оператор несовместности}
+\[
+    \operatorname{Inc} \varepsilon = \frac{1}{\mathring{g}} \epsilon^{lnj} \epsilon^{mik}
+    \nabla_n \nabla_i \varepsilon_{kj} \mathbf{r}_l \otimes \mathbf{r}_m,
+    \qquad \varepsilon = \varepsilon_{kj} \mathbf{r}^i \otimes \mathbf{r}^j.
+\]
+Поскольку $ M $ --- тензор, в декартовом базисе (где $ \Gamma \equiv 0 $) имеем
+ 
+\[
+    M^{lm} = \epsilon^{lnj} \epsilon^{mik} \varepsilon_{kj,in} = 0.
+\]
+
+Решение уравнения совместности малых деформаций всегда можно представить в виде
+ 
+\[
+    \varepsilon = \operatorname{def} \mathbf{u} := \frac{1}{2} (\nabla \otimes
+    \mathbf{u} + \nabla \otimes \mathbf{u}^{\mathsf T}),
+\]
+то есть
+\[
+    \varepsilon_{k j} = \frac{1}{2} (\nabla_k u_j + \nabla_i u_k).
+\]
+Действительно, имеем в таком случае  
+\[
+    \operatorname{Ink} \varepsilon = \frac{1}{2}
+    \epsilon^{lnj}\epsilon^{mik}\nabla_i \nabla_n (\nabla_k u_j + \nabla_j u_k)
+    = \frac{1}{2} \epsilon^{lnj}\epsilon^{mik} (\nabla_i\nabla_k \nabla_n u_j +
+    \nabla_n \nabla_j \nabla_i u_k) = 0,
+\]
+поскольку $ \nabla_i \nabla_k = \nabla_k \nabla_i $ и суммирование их
+произведений с символами
+Леви -- Чивиты приведёт к обнулению суммы.
