@@ -1,2 +1,61 @@
 \que{Различные формы записи (3 формы) определяющих соотношений для трансверсально-изотропных сред.}
 
+\begin{enumerate}
+	\item Безындексное
+	\[
+		\sigma = \lambda_1 I^{(3)}_1(\varepsilon)E +
+		\lambda_2I^{(3)}_2 (\varepsilon )\vec{c^2}_3 +
+		\lambda_3\left(I^{(3)}_1\vec{c^2}_3+I^{(3)}_2E\right) +
+		\lambda_4\left(O_1\varepsilon_{23}+O_2\varepsilon_{13}\right) +
+		2\lambda_5\varepsilon,
+	\]
+	\begin{itemize}[label*=]
+		\item[где] $I^{(3)}_1(\varepsilon)$ -- первый инвариант от тензора деформации,
+		\item $I^{(3)}_2(\varepsilon)$ -- первый инвариант от тензора деформации.
+	\end{itemize}
+	\item Компонентное
+	\begin{multline*}
+		\sigma^{ij} = \lambda_1 I^{(3)}_1(\varepsilon)\delta^{ij} +
+	\lambda_2I^{(3)}_2 (\varepsilon )\delta_{i3}\delta_{j3} +
+	\lambda_3\left(I^{(3)}_1\delta_{i3}\delta_{j3}+I^{(3)}_2\delta_{i3}\delta_{j3}\right) +\\+
+	\lambda_4\left(\left(\delta_{i2}\delta_{j3}+\delta_{i3}\delta_{j2}\right)\varepsilon_{23}+\left(\delta_{i1}\delta_{j3}+\delta_{i3}\delta_{j1}\right)\varepsilon_{13}\right) +
+	2\lambda_5\varepsilon_{ij}.
+	\end{multline*}
+	\item Матричное
+	\[
+		\underset{6\times1}{\left\{\sigma\right\}} =
+		\underset{6\times6}{\left(\tensor[^4]{C}{}\right)}
+		\underset{6\times1}{\left\{\varepsilon\right\}}
+	\]
+	Где $\left(\tensor[^4]{C}{}\right)$ имеет вид:
+	\begin{align*}
+		\left(\tensor[^4]{C}{} \right) &= \left(C_{\alpha\beta}\right) = \begin{pmatrix}
+			{C}^{1111} & {C}^{1122} & {C}^{1133} & 0 & 0 & 0 \\
+			& {C}^{1111} & {C}^{1133} & 0 & 0 & 0 \\
+			& & {C}^{3333} & 0 & 0 & 0 \\
+			& \text{сим.} & & 2 {C}^{1313} & 0 & 0 \\
+			& & & & 2 {C}^{1313} & 0 \\
+			& & & & & {C}^{1111} - {C}^{1122}
+		\end{pmatrix} = \\
+		&= \begin{pmatrix}
+			\lambda_1 + 2 \lambda_5 & \lambda_1 & \lambda_1+{\lambda}_3 & 0 & 0 & 0 \\
+			& \lambda_1 + 2 \lambda_5 & \lambda_1+{\lambda}_3 & 0 & 0 & 0 \\
+			& & {\lambda}''' & 0 & 0 & 0 \\
+			& \text{сим.} & & 2({\lambda}_4+\lambda_5) & 0 & 0 \\
+			& & & & 2({\lambda}_4+\lambda_5)	& 0 \\
+			& & & & & 2 {\lambda}_5
+		\end{pmatrix}
+	\end{align*}
+	\item Явное
+	\[
+		\begin{cases}
+			\sigma_{11} = (\lambda_1+2\lambda_5)\varepsilon_{11} + \lambda_1\varepsilon_{22}+(\lambda_1+\lambda_3)\varepsilon_{33}\\
+			\sigma_{22}=\lambda_1\varepsilon_{11}+(\lambda_1+2\lambda_5)\varepsilon_{22}+(\lambda_1+\lambda_3)\varepsilon_{33}\\
+			\sigma_{33} = (\lambda_1+\lambda_3)(\varepsilon_{11}+\varepsilon_{22})+\lambda'''\varepsilon_{33}\\
+			\sigma_{23}=2(\lambda_2+\lambda_5)\varepsilon_{23}\\
+			\sigma_{13}=2(\lambda_2+\lambda_5)\varepsilon_{13}\\
+			\sigma_{12}=2\lambda_5\varepsilon_{12}
+		\end{cases}
+	\]
+\end{enumerate}
+
