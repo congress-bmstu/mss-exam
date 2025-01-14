@@ -10,7 +10,8 @@
 \begin{align}
 	\tensor[^4]{\mathbf{C}}{} &= \sum_{\alpha = 1}^{3} \left(\lambda_\alpha \widehat{\mathbf{c}}^2_{\alpha} \otimes \widehat{\mathbf{c}}^2_{\alpha}\right) + \lambda_{3 + \alpha} \left(\widehat{\mathbf{c}}^2_{\beta} \otimes \widehat{\mathbf{c}}^2_{\gamma} + \widehat{\mathbf{c}}^2_{\gamma} \otimes \widehat{\mathbf{c}}^2_{\beta}\right) + \lambda_{6 + \alpha} \mathbf{O}_{\alpha} \otimes \mathbf{O}_{\alpha} = 
 	\\
-	&= \widehat{C}^{ijkl} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j \otimes \widehat{\mathbf{c}}_k \otimes \widehat{\mathbf{c}}_l.
+	&= \widehat{C}^{ijkl} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j \otimes \widehat{\mathbf{c}}_k \otimes \widehat{\mathbf{c}}_l. \text{ --- это первая форма, безиндесная;} \\
+	C^{ijkl} &= \sum_{\alpha = 1}^{3} \left(\lambda_a \delta^i_\alpha \delta^j_\alpha \delta^k_\alpha \delta^l_\alpha\ + \lambda_{3+\alpha} \left(\delta^i_\beta\delta^j_\beta\delta^k_\beta\delta^l_\beta + \delta^i_\gamma\delta^j_\gamma\delta^k_\gamma\delta^l_\gamma\right) + \lambda_{6 + \alpha} \left(\delta^i_\beta \delta^j_\gamma + \delta^i_\gamma + \delta^j_\beta\right)\left(\delta^k_\beta\delta^l_\gamma + \delta^l_\gamma\delta^k_\beta\right)\right), \\ &\text{ --- компонентная форма.} \nonumber
 \end{align}
 
 Для компонент $\widehat{C}^{ijkl}$ тензора модулей упругости $\tensor[^4]{\mathbf{C}}{}$ часто используют удобное матричное представление в виде матрицы $6 \times 6$:
@@ -45,6 +46,11 @@
 	\tensor[^4]{\Pi}{} &= \sum_{\alpha = 1}^{3} \left(\lambda_\alpha' \widehat{\mathbf{c}}^2_{\alpha} \otimes \widehat{\mathbf{c}}^2_{\alpha}\right) + \lambda_{3 + \alpha}' \left(\widehat{\mathbf{c}}^2_{\beta} \otimes \widehat{\mathbf{c}}^2_{\gamma} + \widehat{\mathbf{c}}^2_{\gamma} \otimes \widehat{\mathbf{c}}^2_{\beta}\right) + \lambda_{6 + \alpha}' \mathbf{O}_{\alpha} \otimes \mathbf{O}_{\alpha} = 
 	\\
 	&= \widehat{\Pi}^{ijkl} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j \otimes \widehat{\mathbf{c}}_k \otimes \widehat{\mathbf{c}}_l.
+\end{align}
+
+Компонентная форма:
+\begin{align}
+	\Pi^{ijkl} &= \sum_{\alpha = 1}^{3} \left(\lambda_\alpha' \delta^i_\alpha \delta^j_\alpha \delta^k_\alpha \delta^l_\alpha\ + \lambda_{3+\alpha}' \left(\delta^i_\beta\delta^j_\beta\delta^k_\beta\delta^l_\beta + \delta^i_\gamma\delta^j_\gamma\delta^k_\gamma\delta^l_\gamma\right) + \lambda_{6 + \alpha}' \left(\delta^i_\beta \delta^j_\gamma + \delta^i_\gamma + \delta^j_\beta\right)\left(\delta^k_\beta\delta^l_\gamma + \delta^l_\gamma\delta^k_\beta\right)\right)
 \end{align}
 
 Чаще всего, особеннов в приложениях, $\lambda'_{\alpha}$ выражают через так называемые технические константы:
