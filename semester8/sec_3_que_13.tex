@@ -1,2 +1,75 @@
+% !TeX spellcheck = ru_RU
 \que{Вариационная постановка задачи теории упругости.}
 
+Вариационная постановка квазистатической задачи МДТТ состоит из:
+\begin{itemize}
+	\item $\varepsilon$ -- тензор малых деформаций,
+	\item $\sigma$ -- тензор напряжения
+\end{itemize}
+
+\[
+\begin{cases}
+	\nabla\cdot\sigma+\mathring{\rho}f = 0, &\text{-- уравнение равновесия твердого тела}\\
+	\sigma(\varepsilon) = F(\varepsilon,\theta_0)=\rho\frac{\partial\psi(\varepsilon,\theta_0)}{\partial\varepsilon},&\text{-- определяющее соотношение}\\
+	\varepsilon=\frac{1}{2}(\nabla\otimes\vec{u}+\nabla\otimes\vec{u}^T),&\text{-- соотношение Коши}\\
+	\left. \vec{n}\sigma\right|_{\Sigma_\sigma} = \vec{t}_{ne}, &\text{-- граничное условие}\\
+	\left. u\right|_{\Sigma_u} = u_e, &\text{-- граничное условие}\\
+\end{cases}
+\]
+
+Рассмотрим специальный класс векторных полей $\vec{w}\left(x^i\right)$, которые:
+\begin{itemize}
+	\item определены в $V\cup\Sigma$,
+	\item непрерывно-дифференцируемы в $V\cup\Sigma$,
+	\item удовлетворяют ГУ на части поверхности $\Sigma_u:\;\vec{w}=0$.
+\end{itemize}
+
+Домножив первое уравнение системы на $\vec{w}$ и проинтегрировав по области $V$, получим:
+\[
+	\int\limits_V \vec{w}\cdot\left(\nabla\cdot\vec{\sigma}\right)\;\mathrm{d}V +
+	\int\limits_V \left(\mathring{\rho}\cdot\vec{f}\right)\vec{w}\;\mathrm{d}V = 0.
+\]
+Преобразуя подынтегральное выражение:
+\[
+	\vec{w}\cdot\left(\nabla\cdot\vec{\sigma}\right) = \nabla\cdot\left(\vec{w}\cdot\vec{\sigma}\right) - \vec{\sigma}\cdot\cdot\nabla\otimes\vec{w} = \nabla\cdot\left(\vec{w}\cdot\vec{\sigma}\right) - \vec{\sigma}\cdot\cdot\varepsilon(\vec{w})
+\]
+\begin{itemize}
+	\item[где] $\varepsilon(\vec{w}) = \frac{1}{2}\left(\nabla\otimes\vec{w}+\nabla\otimes\vec{w}^T\right)$
+\end{itemize}
+
+Подставив полученное в исходный интеграл, получим:
+\[
+	- \int\limits_V \vec{\sigma}\cdot\cdot\varepsilon(\vec{w}) \;\mathrm{d}V
+	+ \int\limits_V \nabla\cdot\left(\vec{w}\cdot\vec{\sigma}\right) \;\mathrm{d}V
+	+ \int\limits_V \mathring{\rho}\cdot\vec{f} \;\mathrm{d}V
+	=0
+\]
+по формуле Остроградского-Гаусса с использованием ГУ, получим:
+\[
+	\int\limits_V \vec{\sigma}\cdot\cdot\varepsilon(\vec{w}) \;\mathrm{d}V =
+	\int\limits_{\Sigma_\sigma} \vec{S}_e\vec{w} \;\mathrm{d}\Sigma
+	+ \int\limits_V \mathring{\rho}\cdot\vec{f}\;\mathrm{d}V
+\]
+
+Рассмотрим специальный класс векторных полей $\vec{u}$, которые:
+\begin{itemize}
+	\item определены в $V\cup\Sigma$,
+	\item непрерывно-дифференцируемы в $V\cup\Sigma$,
+	\item удовлетворяют ГУ.
+\end{itemize}
+-- это кинематические допустимые векторные поля.
+
+Если векторное полу $\vec{u}$ удовлетворяет всем уравнениями системы, то поле $\vec{u}$ -- действительное. Это и есть решение квазистатической задачи.
+
+Введём понятие вариации $\delta\vec{u}$ кинематики допустимого поля: $\delta\vec{u}=\vec{u}_1-\vec{u}_2$. Следовательно $\vec{w}=\delta\vec{u}$.
+
+В силу линейности $\varepsilon(\delta\vec{u})=\delta\varepsilon(\vec{u})$, а также в силу $\sigma=F(\varepsilon)=F(\varepsilon(\vec{u})) = \sigma(\varepsilon(\vec{u}))$, получим \textit{вариационное уравнение для квазистатической задачи}:
+\[
+	\int\limits_V \sigma(\varepsilon(\vec{u}))\cdot\cdot\delta\varepsilon(\vec{u})\;\mathrm{d}V =
+	\int\limits_{\Sigma_\sigma} \vec{S}_e\delta\vec{u}\;\mathrm{d}V +
+	\int\limits_V \mathring{\rho}\cdot\vec{f}\;\mathrm{d}V
+\]
+
+\begin{remark}
+	\textit{Есть еще вариационная постановка \textbf{динамической задачи} МДТТ, но её не было на лекциях, так что её опустим.}
+\end{remark}

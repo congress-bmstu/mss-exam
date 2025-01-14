@@ -1,2 +1,101 @@
+% !TeX spellcheck = ru_RU
 \que{Основные постановки задач в теории малых упругих деформаций: динамическая и квазистатическая задачи в перемещениях. Основные типы граничных условий.}
 
+\subsection{Динамическая задача в перемещениях}
+
+Если рассматривают только изотермические процессы, когда во вей области $V$ при всех $t\geqslant0$ температура остается постоянной ($\theta=\theta_0$), то динамическая постановка задачи МДТТ имеет вид:
+\[
+	\vec{x}\in\mathring{V},\;t>0:\quad \mathring{\rho} \frac{\partial \vec{v}}{\partial t} = \nabla \cdot \vec{\sigma} + \mathring{\rho}\vec{f},
+\]
+\begin{itemize}[label*=]
+	\item[где] $\mathring{\rho}$ -- плотность в конфигурации $\mathring{\mathcal{K}}$,
+	\item $\vec{\sigma}$ -- тензор напряжений,
+	\item $\vec{f}$ -- плотность массовых сил,
+	\item $\vec{t}_n$ -- вектор напряжений.
+\end{itemize}
+
+\subsection{Интегральная формулировка закона изменения количества движения}
+\[
+	\underbrace{\int\limits_{V} \mathring{\rho} \frac{\mathrm{d}\vec{v}}{\mathrm{d}t}\;\mathrm{d}V}_{\text{внутр.масс.силы(инерц.)}} =
+	\underbrace{\int\limits_{\Sigma} \vec{n}\sigma\;\mathrm{d}\Sigma}_{\text{внеш.поверх.силы}} +
+	\underbrace{\int\limits_{V}\mathring{\rho} f \;\mathrm{d}V}_{\text{внеш.масс.силы}}
+\]
+
+\[
+\vec{x}\in\mathring{V}\cup\Sigma,\;t>0:\quad\begin{cases}
+	\vec{v}=\frac{\partial\vec{u}}{\partial t}, &\\
+	\varepsilon=\frac{1}{2}(\nabla\otimes\vec{u}+\nabla\otimes\vec{u}^T),&\text{-- соотношение Коши}\\
+	\sigma(\varepsilon) = F(\varepsilon,\theta_0)=\rho\frac{\partial\psi(\varepsilon,\theta_0)}{\partial\varepsilon},&\text{-- определяющее соотношение}
+\end{cases}
+\]
+Здесь $\sigma(\varepsilon)=\sigma(\varepsilon,\theta_0)$ - оператор, не зависящий от $\theta$.
+
+Граничные условия:
+\begin{align*}
+	&x\in\Sigma_\sigma,\; t>0:\quad n\cdot\sigma=t_{ne},\\
+	&x\in\Sigma_u,\; t>0:\quad u=u_e
+\end{align*}
+
+Начальные условия:
+\[
+	x\in V,t=0:\quad \begin{cases}
+		u=u_0,\\
+		v=v_0.
+	\end{cases}
+\]
+
+\subsection{Квазистатическая задача в перемещениях}
+
+Если в уравнении движения
+\[
+	\mathring{\rho}\frac{\partial\vec{v}}{\partial t}=\nabla\cdot\sigma+\mathring{\rho}\vec{f},\quad\vec{v}=\frac{\partial\vec{u}}{\partial t}\implies
+	\mathring{\rho}\frac{\partial^2\vec{u}}{\partial t^2}=\nabla\cdot\sigma+\mathring{\rho}f
+\]
+можно пренебречь инерционным членом $\mathring{\rho}\frac{\partial\vec{v}}{\partial t}$ по сравнению с $\nabla\cdot\sigma$, то тогда рассматривается модель квазистатических процессов в деформируемом твердом теле. Для таких процессов постановка квазистатической задачи МДТТ в перемещениях имеет вид:
+\[
+\begin{cases}
+	\nabla\cdot\sigma+\mathring{\rho}f = 0, &\text{-- уравнение равновесия твердого тела}\\
+	\sigma(\varepsilon) = F(\varepsilon,\theta_0)=\rho\frac{\partial\psi(\varepsilon,\theta_0)}{\partial\varepsilon},&\text{-- определяющее соотношение}\\
+	\varepsilon=\frac{1}{2}(\nabla\otimes\vec{u}+\nabla\otimes\vec{u}^T),&\text{-- соотношение Коши}\\
+	\left. \vec{n}\sigma\right|_{\Sigma_\sigma} = \vec{t}_{ne}, &\text{-- граничное условие}\\
+	\left. u\right|_{\Sigma_u} = u_e, &\text{-- граничное условие}\\
+\end{cases}
+\]
+
+Начальные условия:
+\[
+x\in V,t=0:\quad \begin{cases}
+	u=u_0,\\
+	v=v_0.
+\end{cases}
+\]
+
+\subsection{Основные типы граничных условий}
+
+\begin{itemize}
+	\item Условие 1-го рода:
+	Если на $\Sigma$ задана температура $\theta_e$ или $u_e$;
+	\item Условие 2-го рода:
+	Если на $\Sigma$ задан вектор усилий $t_{ne}$ или тепловой поток $q_{ne}$;
+	\item Условие 3-го рода:
+	\begin{itemize}
+		\item При конвективном теплообмене. Если на $\Sigma$ задан конвективный тепловой поток:
+		\[
+			q_{ne} = \alpha^T\left(\theta_e-\theta_w\right),
+		\]
+		\begin{itemize}[label*=]
+			\item[где] $\alpha^T$ -- коэффициент теплообмена,
+			\item $\theta_e$ -- температура внешней среды,
+			\item $\theta_w$ -- температура на поверхности.
+		\end{itemize}
+		\item При теплообмене излучением
+		\[
+			-\vec{n}\cdot\lambda\cdot\nabla\theta=\alpha^T\left(\theta_e-\theta_w\right)-\varepsilon_\theta\sigma_{SB}\theta^4,
+		\]
+		\begin{itemize}[label*=]
+			\item[где] $\lambda$ -- коэффициент теплопроводности,
+			\item $\varepsilon_\theta$ -- степень черноты поверхности (интегральный коэффициент излучения),
+			\item $\sigma_{SB}$ -- постоянная Стефана-Больцмана.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
