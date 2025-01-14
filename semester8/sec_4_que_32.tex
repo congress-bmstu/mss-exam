@@ -1,2 +1,92 @@
 \que{Соотношения на поверхностях сильных разрывов в идеальных газах. Соотношения Гюгонио.}
 
+\begin{theorem}
+	В идеальном газе при наличии перехода материальных точек через поверхность разрыва $S(t)$ (ударная волна или фазовое превращение, когда $M \not = 0$), касательные составляющие скорости $v_{\tau_\alpha}$ при переходе через $S(t)$ остаются непрерывными:
+	\begin{equation*}
+		M \not = 0, \quad [v_{\tau_\alpha}] = 0,
+	\end{equation*}
+	при отсутствии переходов материальных точек через касательные составляющие скорости могут терпеть разрыв:
+	\begin{equation*}
+		M = 0, \quad [v_{\tau_\alpha}] \not = 0.
+	\end{equation*}
+\end{theorem}
+
+Таким образом, соотношения можно записать в виде следующих скалярных соотношений:
+\begin{equation}
+	\begin{cases}
+		\rho_1 \left(v_{n1} - D\right) = \rho_2 \left(v_{n2} - D\right) = -M, \\
+		\rho_1 v_{n1} \left(v_{n1} - D\right) + p_1 = \rho_2 v_{n2} \left(v_{n2} - D\right) + p_2 + C_{n\Sigma}, \\
+		\rho_1 \left(e_1 + \frac{v_{n1}^2}{2}\right) \left(v_{n1} - D\right) + p_1 v_{n1} = \\
+		\quad = \rho_2 \left(e_2 + \frac{v_{n2}^2}{2}\right) \left(v_{n2} - D\right) + p_2 v_{n2} + C'_{3\Sigma}.
+	\end{cases} \label{3}
+\end{equation}
+
+здесь учтено, что скачок кинетической энергии в идеальном газе:
+\begin{equation*}
+	[\rho\abs{\mathbf{v}} / 2] = [\rho \left(v^2_n + v^2_{\tau_1} + v^2_{\tau_2}\right) / 2] = [\rho v^2_n / 2]
+\end{equation*}
+--- есть скачок кинетической энергии только по нормали. 
+
+Для соотношения скачка энтропии также:
+\begin{equation*}
+	\rho_1 \eta_1 \left(v_{n1} - D\right) = \rho_2 \eta_2 \left(v_{n2} - D\right) + C'_{4\Sigma},
+\end{equation*}
+где
+\begin{equation*}
+	C'_{4\Sigma} = C_{4\Sigma} - [q_{n}/\theta].
+\end{equation*}
+
+\paragraph{Соотношения Гюгонио}
+
+Умножим первое уравнение системы соотношений на поверхностях разрывов из начала этого пункта на $D$ и вычтем полученное соотношение из третьей строки той же системы, тогда (речь о \ref{3}):
+\begin{equation*}
+	\rho_1 v_{n1} \left(v_{n1} - D\right) - \rho_1 D \left(v_{n1} - D\right) + p_1 = \rho_2 v_{n2} (v_{n2} - D) - \rho_2 D \left(v_{n2} - D\right) + p_2 + C_{n\Sigma}.
+\end{equation*} 
+
+или
+
+\begin{equation*}
+	\rho_1 \left(v_{n1} - D\right)^2 + p_1 = \rho_2 \left(v_{n2} - D\right)^2 + p_2 + C_{n\Sigma}.
+\end{equation*}
+
+Умножим это соотношение на $D$ и опять вычтем из третьей строки:
+\begin{align*}
+	\rho_1 e_1 \left(v_{n1} - D\right) &+ \rho \frac{v_{n1}^2}{2} \left(v_{n1} - D\right) + p_1(v_{n1} - D) - \rho_1 D \left(v_{n1} - D\right)^2 = \rho_2 e_2 (v_{n2} - D) + \\
+	&+ \rho \frac{v^2_{n2}}{2} \left(v_{n2} - D\right) + p_2 \left(v_{n2} - D\right) - \rho_2 D \left(v_{n2} - D\right)^2 + \left(C_{3\Sigma}' - D C_{n\Sigma}\right).
+\end{align*}
+
+В этом выражении можно убрать слева и справа множители $\rho_1 \left(v_{n1} - D\right)$ и $\rho_2 \left(v_{n2} - D\right)$, тогда имеем:
+\begin{equation*}
+	e_1 + \frac{v^2_{n1}}{2} + \frac{p_1}{\rho_1} - D \left(v_{n1} - D\right) = e_2 + \frac{v^2_{n2}}{2} + \frac{p_2}{\rho_2} - D \left(v_{n2} - D\right) + C''_{3\Sigma},
+\end{equation*}
+где 
+\begin{equation*}
+	C''_{3\Sigma} = - \frac{1}{M} \left(C'_{3\Sigma} - D C_{n\Sigma}\right).
+\end{equation*}
+Здесь рассмотрен случай, когда $M \not = 0$.
+
+Добавляя в левую и правую части полученного соотношения слагаемое $-D/2$ имеем:
+\begin{equation*}
+	e_1 + \frac{p_1}{\rho_1} + \frac{1}{2} \left(v^2_{n1} - 2Dv_{n1} + D^2\right) = e_2 + \frac{p_2}{\rho_2} + \frac{1}{2} \left(v_{n2}^2 - 2 D v_{n2} + D^2\right) + C''_{3\Sigma}.
+\end{equation*}
+
+Отсюда окончательно получаем:
+\begin{equation*}
+	e_1 + \frac{p_1}{\rho_1} + \frac{(v_{n1} - D)^2}{2} = e_2 + \frac{p_2}{\rho_2} + \frac{(v_{n2} - D)^2}{2} + C''_{3\Sigma}
+\end{equation*}
+
+Введем обозначения для относительной скорости:
+\begin{equation*}
+	u_1 = v_{n1} - D, \quad u_2 = v_{n2} - D.
+\end{equation*}
+
+Это скорости в системе координат, движущейся вместе с поверхностью разрыва $S$. Тогда соотношения запишутся в виде:
+\begin{equation*}
+	\begin{cases}
+		\rho_1 u_1 = \rho_2 u_2, \\
+		\rho_1 u^2_1 + p_1 = \rho_2 u^2_2 + p_2 + C_{n\Sigma}, \\
+		e_1 + (p_1 / \rho_1) + (u_1^2 / 2) = e_2 + (p_2 / \rho_2) + (u^2_2 / 2) + C''_{3\Sigma}.
+	\end{cases}
+\end{equation*}
+
+Эти соотношения называют \textit{соотношениями Гюгонио.}
