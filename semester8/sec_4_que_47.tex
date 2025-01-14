@@ -1,2 +1,75 @@
 \que{Установившиеся процессы в идеальных газах. Функция давления, выражения для нее при адиабатических процессах в совершенном газе (3 формы). Функция давления для несжимаемой жидкости.}
 
+\begin{definition}
+  Если для идеальной жидкости (как сжимаемой, так и несжимаемой) принимают допущение, 
+  что функции $\mathbf{v}, p, \rho, \theta$ зависят только от координат, но не от времени, то
+  говорят, что принята модель \emph{установившихся} (или \emph{стационарных}) процессов в
+  жидкости.
+\end{definition}
+
+Для сжимаемой жидкости система уравнений МЖГ при установившихся процессах принимает вид:
+\[
+  \begin{cases}
+    \nabla \cdot (\rho \mathbf{v}) = 0, \\
+    \nabla \cdot \left( \rho \mathbf{v} \otimes \mathbf{v} + p E \right) = \rho \mathbf{f}, \\
+    \nabla \cdot \left( \rho \mathbf{v} (\varepsilon + \dfrac{p}{\rho}) + \mathbf{q} \right) = \rho \mathbf{f} \cdot \mathbf{v} + \rho q_m.
+  \end{cases}
+\]
+
+Для несжимаемой:
+\[
+  \begin{cases}
+    \nabla \cdot \mathbf{v} = 0, \\
+    \nabla \cdot \left( \mathbf{v} \otimes \mathbf{v} + \dfrac{p}{\mathring{\rho}} E \right) = \mathbf{f}, \\
+    \nabla \cdot \left( \mathbf{v} \left( \varepsilon + \dfrac{p}{\mathring{\rho}} \right) + \mathbf{q} \right) = \mathbf{f} \cdot \mathbf{v} + q_m.
+  \end{cases}
+\]
+
+Эти системы допускают существования первого интеграла, если ввести т.н. \emph{функцию давления}.
+
+\paragraph{Функция давления.}
+Пусть есть некоторая несамопересекающаяся кривая $\mathcal{L}$, которая проходит через
+точку $\mathcal{M}_1 ( x^i_1 )$ и имеет уравнение
+$x^i = x^i_\mathcal{L} (x^j_1, \tau), \tau \in [\tau_1, \tau_2]$. Тогда в установившемся
+процессе, когда $\rho$ и $p$ являются функциями только координат, можно найти их как
+зависимости от $\tau$: $\rho = \rho(x^i(x^j_1, \tau)) = \rho(\tau, \mathcal{L})$,
+$p = p(x^i(x^j_1, \tau)) = p(\tau, \mathcal{L})$, тогда если эти зависимости взаимнооднозначные,
+то можно построить зависимость $\rho = \rho(p, \mathcal{L})$.
+
+Введём \emph{функцию давления} $\mathcal{P} (p, \mathcal{L})$:
+\[
+  \mathcal{P} (p, \mathcal{L}) = \int\limits^p \dfrac{dp'}{\rho(p', \mathcal{L})}
+  \Leftrightarrow
+  \dfrac{d\mathcal{P}}{dp} = \dfrac{1}{\rho(p, \mathcal{L})},
+\]
+где нижний предел не важен.
+
+Можно доказать следующую теорему:
+\begin{theorem}\footnote{эта теорема не до конца сформулирована в третьем томе Димитриенко}
+  В баротропной в шикором смысле жидкости при установившихся процессах 
+  функция давления не зависит от кривой $\mathcal{L}$, а только от значения давления
+  и плотности в точке $\mathcal{M}_1$:
+  \[
+    \mathcal{P}(p, \mathcal{L}) = \mathcal{P}(p, \rho_1, p_1) = \int\limits^p \dfrac{dp'}{\rho(p, \rho_1, p_1)}
+  \]
+\end{theorem}
+
+\paragraph{Функция давления при абиабатических процессах в совершенном газе.}
+При адиабатических процессах в совершенном газе с постоянными теплоёмкостями (которые
+являются баротропными в широком смысле) функция давления может быть найдена:
+\[
+  \mathcal{P}(p, \rho_1, p_1) = \int\limtis^p \left( \dfrac{p'}{p_1} \right)^{- 1/k} \dfrac{dp'}{\rho_1} = \dfrac{p_1}{\rho_1} \dfrac{k}{k-1} \left( \dfrac{p}{p_1} \right)^{(k-1)/k} =
+  c_p \theta_1 \left( \dfrac{p}{p_1} \right)^{(k-1)/k}
+\]
+
+Другие формы для функции давления при адиабатических процессах в совершенном газе:
+воспользуемся соотношением Мендлеева-Клапейрона $p / p_1 = \left( \rho / \rho_1 \right)^k $,
+тогда:
+\[
+  \mathcal{P} = \dfrac{p_1}{\rho_1} \dfrac{k}{k-1} \left( \dfrac{\rho}{\rho_1} \right)^{k-1} =
+  c_p \theta_1 \left( \dfrac{\rho}{\rho_1} \right)^{k-1},
+\]
+так как $p / p_1 = \left( \rho / \rho_1 \right)^k \Rightarrow \dfrac{p}{\rho} = p_1 \dfrac{\rho^{k-1}}{\rho_1^k}$, то можно получить ещё одну форму функции давления:
+\[
+  \mathcal{P} = \dfrac{k}{k-1} \dfrac{p}{\rho} = c_p \theta.
+\]
