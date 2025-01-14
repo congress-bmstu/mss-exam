@@ -1,56 +1,32 @@
 \que{Cоотношения на поверхности идеального контакта.}
 
-Когерентную, недиссипативную поверхность $S(t)$, через которую нет перехода материальных точек, называют \textit{поверхностью идеального контакта}. Для такой поверхности\footnote{Тут и далее: нелинейный Димитриенка стр.327}: 
-\begin{equation}
-	\mathring{C}_{\alpha\Sigma} = 0, \quad C_{\alpha\Sigma}, \quad \alpha = 1, \dots, 6.
-\end{equation}
-
-и 
-
-\begin{equation}
-	[\mathring{\mathbf{x}}] = 0, \quad M = 0, \quad [\theta] = 0, \quad [\mathbf{u}] = 0, \quad [\mathbf{v}] = 0. \label{4.19}
-\end{equation}
-
-Поскольку материальны точки не переходят через поверхность идеального контакта, то скорость движения поверхности $S(t)$ совпадает со скоростью $\mathbf{v}$ движения материальных точек $\mathcal{M}$ на $S(t)$, причем скачок скорости также равен нулю.
-
-К двум соотношениям выше следует добавить: 
-\begin{gather}
-	\mathbf{n} \cdot [\mathbf{T}] = 0, \label{4.20} \\
-	\mathbf{n} \cdot [\mathbf{T} \cdot \mathbf{v}] = \mathbf{n} \cdot [\mathbf{q}], \label{4.21} \\
-	\mathbf{n} \cdot [\mathbf{q}/\theta] = 0, \label{4.22}\\
-	\mathbf{n} \cdot [\rho \mathbf{F} \otimes \mathbf{v}] = 0. \label{4.23}
-\end{gather}
-
-Скачок нормальной составляющей вектора потока тепла также равен нулю:
-\begin{equation}
-	\mathbf{n} \cdot [\mathbf{q}] = 0,
-\end{equation}
-а соотношение $	\mathbf{n} \cdot [\mathbf{T} \cdot \mathbf{v}] = \mathbf{n} \cdot [\mathbf{q}]$ не является тождественным, а удовлетворяется тождественно, если выполнено \ref{4.19} и \ref{4.22}. Соотношение \ref{4.23}, в силу $[\mathbf{v}] = 0$ эквивалентно:
-\begin{equation}
-	\mathbf{n} \cdot [\rho \mathbf{F}] = 0,
-\end{equation}
-которое представляет собой не что иное, как геометрическое условие сохранения вектора нормали в $\mathring{\mathcal{K}}$:
-\begin{equation*}
-	0 = [\mathring{\mathbf{n}}] \, d\mathring{\Sigma} = [\rho \mathbf{n} \cdot \mathbf{F}] \, d\Sigma/\mathring{\rho}
-\end{equation*}
-
-Таким образом, независимыми будут следующие соотношения:
+Если поверхность $S$ является \textit{поверхностью контакта} (т.е. определяющие соотношения различны по обе стороны от $S$ и $\mathring{M} = 0$), тогда имеем:
 \begin{equation}
 	\begin{cases}
-		[\mathbf{u}] = 0, \\
-		\mathbf{n} \cdot [\mathbf{T}] = 0, \\
-		[\theta] = 0, \\
-		\mathbf{n} \cdot [\mathbf{q}] = 0,
+		[\mathring{\rho}] \not= 0, \\
+		\mathbf{n} \cdot [\mathbf{\sigma}] + \mathring{C}_{2\Sigma} = 0, \\
+		- \mathbf{n} \cdot [\mathbf{q}] + \mathbf{n} \cdot [\mathbf{\sigma} \cdot \mathbf{v}] + \mathring{C}_{3\Sigma} = 0, \\
+		n \otimes [\mathring{\rho} \mathbf{v}] + \mathring{C}_{6\Sigma} = 0.
 	\end{cases}
 \end{equation}
-которые называют \textit{соотношениями на поверхности идеального контакта}.
 
-Аналогично в $\mathring{\mathcal{K}}$ получаем следующие независимые соотношения на поверхности идеального контакта:
-\begin{equation*}
+В частности, если поверхность гомотермическая, когерентная ($\mathring{C}_{6\Sigma} = 0$) и поверхностными эффектами можно принебречь (т.е. $\mathring{C}_{2\Sigma} = 0$, $\mathring{C}_{3\Sigma} = 0$), то получим:
+\begin{equation}
 	\begin{cases}
+		\mathbf{n} \cdot [\sigma] = 0, \\
+		\mathbf{n} \cdot [\mathbf{q}] = 0, \\
 		[\mathbf{u}] = 0, \\
-		\mathring{\mathbf{n}} \cdot [\mathbf{P}] = 0, \\
-		[\theta] = 0, \\
-		\mathring{\mathbf{n}} \cdot [\mathring{\mathbf{q}}] = 0.
+		[\theta] = 0.
 	\end{cases}
-\end{equation*}
+\end{equation}
+
+Условие непрерывности вектора перемещений является следствием допущения о когерентности поверхности $S$.
+
+Отметим, что поскольку для рассматриваемого случая поверхность $S$ является неподвижной ($\mathring{D} = 0$) и в рамках малых деформаций $S$ может изменить положение только из-за собственного движения в конфигурации $\mathring{\mathcal{K}}$, но не за счет перемещения материальных точек поверхности, тогда:
+\begin{equation}
+	[\mathbf{v}] = 0.
+\end{equation} 
+
+Это условие можно присоединить к последней системе вместо последного уравнения в ней. 
+
+Такие \textit{условия называют условиями идеального контакта} двух твердых тел с малыми деформациями. 
