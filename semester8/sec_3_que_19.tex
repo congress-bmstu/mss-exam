@@ -1,1 +1,58 @@
 \que{Различные формы записи (3 формы) определяющих соотношений для ортотропных сред.}
+
+Подставим безиндексное представление тензора модулей упругости в определяющее соотношение $\tensor[^4]{C}{} \cdot \cdot \varepsilon$:
+\begin{align*}
+	\widehat{\mathbf{c}}^2_{\alpha} \cdot \cdot \varepsilon = (\widehat{\mathbf{c}}_\alpha \otimes \widehat{\mathbf{c}}) \cdot \cdot \varepsilon = \widehat{\mathbf{c}}_{\alpha} \cdot \varepsilon \cdot \widehat{\mathbf{c}}_{\alpha} = \widehat{\mathbf{c}}_{\alpha} \cdot \left(\varepsilon^{ij} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j\right) \cdot \widehat{\mathbf{c}}_{\alpha} = \varepsilon^{ij} \delta_{i \alpha} \delta_{j \alpha} = \varepsilon_{\alpha\alpha}, \quad \alpha = 1, 2, 3.
+\end{align*}
+Но $\varepsilon_{\alpha\alpha}$ --- это инварианты тензора $\varepsilon$ (симметрично) относительно границ ортотропии:
+\begin{gather*}
+	I^{(0)}_{\alpha}(\varepsilon) \equiv \varepsilon_{\alpha\alpha}, \\
+	\mathbf{O}_{\alpha} \cdot \cdot \varepsilon = \left(\widehat{\mathbf{c}}_{\beta} \otimes \widehat{\mathbf{c}}_\gamma + \widehat{\mathbf{c}}_\gamma \otimes \widehat{\mathbf{c}}_\beta\right) \cdot \cdot \varepsilon = \widehat{\mathbf{c}}_\gamma \cdot \varepsilon \cdot \widehat{\mathbf{c}}_\beta + \widehat{\mathbf{c}}_\beta \cdot \varepsilon \cdot \widehat{\mathbf{c}}_\gamma = 2 \varepsilon_{\beta\gamma}, \\
+	I^(0)_{3 + \alpha}(\varepsilon) \equiv \abs{\varepsilon_{\beta\gamma}}.
+\end{gather*}
+
+Получаем:
+\begin{equation*}
+	\sigma = \sum_{\alpha=1}^{3} \left(\lambda_{\alpha} I^{(0)}_{\alpha}(\varepsilon)\widehat{\mathbf{c}}^2_\alpha + \lambda_{3 + \alpha} \left(I^{(0)}_\gamma(\varepsilon)\widehat{\mathbf{c}}_{\beta} + I^{(0)}_{\beta}(\varepsilon)\widehat{\mathbf{c}}^2_\gamma\right) + 2 \lambda_{6 + \alpha} \varepsilon_{\beta\gamma}\mathbf{O}_{\alpha}\right)
+\end{equation*}
+--- \textit{первое безиндоксное представление} определяющих соотношений для линейно упругих ортотропных сред. 
+
+\textit{Второе представление (компонентное):}
+\begin{equation*}
+	\sigma_{ij} = \sum_{\alpha=1}^{3} \left(\lambda_\alpha I^{(0)}_{\alpha}(\varepsilon)\delta^i_\alpha \delta^{j}_{\alpha} + \lambda_{3+\alpha} \left(I^{(0)}_\gamma(\varepsilon) \delta^{i}_{\beta} \delta^{j}_{ \beta} + I^{(0)}_\beta(\varepsilon) \delta^{i}_{\gamma} \delta^{j}_{ \gamma}\right) + 2 \lambda_{6 + \alpha} \varepsilon_{\alpha\beta} \left(\delta^{i}_{\beta} \delta^{j}_{ \gamma} + \delta^{i}_{\gamma} \delta^{j}_{ \beta}\right)\right)
+\end{equation*}
+
+\textit{Третье представление (матричное):}
+\begin{equation*}
+	\{\sigma\} = \left(\tensor[^4]{C}{}\right) \{\varepsilon\}.
+\end{equation*}
+Где $\left(\tensor[^4]{C}{}\right)$ имеет вид: 
+\begin{align*}
+	\left(\tensor[^4]{C}{}\right) &= \begin{pmatrix}
+		\widehat{C}^{1111} & \widehat{C}^{1122} & \widehat{C}^{1133} & 0 & 0 & 0 \\
+		& \widehat{C}^{2222} & \widehat{C}^{2233} & 0 & 0 & 0 \\
+		& & \widehat{C}^{3333} & 0 & 0 & 0 \\
+		& \text{сим.} & & 2 \widehat{C}^{2323} & 0 & 0 \\ 
+		& & & & 2 \widehat{C}^{1313} & 0 \\
+		& & & & & 2 \widehat{C}^{1212}
+	\end{pmatrix} \\ &= \begin{pmatrix}
+	\lambda_1 & \lambda_6 & \lambda_5 & 0 & 0 & 0 \\
+	& \lambda_2 & \lambda_4 & 0 & 0 & 0 \\
+	& & \lambda_3 & 0 & 0 & 0 \\ 
+	& \text{сим.} & & 2\lambda_7 & 0 & 0 \\
+	& & & & 2 \lambda_8	& 0 \\
+	& & & & & 2 \lambda_9
+	\end{pmatrix}
+\end{align*}
+
+Явный вид соотношений:
+\begin{equation*}
+	\begin{cases}
+		\sigma_{11} = \lambda_1 \varepsilon_{11} + \lambda_6 \varepsilon_{22} + \lambda_5 \varepsilon_{33}, \\
+		\sigma_{22} = \lambda_6 \varepsilon_{11} + \lambda_2 \varepsilon_{22} + \lambda_4 \varepsilon_{33}, \\
+		\sigma_{33} = \lambda_5 \varepsilon_{11} + \lambda_4 \varepsilon_{22} + \lambda_3 \varepsilon_{33}, \\
+		\sigma_{23} = 2 \lambda_7 \varepsilon_{23}, \\
+		\sigma_{13} = 2 \lambda_8 \varepsilon_{13}, \\
+		\sigma_{12} = 2 \lambda_9 \varepsilon_{12}, \\
+	\end{cases}
+\end{equation*}
