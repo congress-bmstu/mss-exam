@@ -1,2 +1,65 @@
 \que{Различные  формы  записи  (3  формы) тензора  модулей  упругости,  тензора  упругих  податливостей для изотропных сред.}
 
+Для изотропной линейно-упругой среды инвариантное представление потенциала имеет вид:
+\begin{equation}
+	\Psi = \mathring{\rho} \psi_0 + \frac{1}{2} \left(\lambda_1 + \lambda_2\right) I^2_1(\varepsilon) - \lambda_2 I_2(\varepsilon)
+\end{equation}
+и содержит только две независимые константы упругости $\lambda_1$ и $\lambda_2$ (их обычно называют константами Ламе). 
+
+Соответствующий тензор модулей упругости $\tensor[^4]{\mathbf{C}}{}$ можно представить в следующем виде:
+\begin{equation}
+	\tensor[^4]{\mathbf{C}}{} = \lambda_1 \mathbf{E} \otimes \mathbf{E} + 2 \lambda_2 \Delta.
+\end{equation}
+
+Тензор упругих податливостей $\tensor[^4]{\Pi}{}$ для изотропной среды имеет аналогичную структуру:
+\begin{equation}
+	\tensor[^4]{\Pi}{} = \lambda'_1 \mathbf{E} \otimes \mathbf{E} + 2 \lambda_2' \Delta = \widehat{\Pi}^{ijkl} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j \otimes \widehat{\mathbf{c}}_k \otimes \widehat{\mathbf{c}}_l,
+\end{equation}
+где константы $\lambda_1'$ и $\lambda_2'$ выражаются через две изотропные технические константы --- \textit{модуль Юнга} $E$ и коэффициент Пуассона $v$ --- следующим образом:
+\begin{equation}
+	\lambda_1' = - v/E, \quad 2 \lambda_2' = 1/\left(2G\right), \quad \lambda_1' + 2 \lambda_2' = 1/E.
+\end{equation}
+
+Третья техническая константа $G$ --- модуль сдвига для изотропной среды --- является зависимой и выражается через $E$ и $v$ по формуле, аналогичной:
+\begin{equation}
+	G = \frac{E}{2(1 + v)}.
+\end{equation}
+
+Матричное представление компонент $\widehat{\Pi}^{ijkl}$ имеет вид:
+\begin{align}
+	(\tensor[^2]{\Pi}{}) = \left(\Pi_{\alpha\beta}\right) &= \begin{pmatrix}
+		\widehat{\Pi}^{1111} & \widehat{\Pi}^{1122} & \widehat{\Pi}^{1122} & 0 & 0 & 0 \\
+		& \widehat{\Pi}^{1111} & \widehat{\Pi}^{1122} & 0 & 0 & 0 \\
+		& & \widehat{\Pi}^{1111} & 0 & 0 & 0 \\
+		& \text{сим.} & & 2 \widehat{\Pi}^{2323} & 0 & 0 \\
+		& & & & 2 \widehat{\Pi}^{1313} & 0 \\
+		& & & & & \widehat{\Pi}^{1212}
+	\end{pmatrix} = \\ &= \begin{pmatrix}
+		1 / E & - v/E & -v/E & 0 & 0 & 0 \\
+		& 1 / E & - v/E & 0 & 0 & 0 \\
+		& & 1/E & 0 & 0 & 0 \\
+		& \text{сим.} & & 1 / \left(2 G\right) & 0 & 0 \\ 
+		& & & & 1 / \left(2 G\right) & 0 \\
+		& & & & & 1 / \left(2 G\right)
+	\end{pmatrix}.
+\end{align}
+
+Матричное представление компонент $\widehat{C}^{ijkl}$ имеет вид:
+\begin{align}
+	(\tensor[^2]{\mathbf{C}}{}) = \left(C_{\alpha\beta}\right) &= \begin{pmatrix}
+		\widehat{C}^{1111} & \widehat{C}^{1122} & \widehat{C}^{1122} & 0 & 0 & 0 \\
+		& \widehat{C}^{1111} & \widehat{C}^{1122} & 0 & 0 & 0 \\
+		& & \widehat{C}^{1111} & 0 & 0 & 0 \\
+		& \text{сим.} & & 2 \widehat{C}^{2323} & 0 & 0 \\
+		& & & & 2 \widehat{C}^{1313} & 0 \\
+		& & & & & \widehat{C}^{1212}
+	\end{pmatrix} = \\ &= \begin{pmatrix}
+		\lambda_1 + 2 \lambda_2 & \lambda_1 & \lambda_1 & 0 & 0 & 0 \\
+		& \lambda_1 + 2 \lambda_2 & \lambda_1 & 0 & 0 & 0 \\
+		& & \lambda_1 + 2 \lambda_2 & 0 & 0 & 0 \\
+		& \text{сим.} & & 2 \lambda_2 & 0 & 0 \\ 
+		& & & & 2 \lambda_2 & 0 \\
+		& & & & & 2 \lambda_2
+	\end{pmatrix}.
+\end{align}
+т.е. в этом случае $\widehat{C}^{1133} = \widehat{C}^{1122} = \widehat{C}^{2233}$ и $\widehat{C}^{2323} = \widehat{C}^{1212} = \widehat{C}^{1313}$.  Аналогичные соотношения справедливы и для $\widehat{\Pi}^{ijkl}$.
