@@ -1,7 +1,83 @@
 \que{Матричная  форма  записи  определяющих  соотношений  линейно  теории  упругости  для  общего  случая анизотропии.}
 
-%Упругая среда для которой $\psi(\varepsilon, \theta) = \psi_{\theta}(\theta) + \frac{1}{2 \mathring{\rho}} \left(\varepsilon - \mathring{\varepsilon}\right) \cdot \cdot \, \tensor[^4]{C}{} \cdot \cdot \left(\varepsilon - \mathring{\varepsilon}\right)$, где $\tensor[4]{C}{}$ --- тензор модулей упругостей; $\mathring{\varepsilon}(\theta)$ --- тензор тепловой деформации. 
-%
-%\begin{equation*}
-%	\psi_{\theta} 
-%\end{equation*} 
+Для \textit{ортотропной линейно-упругой среды}
+\begin{equation}
+	\Psi = \mathring{\rho} \psi = \mathring{\rho} \psi_\theta + \sum\limits_{\alpha = 1}^{3} \left(\frac{1}{2} \lambda_\alpha {I^{(O)}_\alpha}^2(\varepsilon) + \lambda_{3 + \alpha} I^{(O)}_{\beta} I^{(O)}_\gamma(\varepsilon) + 2 \lambda_{6 + \alpha}I^{(O)}_{\alpha + 3}(\varepsilon)\right).
+\end{equation}
+где $\alpha \not= \beta \not = \gamma \not = \alpha;$ $\alpha, \beta, \gamma = 1, 2, 3;$ $\lambda_1, \dots, \lambda_9$ --- независимые упругие константы, число которых для ортотропной среды равно девяти. 
+
+Соответствующий тензор модулей упругости $\tensor[^4]{\mathbf{C}}{}$ для ортотропной среды можно представить в следующем виде:
+\begin{align}
+	\tensor[^4]{\mathbf{C}}{} &= \sum_{\alpha = 1}^{3} \left(\lambda_\alpha \widehat{\mathbf{c}}^2_{\alpha} \otimes \widehat{\mathbf{c}}^2_{\alpha}\right) + \lambda_{3 + \alpha} \left(\widehat{\mathbf{c}}^2_{\beta} \otimes \widehat{\mathbf{c}}^2_{\gamma} + \widehat{\mathbf{c}}^2_{\gamma} \otimes \widehat{\mathbf{c}}^2_{\beta}\right) + \lambda_{6 + \alpha} \mathbf{O}_{\alpha} \otimes \mathbf{O}_{\alpha} = 
+	\\
+	&= \widehat{C}^{ijkl} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j \otimes \widehat{\mathbf{c}}_k \otimes \widehat{\mathbf{c}}_l.
+\end{align}
+
+Для компонент $\widehat{C}^{ijkl}$ тензора модулей упругости $\tensor[^4]{\mathbf{C}}{}$ часто используют удобное матричное представление в виде матрицы $6 \times 6$:
+\begin{align}
+	\left(\tensor[^4]{\mathbf{C}}{}\right) &= \left(C_{\alpha \beta}\right) = \begin{pmatrix}
+		C_{11} & C_{12} & C_{13} & 0 & 0 & 0 \\
+		 & C_{22} & C_{23} & 0 & 0 & 0 \\ 
+		 & & C_{33} & 0 & 0 & 0 \\
+		 & \text{сим.} & & 2 C_{23} & 0 & 0 \\
+		 & & & & 2 C_{13} & 0 \\
+		 & & & & & 2 C_{12}
+	\end{pmatrix} = \\
+	&= \begin{pmatrix}
+		\widehat{C}^{1111} & \widehat{C}^{1122} & \widehat{C}^{1133} & 0 & 0 & 0 \\
+		& \widehat{C}^{2222} & \widehat{C}^{2233} & 0 & 0 & 0 \\
+		& & \widehat{C}^{3333} & 0 & 0 & 0 \\
+		& \text{сим.} & & 2 \widehat{C}^{2323} & 0 & 0 \\ 
+		& & & & 2 \widehat{C}^{1313} & 0 \\
+		& & & & & 2 \widehat{C}^{1212}
+	\end{pmatrix} = \\ &= \begin{pmatrix}
+		\lambda_1 & \lambda_6 & \lambda_5 & 0 & 0 & 0 \\
+		& \lambda_2 & \lambda_4 & 0 & 0 & 0 \\
+		& & \lambda_3 & 0 & 0 & 0 \\ 
+		& \text{сим.} & & 2\lambda_7 & 0 & 0 \\
+		& & & & 2 \lambda_8	& 0 \\
+		& & & & & 2 \lambda_9
+	\end{pmatrix}
+\end{align}
+
+Тензор упругих податливостей $\tensor[^4]{\Pi}{}$ ортотропной среды имеет точно такую же структуру, как и тензор модулей упругости:
+\begin{align}
+	\tensor[^4]{\Pi}{} &= \sum_{\alpha = 1}^{3} \left(\lambda_\alpha' \widehat{\mathbf{c}}^2_{\alpha} \otimes \widehat{\mathbf{c}}^2_{\alpha}\right) + \lambda_{3 + \alpha}' \left(\widehat{\mathbf{c}}^2_{\beta} \otimes \widehat{\mathbf{c}}^2_{\gamma} + \widehat{\mathbf{c}}^2_{\gamma} \otimes \widehat{\mathbf{c}}^2_{\beta}\right) + \lambda_{6 + \alpha}' \mathbf{O}_{\alpha} \otimes \mathbf{O}_{\alpha} = 
+	\\
+	&= \widehat{\Pi}^{ijkl} \widehat{\mathbf{c}}_i \otimes \widehat{\mathbf{c}}_j \otimes \widehat{\mathbf{c}}_k \otimes \widehat{\mathbf{c}}_l.
+\end{align}
+
+Чаще всего, особеннов в приложениях, $\lambda'_{\alpha}$ выражают через так называемые технические константы:
+\begin{gather}
+	E_{\alpha}, v_{\beta\gamma}, G_{\beta\gamma}, \\
+	\lambda'_{\alpha} = 1 / E_{\alpha}, \quad \lambda_{3 + \alpha}' = - v_{\beta \gamma} / E_{\beta}, \quad 2 \lambda_{6 + \alpha}' = 1 / \left(2 G_{\beta \gamma}\right), \\
+	\alpha \not = \beta \not = \gamma \not = \alpha; \quad \alpha, \beta, \gamma, = 1, 2, 3, \nonumber
+\end{gather}
+где $E_{\alpha}$ --- модули упругости; $v_{\beta}$ --- коэффициенты Пуассона; $G_{\beta \gamma}$ --- модули сдвига (всего технических констант --- девять штук). 
+
+Тогда матричное представление компонент $\widehat{\Pi}^{ijkl}$ тензора $\tensor[^4]{\Pi}{}$ в базисе $\widehat{\mathbf{c}}_i$ имеет следующий вид:
+\begin{align}
+	\left(\tensor[^4]{\Pi}{}\right) &= \left(\Pi_{\alpha \beta}\right) = \begin{pmatrix}
+			\Pi_{11} & \Pi_{12} & \Pi_{13} & 0 & 0 & 0 \\
+		& \Pi_{22} & \Pi_{23} & 0 & 0 & 0 \\ 
+		& & \Pi_{33} & 0 & 0 & 0 \\
+		& \text{сим.} & & 2 \Pi_{23} & 0 & 0 \\
+		& & & & 2 \Pi_{13} & 0 \\
+		& & & & & 2 \Pi_{12}
+	\end{pmatrix}= \\
+	&= \begin{pmatrix}
+	\widehat{\Pi}^{1111} & \widehat{\Pi}^{1122} & \widehat{\Pi}^{1133} & 0 & 0 & 0 \\
+	& \widehat{\Pi}^{2222} & \widehat{\Pi}^{2233} & 0 & 0 & 0 \\
+	& & \widehat{\Pi}^{3333} & 0 & 0 & 0 \\
+	& \text{сим.} & & 2 \widehat{\Pi}^{2323} & 0 & 0 \\ 
+	& & & & 2 \widehat{\Pi}^{1313} & 0 \\
+	& & & & & 2 \widehat{\Pi}^{1212}
+	\end{pmatrix} = \\ &= \begin{pmatrix}
+	1 / E_1 & -v_{12} / E_1 & - v_{13} / E_1 & 0 & 0 & 0 \\
+	& 1 / E_2 & -v_{23} / E_2 & 0 & 0 & 0 \\
+	& & 1/E_3 & 0 & 0 & 0 \\ 
+	& \text{сим.} & & 1 / \left(2 G_{23}\right) & 0 & 0 \\
+	& & & & 1 / \left(2 G_{13}\right)	& 0 \\
+	& & & & & 1 / \left(2 G_{12}\right)
+	\end{pmatrix}
+\end{align} 
