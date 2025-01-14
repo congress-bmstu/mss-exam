@@ -1,33 +1,56 @@
 \que{Cоотношения на поверхности идеального контакта.}
 
+Когерентную, недиссипативную поверхность $S(t)$, через которую нет перехода материальных точек, называют \textit{поверхностью идеального контакта}. Для такой поверхности\footnote{Тут и далее: нелинейный Димитриенка стр.327}: 
+\begin{equation}
+	\mathring{C}_{\alpha\Sigma} = 0, \quad C_{\alpha\Sigma}, \quad \alpha = 1, \dots, 6.
+\end{equation}
 
-$\mathring{M} = \mathring{D} \mathring{\rho}_{+}$ --- массовая скорость движения поверхности разрыва в $\mathring{\mathcal{K}}$
+и 
 
+\begin{equation}
+	[\mathring{\mathbf{x}}] = 0, \quad M = 0, \quad [\theta] = 0, \quad [\mathbf{u}] = 0, \quad [\mathbf{v}] = 0. \label{4.19}
+\end{equation}
+
+Поскольку материальны точки не переходят через поверхность идеального контакта, то скорость движения поверхности $S(t)$ совпадает со скоростью $\mathbf{v}$ движения материальных точек $\mathcal{M}$ на $S(t)$, причем скачок скорости также равен нулю.
+
+К двум соотношениям выше следует добавить: 
+\begin{gather}
+	\mathbf{n} \cdot [\mathbf{T}] = 0, \label{4.20} \\
+	\mathbf{n} \cdot [\mathbf{T} \cdot \mathbf{v}] = \mathbf{n} \cdot [\mathbf{q}], \label{4.21} \\
+	\mathbf{n} \cdot [\mathbf{q}/\theta] = 0, \label{4.22}\\
+	\mathbf{n} \cdot [\rho \mathbf{F} \otimes \mathbf{v}] = 0. \label{4.23}
+\end{gather}
+
+Скачок нормальной составляющей вектора потока тепла также равен нулю:
+\begin{equation}
+	\mathbf{n} \cdot [\mathbf{q}] = 0,
+\end{equation}
+а соотношение $	\mathbf{n} \cdot [\mathbf{T} \cdot \mathbf{v}] = \mathbf{n} \cdot [\mathbf{q}]$ не является тождественным, а удовлетворяется тождественно, если выполнено \ref{4.19} и \ref{4.22}. Соотношение \ref{4.23}, в силу $[\mathbf{v}] = 0$ эквивалентно:
+\begin{equation}
+	\mathbf{n} \cdot [\rho \mathbf{F}] = 0,
+\end{equation}
+которое представляет собой не что иное, как геометрическое условие сохранения вектора нормали в $\mathring{\mathcal{K}}$:
 \begin{equation*}
-    \Rightarrow \mathring{D} \rho_{+} = \mathring{D} \rho_{-} = \mathring{M}, \rho_{+} \Bigl(D - \vec{v}_{\Sigma_{+}} \cdot \vec{n}\Bigr) = \rho_{-} \Bigl(D - \vec{v}_{\Sigma_{-}} \cdot \vec{n}\Bigr) = M \text{ (в $\mathcal{K}$)}.
+	0 = [\mathring{\mathbf{n}}] \, d\mathring{\Sigma} = [\rho \mathbf{n} \cdot \mathbf{F}] \, d\Sigma/\mathring{\rho}
 \end{equation*}
 
+Таким образом, независимыми будут следующие соотношения:
+\begin{equation}
+	\begin{cases}
+		[\mathbf{u}] = 0, \\
+		\mathbf{n} \cdot [\mathbf{T}] = 0, \\
+		[\theta] = 0, \\
+		\mathbf{n} \cdot [\mathbf{q}] = 0,
+	\end{cases}
+\end{equation}
+которые называют \textit{соотношениями на поверхности идеального контакта}.
+
+Аналогично в $\mathring{\mathcal{K}}$ получаем следующие независимые соотношения на поверхности идеального контакта:
 \begin{equation*}
-    M = \frac{\kappa_{+}\rho_{+}}{\mathring{\rho}_{+}} \mathring{M}; \quad \kappa_{\pm} = \sqrt{\vec{n} \cdot g^{-1}_{\pm} \cdot \vec{n}} = \sqrt{\vec{n} \cdot F_{\pm} \cdot F^{T}_{\pm} \cdot \vec{n}}; \quad \Bigl[\frac{\kappa_{\rho}}{\beta}\Bigr] = 0; \quad \Bigl[\frac{\rho}{\mathring{\kappa}\mathring{\rho}}\Bigr] = 0.
+	\begin{cases}
+		[\mathbf{u}] = 0, \\
+		\mathring{\mathbf{n}} \cdot [\mathbf{P}] = 0, \\
+		[\theta] = 0, \\
+		\mathring{\mathbf{n}} \cdot [\mathring{\mathbf{q}}] = 0.
+	\end{cases}
 \end{equation*}
-
-Имеем соотношение: $M[A_{\alpha}] + \vec{n} \cdot [B_{\alpha}] + C_{\alpha} = 0, \, \alpha = \overline{2, 6}$. Материальные точки не проходят через поверхность разрыва, т.е. $\mathring{M} = M = 0$, то на $\mathring{S}$ и $S$ имеют место соотношения:
-\begin{align*}
-    &\mathring{\vec{n}} \cdot [\mathring{B_{\alpha}}] + \mathring{C}_{\alpha \Sigma} = 0, \, \mathring{\vec{x}} \in \mathring{S}; \\
-    &\vec{n} \cdot [B_{\alpha}] + C_{\alpha \Sigma} = 0, \, x \in S, \alpha = \overline{2, 6}.
-\end{align*}
-
-или
-
-\begin{equation*}
-    \begin{cases}
-        \mathring{\vec{n}} \cdot [P] + \mathring{C}_{2\Sigma} = 0, \\
-        \mathring{\vec{n}} \cdot [P \cdot \vec{v} - \mathring{\vec{q}}] + \mathring{C}_{3\Sigma} = 0,
-        \mathring{\vec{n}} \cdot [\vec{q} / \theta] + \mathring{C}_{4\Sigma} = 0, \\
-        \mathring{C}_{5\Sigma} = 0,
-        \vec{n} \otimes [\mathring{\rho} \vec{v}] + \mathring{C}_{6\Sigma} = 0, \, \mathring{\vec{x}} \in \mathring{S}.
-    \end{cases}
-\end{equation*}
-
-Аналогично для $\vec{x} \in S$.
-
